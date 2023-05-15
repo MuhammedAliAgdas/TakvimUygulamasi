@@ -1,0 +1,14 @@
+C:\Users\aliag\Documents\GitHub\TakvimUygulamasi\TakvimUygulamasi\bin\Debug\TakvimUygulamasi.exe.config
+C:\Users\aliag\Documents\GitHub\TakvimUygulamasi\TakvimUygulamasi\bin\Debug\TakvimUygulamasi.exe
+C:\Users\aliag\Documents\GitHub\TakvimUygulamasi\TakvimUygulamasi\bin\Debug\TakvimUygulamasi.pdb
+C:\Users\aliag\Documents\GitHub\TakvimUygulamasi\TakvimUygulamasi\obj\Debug\TakvimUygulamasi.csproj.AssemblyReference.cache
+C:\Users\aliag\Documents\GitHub\TakvimUygulamasi\TakvimUygulamasi\obj\Debug\TakvimUygulamasi.csproj.SuggestedBindingRedirects.cache
+C:\Users\aliag\Documents\GitHub\TakvimUygulamasi\TakvimUygulamasi\obj\Debug\TakvimUygulamasi.Properties.Resources.resources
+C:\Users\aliag\Documents\GitHub\TakvimUygulamasi\TakvimUygulamasi\obj\Debug\TakvimUygulamasi.csproj.GenerateResource.cache
+C:\Users\aliag\Documents\GitHub\TakvimUygulamasi\TakvimUygulamasi\obj\Debug\TakvimUygulamasi.csproj.CoreCompileInputs.cache
+C:\Users\aliag\Documents\GitHub\TakvimUygulamasi\TakvimUygulamasi\obj\Debug\TakvimUygulamasi.exe
+C:\Users\aliag\Documents\GitHub\TakvimUygulamasi\TakvimUygulamasi\obj\Debug\TakvimUygulamasi.pdb
+C:\Users\aliag\Documents\GitHub\TakvimUygulamasi\TakvimUygulamasi\obj\Debug\TakvimUygulamasi.AnaEkran.resources
+C:\Users\aliag\Documents\GitHub\TakvimUygulamasi\TakvimUygulamasi\obj\Debug\TakvimUygulamasi.KayitOlmaEkrani.resources
+C:\Users\aliag\Documents\GitHub\TakvimUygulamasi\TakvimUygulamasi\obj\Debug\TakvimUygulamasi.TakvimEkrani.resources
+C:\Users\aliag\Documents\GitHub\TakvimUygulamasi\TakvimUygulamasi\obj\Debug\TakvimUygulamasi.OlayEkleEkrani.resources
