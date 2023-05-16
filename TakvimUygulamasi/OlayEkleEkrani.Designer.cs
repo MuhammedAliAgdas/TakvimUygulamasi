@@ -63,6 +63,7 @@
             this.baslangicSaatCB.Name = "baslangicSaatCB";
             this.baslangicSaatCB.Size = new System.Drawing.Size(121, 21);
             this.baslangicSaatCB.TabIndex = 1;
+            this.baslangicSaatCB.SelectedIndexChanged += new System.EventHandler(this.baslangicSaatCB_SelectedIndexChanged);
             // 
             // baslangicDkCB
             // 
@@ -72,6 +73,7 @@
             this.baslangicDkCB.Name = "baslangicDkCB";
             this.baslangicDkCB.Size = new System.Drawing.Size(121, 21);
             this.baslangicDkCB.TabIndex = 2;
+            this.baslangicDkCB.SelectedIndexChanged += new System.EventHandler(this.baslangicDkCB_SelectedIndexChanged);
             // 
             // bitisSaatCB
             // 
@@ -81,6 +83,7 @@
             this.bitisSaatCB.Name = "bitisSaatCB";
             this.bitisSaatCB.Size = new System.Drawing.Size(121, 21);
             this.bitisSaatCB.TabIndex = 3;
+            this.bitisSaatCB.SelectedIndexChanged += new System.EventHandler(this.bitisSaatCB_SelectedIndexChanged);
             // 
             // bitisDkCB
             // 
@@ -213,6 +216,7 @@
             this.Controls.Add(this.baslangicSaatCB);
             this.Controls.Add(this.tarihSec);
             this.Name = "OlayEkleEkrani";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OlayEkleEkrani";
             this.Load += new System.EventHandler(this.OlayEkleEkrani_Load);
             this.ResumeLayout(false);

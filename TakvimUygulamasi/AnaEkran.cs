@@ -39,10 +39,11 @@ namespace TakvimUygulamasi
             if (varMi == true)
             {
                 kullaniciSifre = SifreTB.Text;
-                TakvimEkrani takvimekrani = new TakvimEkrani();
-                takvimekrani.ShowDialog();
                 KullaniciAdiTB.Text = null;
                 SifreTB.Text = null;
+                TakvimEkrani takvimekrani = new TakvimEkrani();
+                takvimekrani.ShowDialog();
+                
             }
             if (varMi == false) { MessageBox.Show("Bilgileriniz yanlış veya kayıt değilsiniz. kaydolun"); }
         }
