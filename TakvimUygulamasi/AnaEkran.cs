@@ -14,7 +14,7 @@ namespace TakvimUygulamasi
     public partial class AnaEkran : Form
     {
         public static string kullaniciSifre;
-        public static SqlConnection girisBaglanti = new SqlConnection("Data Source=DESKTOP-HU58BL8\\SQLEXPRESS;Initial Catalog=TakvimUygulamasi; Integrated Security=TRUE");
+        public static SqlConnection girisBaglanti = new SqlConnection("Data Source=AYKSR\\SQLEXPRESS02;Initial Catalog=TakvimUygulamasi; Integrated Security=TRUE");
         public AnaEkran()
         {
             InitializeComponent();
@@ -63,5 +63,7 @@ namespace TakvimUygulamasi
             BilgiPaneli.Controls.Remove(kayitEkraniac);
             GirisPaneli.Visible = true;
         }
+
+      
     }
 }

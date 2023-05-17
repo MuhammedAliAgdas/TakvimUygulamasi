@@ -8,8 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TakvimUygulamasi
 {
@@ -20,16 +18,11 @@ namespace TakvimUygulamasi
         {
             InitializeComponent();
         }
-       
         private void OlayEkleEkrani_Load(object sender, EventArgs e)
         {
             tarihSec.MinDate = DateTime.Now;
-            for (int i = 0; i < 60; i++)
-            {
-                if (i < 10) { baslangicSaatCB.Items.Add("0" + i); baslangicDkCB.Items.Add("0" + i); }
-                else if (i < 24) { baslangicSaatCB.Items.Add(i); baslangicDkCB.Items.Add(i); }
-                else { baslangicDkCB.Items.Add(i); }
-            }
+            saatSecme(0);
+            DkSecme(0);
         }
 
         private void olayEkleBT_Click(object sender, EventArgs e)
@@ -63,58 +56,54 @@ namespace TakvimUygulamasi
         private void baslangicSaatCB_SelectedIndexChanged(object sender, EventArgs e)
         { 
             bitisSaatCB.Items.Clear();
-            int bitisSaat=0;
-            bitisSaat = Convert.ToInt32(baslangicSaatCB.Text);
-            for (int j = 0; j < 60; j++)
-            {
-                if(j>=bitisSaat)
-                {   
-                    if (j < 10) { bitisSaatCB.Items.Add("0" + j); }              
-                    else if (j < 24) { bitisSaatCB.Items.Add(j); }
-                }
-                if (j < 10) { bitisDkCB.Items.Add("0" + j); }
-                else if (j < 24) { bitisDkCB.Items.Add(j); }
-                else { bitisDkCB.Items.Add(j); }
-
-            }   
+            int bitisSaat= Convert.ToInt32(baslangicSaatCB.Text);
+            saatSecme(bitisSaat);
         }
 
         private void baslangicDkCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (baslangicSaatCB.Text == bitisSaatCB.Text)
-            {
-                bitisDkCB.Items.Clear();
-                for (int j = Convert.ToInt32(baslangicDkCB.Text); j < 60; j++)
-                {
-                    if (j < 10) { bitisDkCB.Items.Add("0" + j); }
-                    else if (j < 24) { bitisDkCB.Items.Add(j); }
-                    else { bitisDkCB.Items.Add(j); }
-                }
-            }
+            bitisDkCB.Items.Clear();
+            DkSecme(Convert.ToInt32(baslangicDkCB.Text));
+       
         }
 
-        private void bitisSaatCB_SelectedIndexChanged(object sender, EventArgs e)
+        private void saatSecme(int sayi)
         {
-            if (baslangicSaatCB.Text == bitisSaatCB.Text)
+            for (int i = 0; i < 60; i++)
             {
-                bitisDkCB.Items.Clear();
-                for (int j = Convert.ToInt32(baslangicDkCB.Text); j < 60; j++)
-                {
-                    if (j < 10) { bitisDkCB.Items.Add("0" + j); }
-                    else if (j < 24) { bitisDkCB.Items.Add(j); }
-                    else { bitisDkCB.Items.Add(j); }
+                if(baslangicSaatCB.SelectedItem == null)
+                { 
+                    if (i < 10) { baslangicSaatCB.Items.Add("0" + i); }
+                    else if (i < 24) { baslangicSaatCB.Items.Add(i);}
                 }
-            }
-            else
-            {
-                bitisDkCB.Items.Clear();
-                for (int j = 0; j < 60; j++)
+                if (baslangicSaatCB.SelectedItem!=null && i>=sayi&& bitisSaatCB.SelectedItem==null)
                 {
-                    if (j < 10) { bitisDkCB.Items.Add("0" + j); }
-                    else if (j < 24) { bitisDkCB.Items.Add(j); }
-                    else { bitisDkCB.Items.Add(j); }
+                    if (i < 10) { bitisSaatCB.Items.Add("0" + i); }
+                    else if (i < 24) { bitisSaatCB.Items.Add(i); }
                 }
             }
         }
+         
+        private void DkSecme(int sayi)
+        {
+            for (int i = 0; i < 60; i++)
+            {
+                if (baslangicDkCB.SelectedItem==null)
+                {
+                    if (i < 10) { baslangicDkCB.Items.Add("0" + i); }
+                    else { baslangicDkCB.Items.Add(i); }
+                }
+
+                if (baslangicDkCB.SelectedItem != null && i >= sayi && bitisDkCB.SelectedItem == null)
+                {
+                    if (i < 10) { bitisDkCB.Items.Add("0" + i); }
+                    else { bitisDkCB.Items.Add(i); }
+                }
+            }
+
+
+        }
+
+
     }
 }
