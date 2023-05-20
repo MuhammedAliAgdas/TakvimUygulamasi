@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaEkran));
             this.GirisButonu = new System.Windows.Forms.Button();
             this.BilgiPaneli = new System.Windows.Forms.Panel();
             this.GeriButonu = new System.Windows.Forms.Button();
@@ -44,7 +45,7 @@
             // GirisButonu
             // 
             this.GirisButonu.Location = new System.Drawing.Point(383, 299);
-            this.GirisButonu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GirisButonu.Margin = new System.Windows.Forms.Padding(4);
             this.GirisButonu.Name = "GirisButonu";
             this.GirisButonu.Size = new System.Drawing.Size(100, 80);
             this.GirisButonu.TabIndex = 0;
@@ -57,7 +58,7 @@
             this.BilgiPaneli.Controls.Add(this.GeriButonu);
             this.BilgiPaneli.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BilgiPaneli.Location = new System.Drawing.Point(0, 0);
-            this.BilgiPaneli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BilgiPaneli.Margin = new System.Windows.Forms.Padding(4);
             this.BilgiPaneli.Name = "BilgiPaneli";
             this.BilgiPaneli.Size = new System.Drawing.Size(879, 530);
             this.BilgiPaneli.TabIndex = 1;
@@ -65,7 +66,7 @@
             // GeriButonu
             // 
             this.GeriButonu.Location = new System.Drawing.Point(4, 4);
-            this.GeriButonu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GeriButonu.Margin = new System.Windows.Forms.Padding(4);
             this.GeriButonu.Name = "GeriButonu";
             this.GeriButonu.Size = new System.Drawing.Size(67, 62);
             this.GeriButonu.TabIndex = 0;
@@ -76,7 +77,7 @@
             // KullaniciAdiTB
             // 
             this.KullaniciAdiTB.Location = new System.Drawing.Point(327, 133);
-            this.KullaniciAdiTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.KullaniciAdiTB.Margin = new System.Windows.Forms.Padding(4);
             this.KullaniciAdiTB.MaxLength = 20;
             this.KullaniciAdiTB.Name = "KullaniciAdiTB";
             this.KullaniciAdiTB.Size = new System.Drawing.Size(208, 22);
@@ -85,7 +86,7 @@
             // SifreTB
             // 
             this.SifreTB.Location = new System.Drawing.Point(327, 225);
-            this.SifreTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SifreTB.Margin = new System.Windows.Forms.Padding(4);
             this.SifreTB.MaxLength = 20;
             this.SifreTB.Name = "SifreTB";
             this.SifreTB.Size = new System.Drawing.Size(208, 22);
@@ -136,7 +137,7 @@
             this.GirisPaneli.Controls.Add(this.GirisButonu);
             this.GirisPaneli.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GirisPaneli.Location = new System.Drawing.Point(0, 0);
-            this.GirisPaneli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GirisPaneli.Margin = new System.Windows.Forms.Padding(4);
             this.GirisPaneli.Name = "GirisPaneli";
             this.GirisPaneli.Size = new System.Drawing.Size(879, 530);
             this.GirisPaneli.TabIndex = 6;
@@ -150,8 +151,9 @@
             this.Controls.Add(this.GirisPaneli);
             this.Controls.Add(this.BilgiPaneli);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AnaEkran";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AnaEkran";

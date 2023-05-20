@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,26 +22,38 @@ namespace TakvimUygulamasi
             InitializeComponent();
         }
 
+        bool varMi = false;
         private void TakvimEkrani_Load(object sender, EventArgs e)
         {
             ayPaneli.BringToFront();
             yılCB.SelectedIndex = 0;
             int olaySayisi = 0;
-            var aylar= ayPaneli.Controls.OfType<Button>();
-            foreach (var ay in aylar) { ay.Click+= new EventHandler(this.ayButonlarinaTiklama); }
-            bool varMi = false;
+            var aylar = ayPaneli.Controls.OfType<Button>();
+            foreach (var ay in aylar) { ay.Click += new EventHandler(this.ayButonlarinaTiklama); }
+            //bool varMi = false;
             olayGrountuleBaglanti.Open();
-            SqlCommand cmd = new SqlCommand("Select OlayTarihi,AlarmVarMi from Olaylar Where OlayKod = '"+AnaEkran.kullaniciSifre+"'", olayGrountuleBaglanti);
+            SqlCommand cmd = new SqlCommand("Select OlayTarihi,AlarmVarMi from Olaylar Where OlayKod = '" + AnaEkran.kullaniciSifre + "'", olayGrountuleBaglanti);
             SqlDataReader rdr = cmd.ExecuteReader();
             while (rdr.Read())
             {
-                if (tarihler(DateTime.Now.ToString())[3] == rdr["OlayTarihi"].ToString().TrimEnd() &&Convert.ToBoolean(rdr["AlarmVarMi"].ToString().TrimEnd())==true) { varMi = true;}
+                if (tarihler(DateTime.Now.ToString())[3] == rdr["OlayTarihi"].ToString().TrimEnd() && Convert.ToBoolean(rdr["AlarmVarMi"].ToString().TrimEnd()) == true) { varMi = true; }
                 if (tarihler(DateTime.Now.ToString())[1] == tarihler(rdr["OlayTarihi"].ToString().TrimEnd())[1] && Convert.ToBoolean(rdr["AlarmVarMi"].ToString().TrimEnd()) == true) { olaySayisi++; }
             }
-            MessageBox.Show("bu ay "+olaySayisi + " tane olay var");
-            if (varMi) {MessageBox.Show("Bugüne tanımlanan olaylar var!!!"); }
+            //MessageBox.Show("bu ay "+olaySayisi + " tane olay var");
             olayGrountuleBaglanti.Close();
 
+        }
+
+        private void TakvimEkrani_Shown(object sender, EventArgs e)
+        {
+            if (varMi)
+            {
+                SoundPlayer alarm = new SoundPlayer(@"C:\Users\Ayfer\OneDrive\Belgeler\GitHub\TakvimUygulamasi\AlarmSes.wav"); alarm.Play();
+                DialogResult kullaniciCevabi = MessageBox.Show("Bugüne tanımlanan olaylar var!!!","UYARI!!!");
+                if(kullaniciCevabi == DialogResult.OK) { alarm.Stop(); }
+
+
+            }
         }
 
         private void ayButonlarinaTiklama(object sender, EventArgs e)
@@ -143,9 +156,9 @@ namespace TakvimUygulamasi
             olayAciklamasiGuncelleRTB.Text = null;
             olayTanimiGoruntuTB.Text = null;
             olayAciklamaGoruntuRTB.Text = null;
-            olayTarihiGoruntuTB = null;
-            baslangicGoruntuTB = null;
-            bitisGoruntuTB = null;
+            olayTarihiGoruntuTB.Text = null;
+            baslangicGoruntuTB.Text = null;
+            bitisGoruntuTB.Text = null;
             var comboboxlar = this.GuncellemeSayfasi.Controls.OfType<ComboBox>();
             foreach (var combobox in comboboxlar) { combobox.SelectedItem = null; }
 
