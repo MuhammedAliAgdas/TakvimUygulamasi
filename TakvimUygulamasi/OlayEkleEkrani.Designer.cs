@@ -83,6 +83,7 @@
             this.bitisSaatCB.Name = "bitisSaatCB";
             this.bitisSaatCB.Size = new System.Drawing.Size(121, 21);
             this.bitisSaatCB.TabIndex = 3;
+            this.bitisSaatCB.SelectedIndexChanged += new System.EventHandler(this.bitisSaatCB_SelectedIndexChanged);
             // 
             // bitisDkCB
             // 

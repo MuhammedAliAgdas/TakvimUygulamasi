@@ -52,13 +52,17 @@ namespace TakvimUygulamasi
             ayPaneli.Visible = false;
             gunPaneli.Visible = true;
             panelDegistirBT.Visible = true;
-            ay=tiklananAy.Tag.ToString();
+            ay = tiklananAy.Tag.ToString();
+            for (int i = 1; i <= 7; i++)
+            {
+                this.Controls["gun"+i.ToString()].Text = CultureInfo.GetCultureInfo("tr-TR").DateTimeFormat.DayNames[(int)DateTime.Parse(yılCB.Text + "-" + tiklananAy.Tag.ToString() + "-0"+i.ToString()).DayOfWeek];
+                this.Controls["gun" + i.ToString()].Visible = true;
+            }
+
         }
-
-
         private void gunOlusturma(int kacinciAy)
         {
-            int x = 0, y = 40;
+            int x = 0, y = 0;
             gunPaneli.Controls.Clear();
             int gunSayisi=0;
             if(kacinciAy == 4 || kacinciAy == 6 || kacinciAy == 9 || kacinciAy == 11) {gunSayisi = 30;}
@@ -69,18 +73,15 @@ namespace TakvimUygulamasi
             {
                 Button gunButonu = new Button();
                 gunButonu.Name = i.ToString();
-                if (i <10) { gunButonu.Tag = ("0" + i).ToString(); } else { gunButonu.Tag = i.ToString(); }    
-                gunButonu.Text =i.ToString()+" "+CultureInfo.GetCultureInfo("tr-TR").DateTimeFormat.DayNames[(int)DateTime.Parse(yılCB.Text+"-"+kacinciAy+"-"+gunButonu.Tag.ToString() ).DayOfWeek];
+                if (i <10) { gunButonu.Tag = ("0" + i).ToString(); } else { gunButonu.Tag = i.ToString(); }
+                gunButonu.Text =i.ToString();
                 gunButonu.Click += new EventHandler(this.gunTikla);
                 gunButonu.Size = new Size(70,60);
                 gunButonu.Location = new Point(x,y);
                 x+=70;
                 if (i%7==0){y += 60; x = 0;}
-
-                gunPaneli.Controls.Add(gunButonu);
-                       
+                gunPaneli.Controls.Add(gunButonu);    
             }
-
         }
 
         private void gunTikla(object sender, EventArgs e)
@@ -117,16 +118,14 @@ namespace TakvimUygulamasi
             SqlDataReader rdr = cmd.ExecuteReader();
             while (rdr.Read())
             {
-                olayTanimLB.Text = rdr[3].ToString(); olayAciklamasiLB.Text = rdr[4].ToString(); olayBaslangic.Text = rdr[1].ToString(); olayBitis.Text = rdr[2].ToString(); olayTarih.Text = rdr[0].ToString();
-                olayTanimiTB.Text = rdr[3].ToString(); olayAciklamasiRTB.Text = rdr[4].ToString(); alarmVarYok = Convert.ToBoolean(rdr[5].ToString());
+                olayTanimiGoruntuTB.Text = rdr[3].ToString(); olayAciklamaGoruntuRTB.Text = rdr[4].ToString(); baslangicGoruntuTB.Text = rdr[1].ToString(); bitisGoruntuTB.Text = rdr[2].ToString(); olayTarihiGoruntuTB.Text = rdr[0].ToString();
+                olayTanimiGuncelleTB.Text = rdr[3].ToString(); olayAciklamasiGuncelleRTB.Text = rdr[4].ToString(); alarmVarYok = Convert.ToBoolean(rdr[5].ToString());
                 saatGuncelleme(rdr[1].ToString(), rdr[2].ToString());
             }
             if (alarmVarYok) { alarmCB.Checked = true; }
             olayGrountuleBaglanti.Close();
-
-
-            saatSecme(0);
-            DkSecme(0);
+            var labellar = this.GoruntulemeSayfasi.Controls.OfType<Label>();
+            foreach (var label in labellar) { label.Visible = true; }
         }
 
         private void guncelleButonu_Click(object sender, EventArgs e)
@@ -134,16 +133,22 @@ namespace TakvimUygulamasi
             bool alarmVarYok = false;
             if (alarmCB.Checked == true) { alarmVarYok = true; }
             olayGrountuleBaglanti.Open();
-            SqlCommand cmd = new SqlCommand("UPDATE Olaylar SET OlayTanimi = '"+ olayTanimiTB.Text + "',OlayAciklamasi = '"+ olayAciklamasiRTB.Text + "',OlayBaslangicSaati = '" + baslangicSaatiCB.Text + ":" + baslangicDkCB.Text + "',OlayBitisSaati ='" + bitisSaatiCB.Text + ":" + bitisDkCB.Text + "',AlarmVarMi = '"+alarmVarYok+"' Where OlayKod LIKE '" + AnaEkran.kullaniciSifre+ "'AND OlayTanimi LIKE '" + olayTanimlarıCB.Text + "'", olayGrountuleBaglanti);
+            SqlCommand cmd = new SqlCommand("UPDATE Olaylar SET OlayTanimi = '"+ olayTanimiGuncelleTB.Text + "',OlayAciklamasi = '"+ olayAciklamasiGuncelleRTB.Text + "',OlayBaslangicSaati = '" + baslangicSaatiCB.Text + ":" + baslangicDkCB.Text + "',OlayBitisSaati ='" + bitisSaatiCB.Text + ":" + bitisDkCB.Text + "',AlarmVarMi = '"+alarmVarYok+"' Where OlayKod LIKE '" + AnaEkran.kullaniciSifre+ "'AND OlayTanimi LIKE '" + olayTanimlarıCB.Text + "'", olayGrountuleBaglanti);
             cmd.ExecuteNonQuery();
             olayGrountuleBaglanti.Close();
-            olayTanimlarıCB.Items.Clear();
-            olayTanimlarıCB.Items.Add(olayTanimiTB.Text);
-            olayTanimLB.Text = " ";
-            olayTarih.Text = " ";
-            olayAciklamasiLB.Text = " ";
-            olayBaslangic.Text = " ";
-            olayBitis.Text = " ";
+            olayTanimlarıCB.Items.Add(olayTanimiGuncelleTB.Text);
+            olayTanimlarıCB.Items.Remove(olayTanimlarıCB.SelectedItem);
+            olayTanimlarıCB.SelectedItem = null;
+            olayTanimiGuncelleTB.Text = null;
+            olayAciklamasiGuncelleRTB.Text = null;
+            olayTanimiGoruntuTB.Text = null;
+            olayAciklamaGoruntuRTB.Text = null;
+            olayTarihiGoruntuTB = null;
+            baslangicGoruntuTB = null;
+            bitisGoruntuTB = null;
+            var comboboxlar = this.GuncellemeSayfasi.Controls.OfType<ComboBox>();
+            foreach (var combobox in comboboxlar) { combobox.SelectedItem = null; }
+
         }
 
         private void olaySilButonu_Click(object sender, EventArgs e)
@@ -152,11 +157,11 @@ namespace TakvimUygulamasi
             SqlCommand cmd = new SqlCommand("DELETE FROM Olaylar Where OlayKod LIKE '" + AnaEkran.kullaniciSifre + "' AND OlayTanimi LIKE '" + olayTanimlarıCB.Text + "'", olayGrountuleBaglanti);
             cmd.ExecuteNonQuery();
             olayGrountuleBaglanti.Close();
-            olayTanimLB.Text = " ";
-            olayTarih.Text = " ";
-            olayAciklamasiLB.Text = " ";
-            olayBaslangic.Text = " ";
-            olayBitis.Text = " ";
+            olayTanimiGoruntuTB.Text = null;
+            olayAciklamaGoruntuRTB.Text = null;
+            olayTarihiGoruntuTB=null;
+            baslangicGoruntuTB = null;
+            bitisGoruntuTB= null;
             olayTanimlarıCB.Items.Remove(olayTanimlarıCB.Text);
         }
 
@@ -172,7 +177,8 @@ namespace TakvimUygulamasi
             gunPaneli.Visible = false;
             panelDegistirBT.Visible = false;
             ayPaneli.Visible = true;
-            ayIsmi.Visible= false;
+            var labellar = this.Controls.OfType<Label>();
+            foreach (var label in labellar) { label.Visible = false; }
         }
 
         private string[] tarihler(string tarih)
@@ -204,65 +210,71 @@ namespace TakvimUygulamasi
                 else if(i > 2 && i < 5) { baslangicDk += baslangicSaatDk[i]; bitisDk += bitisSaatDk[i]; }
             }
 
-            baslangicSaatiCB.Items.Add(baslangicSaat);
-            baslangicSaatiCB.SelectedIndex = 0;
-            baslangicDkCB.Items.Add(baslangicDk);
-            baslangicDkCB.SelectedIndex = 0;
-            bitisSaatiCB.Items.Add(bitisSaat);
-            bitisSaatiCB.SelectedIndex = 0;
-            bitisDkCB.Items.Add(bitisDk);
-            bitisDkCB.SelectedIndex = 0;
+            saatSecme(0);
+            DkSecme(0);
+            
+            baslangicSaatiCB.SelectedIndex =Convert.ToInt32(baslangicSaat);
+            baslangicDkCB.SelectedIndex = Convert.ToInt32(baslangicDk);
+            bitisSaatiCB.SelectedIndex = Convert.ToInt32(bitisSaat);
+            bitisDkCB.SelectedIndex = Convert.ToInt32(bitisDk);
+            
         }
 
-
-        private void saatSecme(int sayi)
-        {
-            for (int i = 0; i < 60; i++)
-            {
-                if (baslangicSaatiCB.SelectedItem == null)
-                {
-                    if (i < 10) { baslangicSaatiCB.Items.Add("0" + i); }
-                    else if (i < 24) { baslangicSaatiCB.Items.Add(i); }
-                }
-                if (baslangicSaatiCB.SelectedItem != null && i >= sayi && bitisSaatiCB.SelectedItem == null)
-                {
-                    if (i < 10) { bitisSaatiCB.Items.Add("0" + i); }
-                    else if (i < 24) { bitisSaatiCB.Items.Add(i); }
-                }
-            }
-        }
-
-        private void baslangicSaatiCB_SelectedIndexChanged(object sender, EventArgs e)
+        private void bitisSaatiCB_Click(object sender, EventArgs e)
         {
             bitisSaatiCB.Items.Clear();
-            int bitisSaat = Convert.ToInt32(baslangicSaatiCB.Text);
-            saatSecme(bitisSaat);
+            saatSecme(Convert.ToInt32(baslangicSaatiCB.Text));
         }
 
-        private void baslangicDkCB_SelectedIndexChanged(object sender, EventArgs e)
+        private void bitisDkCB_Click(object sender, EventArgs e)
         {
             bitisDkCB.Items.Clear();
             DkSecme(Convert.ToInt32(baslangicDkCB.Text));
         }
 
+        private void saatSecme(int sayi)
+        {
+            for (int i = 0; i < 24; i++)
+            {
+                if (baslangicSaatiCB.SelectedItem == null)
+                {
+                    if (i < 10) { baslangicSaatiCB.Items.Add("0" + i); }
+                    else { baslangicSaatiCB.Items.Add(i); }
+                }
+                if (i >= sayi && bitisSaatiCB.SelectedItem == null)
+                {
+                    if (i < 10) { bitisSaatiCB.Items.Add("0" + i); }
+                    else { bitisSaatiCB.Items.Add(i); }
+                }
+            }
+        }
+
         private void DkSecme(int sayi)
         {
+
             for (int i = 0; i < 60; i++)
             {
-                if (baslangicDkCB.SelectedItem == null)
+                if (baslangicDkCB.SelectedItem==null)
                 {
                     if (i < 10) { baslangicDkCB.Items.Add("0" + i); }
                     else { baslangicDkCB.Items.Add(i); }
+
                 }
 
-                if (baslangicDkCB.SelectedItem != null && i >= sayi && bitisDkCB.SelectedItem == null)
+                if (baslangicSaatiCB.Text != bitisSaatiCB.Text)
+                {
+                    if (i < 10) { bitisDkCB.Items.Add("0" + i); }
+                    else { bitisDkCB.Items.Add(i); }
+                }
+
+
+                if (i >= sayi && baslangicSaatiCB.Text == bitisSaatiCB.Text)
                 {
                     if (i < 10) { bitisDkCB.Items.Add("0" + i); }
                     else { bitisDkCB.Items.Add(i); }
                 }
             }
-
-
         }
+        
     }
 }

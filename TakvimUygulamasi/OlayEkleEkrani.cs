@@ -56,8 +56,7 @@ namespace TakvimUygulamasi
         private void baslangicSaatCB_SelectedIndexChanged(object sender, EventArgs e)
         { 
             bitisSaatCB.Items.Clear();
-            int bitisSaat= Convert.ToInt32(baslangicSaatCB.Text);
-            saatSecme(bitisSaat);
+            saatSecme(Convert.ToInt32(baslangicSaatCB.Text));
         }
 
         private void baslangicDkCB_SelectedIndexChanged(object sender, EventArgs e)
@@ -92,9 +91,17 @@ namespace TakvimUygulamasi
                 {
                     if (i < 10) { baslangicDkCB.Items.Add("0" + i); }
                     else { baslangicDkCB.Items.Add(i); }
+                 
                 }
 
-                if (baslangicDkCB.SelectedItem != null && i >= sayi && bitisDkCB.SelectedItem == null)
+                if (baslangicSaatCB.Text != bitisSaatCB.Text)
+                {
+                    if (i < 10) { bitisDkCB.Items.Add("0" + i); }
+                    else { bitisDkCB.Items.Add(i); }
+                }
+
+
+                if (baslangicDkCB.SelectedItem != null && i >= sayi && bitisDkCB.SelectedItem == null&& baslangicSaatCB.Text==bitisSaatCB.Text)
                 {
                     if (i < 10) { bitisDkCB.Items.Add("0" + i); }
                     else { bitisDkCB.Items.Add(i); }
@@ -104,6 +111,11 @@ namespace TakvimUygulamasi
 
         }
 
-
+        private void bitisSaatCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            baslangicDkCB.Items.Clear();
+            bitisDkCB.Items.Clear();
+            DkSecme(0);
+        }
     }
 }
