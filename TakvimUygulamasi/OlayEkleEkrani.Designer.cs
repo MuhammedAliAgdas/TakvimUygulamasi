@@ -45,15 +45,17 @@
             this.olayAciklamasiLB = new System.Windows.Forms.Label();
             this.alarmEkleCB = new System.Windows.Forms.CheckBox();
             this.olayEkleBT = new System.Windows.Forms.Button();
+            this.bosSaatHatasi = new System.Windows.Forms.Label();
+            this.bosTanimHatasi = new System.Windows.Forms.Label();
+            this.bosAciklamaHatasi = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tarihSec
             // 
-            this.tarihSec.Location = new System.Drawing.Point(427, 53);
-            this.tarihSec.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tarihSec.Location = new System.Drawing.Point(320, 43);
             this.tarihSec.MaxDate = new System.DateTime(2033, 12, 31, 0, 0, 0, 0);
             this.tarihSec.Name = "tarihSec";
-            this.tarihSec.Size = new System.Drawing.Size(265, 22);
+            this.tarihSec.Size = new System.Drawing.Size(200, 20);
             this.tarihSec.TabIndex = 0;
             this.tarihSec.Value = new System.DateTime(2023, 5, 15, 0, 0, 0, 0);
             // 
@@ -61,10 +63,9 @@
             // 
             this.baslangicSaatCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.baslangicSaatCB.FormattingEnabled = true;
-            this.baslangicSaatCB.Location = new System.Drawing.Point(279, 133);
-            this.baslangicSaatCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.baslangicSaatCB.Location = new System.Drawing.Point(209, 108);
             this.baslangicSaatCB.Name = "baslangicSaatCB";
-            this.baslangicSaatCB.Size = new System.Drawing.Size(160, 24);
+            this.baslangicSaatCB.Size = new System.Drawing.Size(121, 21);
             this.baslangicSaatCB.TabIndex = 1;
             this.baslangicSaatCB.SelectedIndexChanged += new System.EventHandler(this.baslangicSaatCB_SelectedIndexChanged);
             // 
@@ -72,10 +73,9 @@
             // 
             this.baslangicDkCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.baslangicDkCB.FormattingEnabled = true;
-            this.baslangicDkCB.Location = new System.Drawing.Point(532, 133);
-            this.baslangicDkCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.baslangicDkCB.Location = new System.Drawing.Point(399, 108);
             this.baslangicDkCB.Name = "baslangicDkCB";
-            this.baslangicDkCB.Size = new System.Drawing.Size(160, 24);
+            this.baslangicDkCB.Size = new System.Drawing.Size(121, 21);
             this.baslangicDkCB.TabIndex = 2;
             this.baslangicDkCB.SelectedIndexChanged += new System.EventHandler(this.baslangicDkCB_SelectedIndexChanged);
             // 
@@ -83,10 +83,9 @@
             // 
             this.bitisSaatCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.bitisSaatCB.FormattingEnabled = true;
-            this.bitisSaatCB.Location = new System.Drawing.Point(279, 185);
-            this.bitisSaatCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bitisSaatCB.Location = new System.Drawing.Point(209, 150);
             this.bitisSaatCB.Name = "bitisSaatCB";
-            this.bitisSaatCB.Size = new System.Drawing.Size(160, 24);
+            this.bitisSaatCB.Size = new System.Drawing.Size(121, 21);
             this.bitisSaatCB.TabIndex = 3;
             this.bitisSaatCB.SelectedIndexChanged += new System.EventHandler(this.bitisSaatCB_SelectedIndexChanged);
             // 
@@ -94,128 +93,155 @@
             // 
             this.bitisDkCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.bitisDkCB.FormattingEnabled = true;
-            this.bitisDkCB.Location = new System.Drawing.Point(532, 185);
-            this.bitisDkCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bitisDkCB.Location = new System.Drawing.Point(399, 150);
             this.bitisDkCB.Name = "bitisDkCB";
-            this.bitisDkCB.Size = new System.Drawing.Size(160, 24);
+            this.bitisDkCB.Size = new System.Drawing.Size(121, 21);
             this.bitisDkCB.TabIndex = 4;
             // 
             // olayTanimiTB
             // 
-            this.olayTanimiTB.Location = new System.Drawing.Point(403, 276);
-            this.olayTanimiTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.olayTanimiTB.Location = new System.Drawing.Point(286, 224);
             this.olayTanimiTB.MaxLength = 50;
             this.olayTanimiTB.Name = "olayTanimiTB";
-            this.olayTanimiTB.Size = new System.Drawing.Size(289, 22);
+            this.olayTanimiTB.Size = new System.Drawing.Size(234, 20);
             this.olayTanimiTB.TabIndex = 5;
             // 
             // olayAciklamasıRTB
             // 
-            this.olayAciklamasıRTB.Location = new System.Drawing.Point(381, 373);
-            this.olayAciklamasıRTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.olayAciklamasıRTB.Location = new System.Drawing.Point(286, 303);
             this.olayAciklamasıRTB.MaxLength = 250;
             this.olayAciklamasıRTB.Name = "olayAciklamasıRTB";
-            this.olayAciklamasıRTB.Size = new System.Drawing.Size(311, 117);
+            this.olayAciklamasıRTB.Size = new System.Drawing.Size(234, 96);
             this.olayAciklamasıRTB.TabIndex = 6;
             this.olayAciklamasıRTB.Text = "";
             // 
             // olayTarihiLB
             // 
             this.olayTarihiLB.AutoSize = true;
-            this.olayTarihiLB.Location = new System.Drawing.Point(299, 53);
-            this.olayTarihiLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.olayTarihiLB.Location = new System.Drawing.Point(224, 43);
             this.olayTarihiLB.Name = "olayTarihiLB";
-            this.olayTarihiLB.Size = new System.Drawing.Size(112, 16);
+            this.olayTarihiLB.Size = new System.Drawing.Size(90, 13);
             this.olayTarihiLB.TabIndex = 7;
             this.olayTarihiLB.Text = "Olay Tarihi Seçin:";
             // 
             // baslangicSaatiLB
             // 
             this.baslangicSaatiLB.AutoSize = true;
-            this.baslangicSaatiLB.Location = new System.Drawing.Point(163, 137);
-            this.baslangicSaatiLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.baslangicSaatiLB.Location = new System.Drawing.Point(122, 111);
             this.baslangicSaatiLB.Name = "baslangicSaatiLB";
-            this.baslangicSaatiLB.Size = new System.Drawing.Size(102, 16);
+            this.baslangicSaatiLB.Size = new System.Drawing.Size(81, 13);
             this.baslangicSaatiLB.TabIndex = 8;
             this.baslangicSaatiLB.Text = "Başlangıç saati:";
             // 
             // baslangicDkLB
             // 
             this.baslangicDkLB.AutoSize = true;
-            this.baslangicDkLB.Location = new System.Drawing.Point(460, 137);
-            this.baslangicDkLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.baslangicDkLB.Location = new System.Drawing.Point(345, 111);
             this.baslangicDkLB.Name = "baslangicDkLB";
-            this.baslangicDkLB.Size = new System.Drawing.Size(63, 16);
+            this.baslangicDkLB.Size = new System.Drawing.Size(51, 13);
             this.baslangicDkLB.TabIndex = 9;
             this.baslangicDkLB.Text = "Dakikası:";
             // 
             // bitisSaatiLB
             // 
             this.bitisSaatiLB.AutoSize = true;
-            this.bitisSaatiLB.Location = new System.Drawing.Point(200, 188);
-            this.bitisSaatiLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bitisSaatiLB.Location = new System.Drawing.Point(150, 153);
             this.bitisSaatiLB.Name = "bitisSaatiLB";
-            this.bitisSaatiLB.Size = new System.Drawing.Size(69, 16);
+            this.bitisSaatiLB.Size = new System.Drawing.Size(56, 13);
             this.bitisSaatiLB.TabIndex = 10;
             this.bitisSaatiLB.Text = "Bitiş Saati:";
             // 
             // bitisDkLB
             // 
             this.bitisDkLB.AutoSize = true;
-            this.bitisDkLB.Location = new System.Drawing.Point(460, 188);
-            this.bitisDkLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bitisDkLB.Location = new System.Drawing.Point(345, 153);
             this.bitisDkLB.Name = "bitisDkLB";
-            this.bitisDkLB.Size = new System.Drawing.Size(63, 16);
+            this.bitisDkLB.Size = new System.Drawing.Size(51, 13);
             this.bitisDkLB.TabIndex = 11;
             this.bitisDkLB.Text = "Dakikası:";
             // 
             // olayTanimiLB
             // 
             this.olayTanimiLB.AutoSize = true;
-            this.olayTanimiLB.Location = new System.Drawing.Point(279, 279);
-            this.olayTanimiLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.olayTanimiLB.Location = new System.Drawing.Point(193, 227);
             this.olayTanimiLB.Name = "olayTanimiLB";
-            this.olayTanimiLB.Size = new System.Drawing.Size(110, 16);
+            this.olayTanimiLB.Size = new System.Drawing.Size(87, 13);
             this.olayTanimiLB.TabIndex = 12;
             this.olayTanimiLB.Text = "Olay Tanımı girin:";
             // 
             // olayAciklamasiLB
             // 
             this.olayAciklamasiLB.AutoSize = true;
-            this.olayAciklamasiLB.Location = new System.Drawing.Point(229, 373);
-            this.olayAciklamasiLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.olayAciklamasiLB.Location = new System.Drawing.Point(172, 303);
             this.olayAciklamasiLB.Name = "olayAciklamasiLB";
-            this.olayAciklamasiLB.Size = new System.Drawing.Size(137, 16);
+            this.olayAciklamasiLB.Size = new System.Drawing.Size(108, 13);
             this.olayAciklamasiLB.TabIndex = 13;
             this.olayAciklamasiLB.Text = "Olay Açıklaması Girin:";
             // 
             // alarmEkleCB
             // 
             this.alarmEkleCB.AutoSize = true;
-            this.alarmEkleCB.Location = new System.Drawing.Point(381, 528);
-            this.alarmEkleCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.alarmEkleCB.Location = new System.Drawing.Point(286, 429);
             this.alarmEkleCB.Name = "alarmEkleCB";
-            this.alarmEkleCB.Size = new System.Drawing.Size(142, 20);
+            this.alarmEkleCB.Size = new System.Drawing.Size(115, 17);
             this.alarmEkleCB.TabIndex = 14;
             this.alarmEkleCB.Text = "Alarm Eklensin Mi?";
             this.alarmEkleCB.UseVisualStyleBackColor = true;
             // 
             // olayEkleBT
             // 
-            this.olayEkleBT.Location = new System.Drawing.Point(464, 602);
-            this.olayEkleBT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.olayEkleBT.Location = new System.Drawing.Point(348, 489);
             this.olayEkleBT.Name = "olayEkleBT";
-            this.olayEkleBT.Size = new System.Drawing.Size(100, 70);
+            this.olayEkleBT.Size = new System.Drawing.Size(75, 57);
             this.olayEkleBT.TabIndex = 15;
             this.olayEkleBT.Text = "Olayı Ekle";
             this.olayEkleBT.UseVisualStyleBackColor = true;
             this.olayEkleBT.Click += new System.EventHandler(this.olayEkleBT_Click);
             // 
+            // bosSaatHatasi
+            // 
+            this.bosSaatHatasi.AutoSize = true;
+            this.bosSaatHatasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bosSaatHatasi.ForeColor = System.Drawing.Color.Brown;
+            this.bosSaatHatasi.Location = new System.Drawing.Point(526, 129);
+            this.bosSaatHatasi.Name = "bosSaatHatasi";
+            this.bosSaatHatasi.Size = new System.Drawing.Size(20, 25);
+            this.bosSaatHatasi.TabIndex = 16;
+            this.bosSaatHatasi.Text = "*";
+            this.bosSaatHatasi.Visible = false;
+            // 
+            // bosTanimHatasi
+            // 
+            this.bosTanimHatasi.AutoSize = true;
+            this.bosTanimHatasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bosTanimHatasi.ForeColor = System.Drawing.Color.Brown;
+            this.bosTanimHatasi.Location = new System.Drawing.Point(526, 227);
+            this.bosTanimHatasi.Name = "bosTanimHatasi";
+            this.bosTanimHatasi.Size = new System.Drawing.Size(20, 25);
+            this.bosTanimHatasi.TabIndex = 17;
+            this.bosTanimHatasi.Text = "*";
+            this.bosTanimHatasi.Visible = false;
+            // 
+            // bosAciklamaHatasi
+            // 
+            this.bosAciklamaHatasi.AutoSize = true;
+            this.bosAciklamaHatasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bosAciklamaHatasi.ForeColor = System.Drawing.Color.Brown;
+            this.bosAciklamaHatasi.Location = new System.Drawing.Point(526, 303);
+            this.bosAciklamaHatasi.Name = "bosAciklamaHatasi";
+            this.bosAciklamaHatasi.Size = new System.Drawing.Size(20, 25);
+            this.bosAciklamaHatasi.TabIndex = 18;
+            this.bosAciklamaHatasi.Text = "*";
+            this.bosAciklamaHatasi.Visible = false;
+            // 
             // OlayEkleEkrani
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 706);
+            this.ClientSize = new System.Drawing.Size(800, 574);
+            this.Controls.Add(this.bosAciklamaHatasi);
+            this.Controls.Add(this.bosTanimHatasi);
+            this.Controls.Add(this.bosSaatHatasi);
             this.Controls.Add(this.olayEkleBT);
             this.Controls.Add(this.alarmEkleCB);
             this.Controls.Add(this.olayAciklamasiLB);
@@ -233,7 +259,6 @@
             this.Controls.Add(this.baslangicSaatCB);
             this.Controls.Add(this.tarihSec);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "OlayEkleEkrani";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OlayEkleEkrani";
@@ -261,5 +286,8 @@
         private System.Windows.Forms.Label olayAciklamasiLB;
         private System.Windows.Forms.CheckBox alarmEkleCB;
         private System.Windows.Forms.Button olayEkleBT;
+        private System.Windows.Forms.Label bosSaatHatasi;
+        private System.Windows.Forms.Label bosTanimHatasi;
+        private System.Windows.Forms.Label bosAciklamaHatasi;
     }
 }

@@ -37,20 +37,23 @@ namespace TakvimUygulamasi
                 if (kontrol) { yazılacakTarih += tarih[i]; }
             }
 
-
-            int alarmVorMi = 0;
-            if (alarmEkleCB.Checked == true) { alarmVorMi = 1; }
-            try
+            if (girisHatalari())
             {
-                olayEkleBaglanti.Open();
-                SqlCommand cmd = new SqlCommand("Insert into Olaylar (OlayTarihi,OlayBaslangicSaati,OlayBitisSaati,OlayTanimi,OlayAciklamasi,AlarmVarMi,OlayKod) values ('" + yazılacakTarih + "','" + baslangicSaatCB.Text + ":" + baslangicDkCB.Text + "','" + bitisSaatCB.Text + ":" + bitisDkCB.Text + "','" + olayTanimiTB.Text + "','" + olayAciklamasıRTB.Text + "','" + alarmVorMi + "','" + AnaEkran.kullaniciSifre + "')", olayEkleBaglanti);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("olay kaydoldu");
-                olayEkleBaglanti.Close();
-                this.Dispose();
+                int alarmVorMi = 0;
+                if (alarmEkleCB.Checked == true) { alarmVorMi = 1; }
+                try
+                {
+                    olayEkleBaglanti.Open();
+                    SqlCommand cmd = new SqlCommand("Insert into Olaylar (OlayTarihi,OlayBaslangicSaati,OlayBitisSaati,OlayTanimi,OlayAciklamasi,AlarmVarMi,OlayKod) values ('" + yazılacakTarih + "','" + baslangicSaatCB.Text + ":" + baslangicDkCB.Text + "','" + bitisSaatCB.Text + ":" + bitisDkCB.Text + "','" + olayTanimiTB.Text + "','" + olayAciklamasıRTB.Text + "','" + alarmVorMi + "','" + AnaEkran.kullaniciSifre + "')", olayEkleBaglanti);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("olay kaydoldu");
+                    olayEkleBaglanti.Close();
+                    this.Dispose();
+                }
+                catch (System.Data.SqlClient.SqlException) { MessageBox.Show("Veri tabanıyla ilgili sorun oluştu"); }
+                finally { olayEkleBaglanti.Close(); }
             }
-            catch (System.Data.SqlClient.SqlException) { MessageBox.Show("Veri tabanıyla ilgili sorun oluştu"); }
-            finally { olayEkleBaglanti.Close(); }
+    
         }
 
         private void baslangicSaatCB_SelectedIndexChanged(object sender, EventArgs e)
@@ -64,6 +67,13 @@ namespace TakvimUygulamasi
             bitisDkCB.Items.Clear();
             DkSecme(Convert.ToInt32(baslangicDkCB.Text));
        
+        }
+
+        private void bitisSaatCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            baslangicDkCB.Items.Clear();
+            bitisDkCB.Items.Clear();
+            DkSecme(0);
         }
 
         private void saatSecme(int sayi)
@@ -107,15 +117,16 @@ namespace TakvimUygulamasi
                     else { bitisDkCB.Items.Add(i); }
                 }
             }
-
-
         }
-
-        private void bitisSaatCB_SelectedIndexChanged(object sender, EventArgs e)
+        private bool girisHatalari()
         {
-            baslangicDkCB.Items.Clear();
-            bitisDkCB.Items.Clear();
-            DkSecme(0);
+            bool hata = true;
+            if (baslangicSaatCB.SelectedItem == null||baslangicDkCB.SelectedItem==null|| bitisSaatCB.SelectedItem==null||bitisDkCB.SelectedItem==null) { hata = false; bosSaatHatasi.Visible = true; MessageBox.Show("Saat bilgileri boş olamaz."); }
+            else if (olayTanimiTB.Text.Length ==0) {hata = false; bosSaatHatasi.Visible = false; bosTanimHatasi.Visible = true; MessageBox.Show("Olay tanımı boş olamaz."); }
+            else if(olayAciklamasıRTB.Text.Length == 0) { hata = false; bosSaatHatasi.Visible=false; bosTanimHatasi.Visible = false; bosAciklamaHatasi.Visible = true; MessageBox.Show("Olay açıklaması boş olamaz."); }
+            else { hata = true; bosAciklamaHatasi.Visible = false; }
+
+            return hata;
         }
     }
 }

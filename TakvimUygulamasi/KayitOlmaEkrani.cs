@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Net.Mail;
 
 namespace TakvimUygulamasi
 {
@@ -22,7 +23,7 @@ namespace TakvimUygulamasi
 
         private void adminSifreTB_TextChanged(object sender, EventArgs e)
         {
-            if(adminSifreTB.Text == "wuhuhiuw") { adminMisinCB.Enabled = true; }
+            if(adminSifreTB.Text == "hasta la vista baby") { adminMisinCB.Enabled = true; }
             else { adminMisinCB.Enabled = false; }
         }
   
@@ -43,7 +44,7 @@ namespace TakvimUygulamasi
                     MessageBox.Show("Kaydoldun");
                     kayitBaglanti.Close();
                     var nesneler = this.Controls.OfType<TextBox>();
-                    foreach (var nesne in nesneler) { nesne.Text = " "; }
+                    foreach (var nesne in nesneler) { nesne.Text = null; }
                     TelNoTB.Text = " ";
                     adresRTB.Text = " ";
 
@@ -84,6 +85,19 @@ namespace TakvimUygulamasi
             if (e.Handled = (e.KeyChar == (char)Keys.Space)) { }
             else { e.Handled = false; }
         }
+        
+        private bool Email_Format_Kontrol(string email)
+        {
+            try
+            {
+                MailAddress m = new MailAddress(email);
+                return false;
+            }
+            catch
+            {
+                return true;
+            }
+        }
 
         private bool hatalıDurumlar(bool hataliMi)
         {
@@ -94,14 +108,11 @@ namespace TakvimUygulamasi
             else if (SifreTB.Text.Length < 8) { foreach (var nesne in nesneler) { if (nesne.Text == "*") { nesne.Visible = false; } } sifreHataLB.Visible = true; MessageBox.Show("Şifre 8 karakterden az olamaz"); hataliMi = true; }
             else if (TcNoTB.Text.Length < 11) { foreach (var nesne in nesneler) { if (nesne.Text == "*") { nesne.Visible = false; } } tcnoHataLB.Visible = true; MessageBox.Show("Yanlış Tc no girişi"); hataliMi = true; }
             else if (TelNoTB.Text.Length < 15) { foreach (var nesne in nesneler) { if (nesne.Text == "*") { nesne.Visible = false; } } telnoHataLB.Visible = true; MessageBox.Show("Yanlış tel no girişi"); hataliMi = true; }
-            else if (EmailTB.Text.Length < 12) { foreach (var nesne in nesneler) { if (nesne.Text == "*") { nesne.Visible = false; } } emailHataLB.Visible = true; MessageBox.Show("e posta çok kısa"); hataliMi = true; }
-            else if (adresRTB.Text.Length < 10) { foreach (var nesne in nesneler) { if (nesne.Text == "*") { nesne.Visible = false; } } adresHataLB.Visible = true; MessageBox.Show("Adres çok uzun"); hataliMi = true; }
+            else if (Email_Format_Kontrol(EmailTB.Text)) { foreach (var nesne in nesneler) { if (nesne.Text == "*") { nesne.Visible = false; } } emailHataLB.Visible = true; MessageBox.Show("Yanlış Email formatı"); hataliMi = true; }
+            else if (adresRTB.Text.Length < 10) { foreach (var nesne in nesneler) { if (nesne.Text == "*") { nesne.Visible = false; } } adresHataLB.Visible = true; MessageBox.Show("Adres çok kısa"); hataliMi = true; }
             else { foreach (var nesne in nesneler) { if (nesne.Text == "*") { nesne.Visible = false; } } hataliMi = false; }
-
             return hataliMi;
         }
-
-
 
     }
 }

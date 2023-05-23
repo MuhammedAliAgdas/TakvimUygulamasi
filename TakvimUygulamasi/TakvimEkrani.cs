@@ -48,7 +48,7 @@ namespace TakvimUygulamasi
         {
             if (varMi)
             {
-                SoundPlayer alarm = new SoundPlayer(@"C:\Users\Ayfer\OneDrive\Belgeler\GitHub\TakvimUygulamasi\AlarmSes.wav"); alarm.Play();
+                SoundPlayer alarm = new SoundPlayer(@"C:\Users\aliag\Documents\GitHub\TakvimUygulamasi\AlarmSes.wav"); alarm.PlayLooping();
                 DialogResult kullaniciCevabi = MessageBox.Show("Bugüne tanımlanan olaylar var!!!","UYARI!!!");
                 if(kullaniciCevabi == DialogResult.OK) { alarm.Stop(); }
 
@@ -145,23 +145,25 @@ namespace TakvimUygulamasi
         {
             bool alarmVarYok = false;
             if (alarmCB.Checked == true) { alarmVarYok = true; }
-            olayGrountuleBaglanti.Open();
-            SqlCommand cmd = new SqlCommand("UPDATE Olaylar SET OlayTanimi = '"+ olayTanimiGuncelleTB.Text + "',OlayAciklamasi = '"+ olayAciklamasiGuncelleRTB.Text + "',OlayBaslangicSaati = '" + baslangicSaatiCB.Text + ":" + baslangicDkCB.Text + "',OlayBitisSaati ='" + bitisSaatiCB.Text + ":" + bitisDkCB.Text + "',AlarmVarMi = '"+alarmVarYok+"' Where OlayKod LIKE '" + AnaEkran.kullaniciSifre+ "'AND OlayTanimi LIKE '" + olayTanimlarıCB.Text + "'", olayGrountuleBaglanti);
-            cmd.ExecuteNonQuery();
-            olayGrountuleBaglanti.Close();
-            olayTanimlarıCB.Items.Add(olayTanimiGuncelleTB.Text);
-            olayTanimlarıCB.Items.Remove(olayTanimlarıCB.SelectedItem);
-            olayTanimlarıCB.SelectedItem = null;
-            olayTanimiGuncelleTB.Text = null;
-            olayAciklamasiGuncelleRTB.Text = null;
-            olayTanimiGoruntuTB.Text = null;
-            olayAciklamaGoruntuRTB.Text = null;
-            olayTarihiGoruntuTB.Text = null;
-            baslangicGoruntuTB.Text = null;
-            bitisGoruntuTB.Text = null;
-            var comboboxlar = this.GuncellemeSayfasi.Controls.OfType<ComboBox>();
-            foreach (var combobox in comboboxlar) { combobox.SelectedItem = null; }
-
+            if (girisHatalari())
+            {
+                olayGrountuleBaglanti.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE Olaylar SET OlayTanimi = '" + olayTanimiGuncelleTB.Text + "',OlayAciklamasi = '" + olayAciklamasiGuncelleRTB.Text + "',OlayBaslangicSaati = '" + baslangicSaatiCB.Text + ":" + baslangicDkCB.Text + "',OlayBitisSaati ='" + bitisSaatiCB.Text + ":" + bitisDkCB.Text + "',AlarmVarMi = '" + alarmVarYok + "' Where OlayKod LIKE '" + AnaEkran.kullaniciSifre + "'AND OlayTanimi LIKE '" + olayTanimlarıCB.Text + "'", olayGrountuleBaglanti);
+                cmd.ExecuteNonQuery();
+                olayGrountuleBaglanti.Close();
+                olayTanimlarıCB.Items.Add(olayTanimiGuncelleTB.Text);
+                olayTanimlarıCB.Items.Remove(olayTanimlarıCB.SelectedItem);
+                olayTanimlarıCB.SelectedItem = null;
+                olayTanimiGuncelleTB.Text = null;
+                olayAciklamasiGuncelleRTB.Text = null;
+                olayTanimiGoruntuTB.Text = null;
+                olayAciklamaGoruntuRTB.Text = null;
+                olayTarihiGoruntuTB.Text = null;
+                baslangicGoruntuTB.Text = null;
+                bitisGoruntuTB.Text = null;
+                var comboboxlar = this.GuncellemeSayfasi.Controls.OfType<ComboBox>();
+                foreach (var combobox in comboboxlar) { combobox.SelectedItem = null; }
+            }
         }
 
         private void olaySilButonu_Click(object sender, EventArgs e)
@@ -288,6 +290,15 @@ namespace TakvimUygulamasi
                 }
             }
         }
-        
+        private bool girisHatalari()
+        {
+            bool hata = true;
+            if (baslangicSaatiCB.SelectedItem == null || baslangicDkCB.SelectedItem == null || bitisSaatiCB.SelectedItem == null || bitisDkCB.SelectedItem == null) { hata = false; bosSaatHatasi.Visible = true; MessageBox.Show("Saat bilgileri boş olamaz."); }
+            else if (olayTanimiGuncelleTB.Text.Length == 0) { hata = false; bosSaatHatasi.Visible = false; bosTanimHatasi.Visible = true; MessageBox.Show("Olay tanımı boş olamaz."); }
+            else if (olayAciklamasiGuncelleRTB.Text.Length == 0) { hata = false; bosSaatHatasi.Visible = false; bosTanimHatasi.Visible = false; bosAciklamaHatasi.Visible = true; MessageBox.Show("Olay açıklaması boş olamaz."); }
+            else { hata = true; bosAciklamaHatasi.Visible = false; bosSaatHatasi.Visible = false; bosTanimHatasi.Visible = false; }
+
+            return hata;
+        }
     }
 }

@@ -61,101 +61,92 @@
             // 
             // AdTB
             // 
-            this.AdTB.Location = new System.Drawing.Point(193, 38);
-            this.AdTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdTB.Location = new System.Drawing.Point(145, 31);
             this.AdTB.MaxLength = 20;
             this.AdTB.Name = "AdTB";
-            this.AdTB.Size = new System.Drawing.Size(207, 22);
+            this.AdTB.Size = new System.Drawing.Size(156, 20);
             this.AdTB.TabIndex = 0;
             // 
             // SoyadTB
             // 
-            this.SoyadTB.Location = new System.Drawing.Point(193, 98);
-            this.SoyadTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SoyadTB.Location = new System.Drawing.Point(145, 80);
             this.SoyadTB.MaxLength = 20;
             this.SoyadTB.Name = "SoyadTB";
-            this.SoyadTB.Size = new System.Drawing.Size(207, 22);
+            this.SoyadTB.Size = new System.Drawing.Size(156, 20);
             this.SoyadTB.TabIndex = 1;
             // 
             // KullaniciAdiTB
             // 
-            this.KullaniciAdiTB.Location = new System.Drawing.Point(193, 156);
-            this.KullaniciAdiTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.KullaniciAdiTB.Location = new System.Drawing.Point(145, 127);
             this.KullaniciAdiTB.MaxLength = 20;
             this.KullaniciAdiTB.Name = "KullaniciAdiTB";
-            this.KullaniciAdiTB.Size = new System.Drawing.Size(207, 22);
+            this.KullaniciAdiTB.Size = new System.Drawing.Size(156, 20);
             this.KullaniciAdiTB.TabIndex = 2;
             this.KullaniciAdiTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KullaniciAdiTB_KeyPress);
             // 
             // SifreTB
             // 
-            this.SifreTB.Location = new System.Drawing.Point(193, 214);
-            this.SifreTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SifreTB.Location = new System.Drawing.Point(145, 174);
             this.SifreTB.MaxLength = 20;
             this.SifreTB.Name = "SifreTB";
-            this.SifreTB.Size = new System.Drawing.Size(207, 22);
+            this.SifreTB.Size = new System.Drawing.Size(156, 20);
             this.SifreTB.TabIndex = 3;
             this.SifreTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SifreTB_KeyPress);
             // 
             // TcNoTB
             // 
-            this.TcNoTB.Location = new System.Drawing.Point(193, 277);
-            this.TcNoTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TcNoTB.Location = new System.Drawing.Point(145, 225);
             this.TcNoTB.MaxLength = 11;
             this.TcNoTB.Name = "TcNoTB";
-            this.TcNoTB.Size = new System.Drawing.Size(207, 22);
+            this.TcNoTB.Size = new System.Drawing.Size(156, 20);
             this.TcNoTB.TabIndex = 4;
             this.TcNoTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TcNoTB_KeyPress);
             // 
             // TelNoTB
             // 
-            this.TelNoTB.Location = new System.Drawing.Point(193, 341);
-            this.TelNoTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TelNoTB.Location = new System.Drawing.Point(145, 277);
             this.TelNoTB.Mask = "0 000 000 00 00";
             this.TelNoTB.Name = "TelNoTB";
             this.TelNoTB.PromptChar = ' ';
-            this.TelNoTB.Size = new System.Drawing.Size(207, 22);
+            this.TelNoTB.Size = new System.Drawing.Size(156, 20);
             this.TelNoTB.TabIndex = 5;
             this.TelNoTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelNoTB_KeyPress);
             // 
             // EmailTB
             // 
-            this.EmailTB.Location = new System.Drawing.Point(193, 400);
-            this.EmailTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EmailTB.Location = new System.Drawing.Point(145, 325);
             this.EmailTB.MaxLength = 30;
             this.EmailTB.Name = "EmailTB";
-            this.EmailTB.Size = new System.Drawing.Size(207, 22);
+            this.EmailTB.Size = new System.Drawing.Size(156, 20);
             this.EmailTB.TabIndex = 6;
             this.EmailTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmailTB_KeyPress);
             // 
             // adresRTB
             // 
-            this.adresRTB.Location = new System.Drawing.Point(519, 38);
-            this.adresRTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.adresRTB.Location = new System.Drawing.Point(389, 31);
             this.adresRTB.MaxLength = 250;
             this.adresRTB.Name = "adresRTB";
-            this.adresRTB.Size = new System.Drawing.Size(301, 142);
+            this.adresRTB.Size = new System.Drawing.Size(227, 116);
             this.adresRTB.TabIndex = 7;
             this.adresRTB.Text = "";
             // 
             // adminSifreTB
             // 
-            this.adminSifreTB.Location = new System.Drawing.Point(559, 214);
-            this.adminSifreTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.adminSifreTB.Location = new System.Drawing.Point(419, 174);
             this.adminSifreTB.MaxLength = 50;
             this.adminSifreTB.Name = "adminSifreTB";
-            this.adminSifreTB.Size = new System.Drawing.Size(261, 22);
+            this.adminSifreTB.Size = new System.Drawing.Size(197, 20);
             this.adminSifreTB.TabIndex = 8;
+            this.adminSifreTB.UseSystemPasswordChar = true;
             this.adminSifreTB.TextChanged += new System.EventHandler(this.adminSifreTB_TextChanged);
             // 
             // adminMisinCB
             // 
             this.adminMisinCB.AutoSize = true;
             this.adminMisinCB.Enabled = false;
-            this.adminMisinCB.Location = new System.Drawing.Point(559, 276);
-            this.adminMisinCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.adminMisinCB.Location = new System.Drawing.Point(419, 224);
             this.adminMisinCB.Name = "adminMisinCB";
-            this.adminMisinCB.Size = new System.Drawing.Size(108, 20);
+            this.adminMisinCB.Size = new System.Drawing.Size(88, 17);
             this.adminMisinCB.TabIndex = 9;
             this.adminMisinCB.Text = "Admin Misin?";
             this.adminMisinCB.UseVisualStyleBackColor = true;
@@ -163,99 +154,89 @@
             // adLB
             // 
             this.adLB.AutoSize = true;
-            this.adLB.Location = new System.Drawing.Point(155, 42);
-            this.adLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.adLB.Location = new System.Drawing.Point(116, 34);
             this.adLB.Name = "adLB";
-            this.adLB.Size = new System.Drawing.Size(27, 16);
+            this.adLB.Size = new System.Drawing.Size(23, 13);
             this.adLB.TabIndex = 10;
             this.adLB.Text = "Ad:";
             // 
             // soyadLB
             // 
             this.soyadLB.AutoSize = true;
-            this.soyadLB.Location = new System.Drawing.Point(132, 102);
-            this.soyadLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.soyadLB.Location = new System.Drawing.Point(99, 83);
             this.soyadLB.Name = "soyadLB";
-            this.soyadLB.Size = new System.Drawing.Size(50, 16);
+            this.soyadLB.Size = new System.Drawing.Size(40, 13);
             this.soyadLB.TabIndex = 11;
             this.soyadLB.Text = "Soyad:";
             // 
             // kullaniciAdiLB
             // 
             this.kullaniciAdiLB.AutoSize = true;
-            this.kullaniciAdiLB.Location = new System.Drawing.Point(101, 160);
-            this.kullaniciAdiLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.kullaniciAdiLB.Location = new System.Drawing.Point(76, 130);
             this.kullaniciAdiLB.Name = "kullaniciAdiLB";
-            this.kullaniciAdiLB.Size = new System.Drawing.Size(82, 16);
+            this.kullaniciAdiLB.Size = new System.Drawing.Size(67, 13);
             this.kullaniciAdiLB.TabIndex = 12;
             this.kullaniciAdiLB.Text = "Kullanıcı Adı:";
             // 
             // sifreLB
             // 
             this.sifreLB.AutoSize = true;
-            this.sifreLB.Location = new System.Drawing.Point(144, 218);
-            this.sifreLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.sifreLB.Location = new System.Drawing.Point(108, 177);
             this.sifreLB.Name = "sifreLB";
-            this.sifreLB.Size = new System.Drawing.Size(37, 16);
+            this.sifreLB.Size = new System.Drawing.Size(31, 13);
             this.sifreLB.TabIndex = 13;
             this.sifreLB.Text = "Şifre:";
             // 
             // TcNoLB
             // 
             this.TcNoLB.AutoSize = true;
-            this.TcNoLB.Location = new System.Drawing.Point(96, 281);
-            this.TcNoLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TcNoLB.Location = new System.Drawing.Point(72, 228);
             this.TcNoLB.Name = "TcNoLB";
-            this.TcNoLB.Size = new System.Drawing.Size(81, 16);
+            this.TcNoLB.Size = new System.Drawing.Size(67, 13);
             this.TcNoLB.TabIndex = 14;
             this.TcNoLB.Text = "Tc kimlik no:";
             // 
             // telNoLB
             // 
             this.telNoLB.AutoSize = true;
-            this.telNoLB.Location = new System.Drawing.Point(101, 345);
-            this.telNoLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.telNoLB.Location = new System.Drawing.Point(76, 280);
             this.telNoLB.Name = "telNoLB";
-            this.telNoLB.Size = new System.Drawing.Size(77, 16);
+            this.telNoLB.Size = new System.Drawing.Size(63, 13);
             this.telNoLB.TabIndex = 15;
             this.telNoLB.Text = "Telefon No:";
             // 
             // emailLB
             // 
             this.emailLB.AutoSize = true;
-            this.emailLB.Location = new System.Drawing.Point(139, 404);
-            this.emailLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.emailLB.Location = new System.Drawing.Point(104, 328);
             this.emailLB.Name = "emailLB";
-            this.emailLB.Size = new System.Drawing.Size(44, 16);
+            this.emailLB.Size = new System.Drawing.Size(35, 13);
             this.emailLB.TabIndex = 16;
             this.emailLB.Text = "Email:";
             // 
             // AdresLB
             // 
             this.AdresLB.AutoSize = true;
-            this.AdresLB.Location = new System.Drawing.Point(457, 42);
-            this.AdresLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.AdresLB.Location = new System.Drawing.Point(343, 34);
             this.AdresLB.Name = "AdresLB";
-            this.AdresLB.Size = new System.Drawing.Size(49, 16);
+            this.AdresLB.Size = new System.Drawing.Size(40, 13);
             this.AdresLB.TabIndex = 17;
             this.AdresLB.Text = "Adres: ";
             // 
             // adminSifreLB
             // 
             this.adminSifreLB.AutoSize = true;
-            this.adminSifreLB.Location = new System.Drawing.Point(457, 218);
-            this.adminSifreLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.adminSifreLB.Location = new System.Drawing.Point(343, 177);
             this.adminSifreLB.Name = "adminSifreLB";
-            this.adminSifreLB.Size = new System.Drawing.Size(88, 16);
+            this.adminSifreLB.Size = new System.Drawing.Size(70, 13);
             this.adminSifreLB.TabIndex = 18;
             this.adminSifreLB.Text = "Admin Şifresi:";
             // 
             // KaydolButonu
             // 
-            this.KaydolButonu.Location = new System.Drawing.Point(559, 340);
-            this.KaydolButonu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.KaydolButonu.Location = new System.Drawing.Point(419, 276);
             this.KaydolButonu.Name = "KaydolButonu";
-            this.KaydolButonu.Size = new System.Drawing.Size(200, 80);
+            this.KaydolButonu.Size = new System.Drawing.Size(150, 65);
             this.KaydolButonu.TabIndex = 10;
             this.KaydolButonu.Text = "Kaydol";
             this.KaydolButonu.UseVisualStyleBackColor = true;
@@ -266,10 +247,9 @@
             this.adHataLB.AutoSize = true;
             this.adHataLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.adHataLB.ForeColor = System.Drawing.Color.Brown;
-            this.adHataLB.Location = new System.Drawing.Point(409, 38);
-            this.adHataLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.adHataLB.Location = new System.Drawing.Point(307, 31);
             this.adHataLB.Name = "adHataLB";
-            this.adHataLB.Size = new System.Drawing.Size(30, 39);
+            this.adHataLB.Size = new System.Drawing.Size(25, 31);
             this.adHataLB.TabIndex = 20;
             this.adHataLB.Text = "*";
             this.adHataLB.Visible = false;
@@ -279,10 +259,9 @@
             this.sifreHataLB.AutoSize = true;
             this.sifreHataLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.sifreHataLB.ForeColor = System.Drawing.Color.Brown;
-            this.sifreHataLB.Location = new System.Drawing.Point(409, 214);
-            this.sifreHataLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.sifreHataLB.Location = new System.Drawing.Point(307, 174);
             this.sifreHataLB.Name = "sifreHataLB";
-            this.sifreHataLB.Size = new System.Drawing.Size(30, 39);
+            this.sifreHataLB.Size = new System.Drawing.Size(25, 31);
             this.sifreHataLB.TabIndex = 21;
             this.sifreHataLB.Text = "*";
             this.sifreHataLB.Visible = false;
@@ -292,10 +271,9 @@
             this.kullaniciadiHataLB.AutoSize = true;
             this.kullaniciadiHataLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.kullaniciadiHataLB.ForeColor = System.Drawing.Color.Brown;
-            this.kullaniciadiHataLB.Location = new System.Drawing.Point(409, 156);
-            this.kullaniciadiHataLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.kullaniciadiHataLB.Location = new System.Drawing.Point(307, 127);
             this.kullaniciadiHataLB.Name = "kullaniciadiHataLB";
-            this.kullaniciadiHataLB.Size = new System.Drawing.Size(30, 39);
+            this.kullaniciadiHataLB.Size = new System.Drawing.Size(25, 31);
             this.kullaniciadiHataLB.TabIndex = 22;
             this.kullaniciadiHataLB.Text = "*";
             this.kullaniciadiHataLB.Visible = false;
@@ -305,10 +283,9 @@
             this.soyadHataLB.AutoSize = true;
             this.soyadHataLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.soyadHataLB.ForeColor = System.Drawing.Color.Brown;
-            this.soyadHataLB.Location = new System.Drawing.Point(409, 102);
-            this.soyadHataLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.soyadHataLB.Location = new System.Drawing.Point(307, 83);
             this.soyadHataLB.Name = "soyadHataLB";
-            this.soyadHataLB.Size = new System.Drawing.Size(30, 39);
+            this.soyadHataLB.Size = new System.Drawing.Size(25, 31);
             this.soyadHataLB.TabIndex = 23;
             this.soyadHataLB.Text = "*";
             this.soyadHataLB.Visible = false;
@@ -318,10 +295,9 @@
             this.tcnoHataLB.AutoSize = true;
             this.tcnoHataLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tcnoHataLB.ForeColor = System.Drawing.Color.Brown;
-            this.tcnoHataLB.Location = new System.Drawing.Point(409, 277);
-            this.tcnoHataLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.tcnoHataLB.Location = new System.Drawing.Point(307, 225);
             this.tcnoHataLB.Name = "tcnoHataLB";
-            this.tcnoHataLB.Size = new System.Drawing.Size(30, 39);
+            this.tcnoHataLB.Size = new System.Drawing.Size(25, 31);
             this.tcnoHataLB.TabIndex = 24;
             this.tcnoHataLB.Text = "*";
             this.tcnoHataLB.Visible = false;
@@ -331,10 +307,9 @@
             this.telnoHataLB.AutoSize = true;
             this.telnoHataLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.telnoHataLB.ForeColor = System.Drawing.Color.Brown;
-            this.telnoHataLB.Location = new System.Drawing.Point(409, 341);
-            this.telnoHataLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.telnoHataLB.Location = new System.Drawing.Point(307, 277);
             this.telnoHataLB.Name = "telnoHataLB";
-            this.telnoHataLB.Size = new System.Drawing.Size(30, 39);
+            this.telnoHataLB.Size = new System.Drawing.Size(25, 31);
             this.telnoHataLB.TabIndex = 25;
             this.telnoHataLB.Text = "*";
             this.telnoHataLB.Visible = false;
@@ -344,10 +319,9 @@
             this.emailHataLB.AutoSize = true;
             this.emailHataLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.emailHataLB.ForeColor = System.Drawing.Color.Brown;
-            this.emailHataLB.Location = new System.Drawing.Point(409, 400);
-            this.emailHataLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.emailHataLB.Location = new System.Drawing.Point(307, 325);
             this.emailHataLB.Name = "emailHataLB";
-            this.emailHataLB.Size = new System.Drawing.Size(30, 39);
+            this.emailHataLB.Size = new System.Drawing.Size(25, 31);
             this.emailHataLB.TabIndex = 26;
             this.emailHataLB.Text = "*";
             this.emailHataLB.Visible = false;
@@ -357,19 +331,18 @@
             this.adresHataLB.AutoSize = true;
             this.adresHataLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.adresHataLB.ForeColor = System.Drawing.Color.Brown;
-            this.adresHataLB.Location = new System.Drawing.Point(829, 38);
-            this.adresHataLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.adresHataLB.Location = new System.Drawing.Point(622, 31);
             this.adresHataLB.Name = "adresHataLB";
-            this.adresHataLB.Size = new System.Drawing.Size(30, 39);
+            this.adresHataLB.Size = new System.Drawing.Size(25, 31);
             this.adresHataLB.TabIndex = 27;
             this.adresHataLB.Text = "*";
             this.adresHataLB.Visible = false;
             // 
             // KayitOlmaEkrani
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 524);
+            this.ClientSize = new System.Drawing.Size(659, 426);
             this.Controls.Add(this.adresHataLB);
             this.Controls.Add(this.emailHataLB);
             this.Controls.Add(this.telnoHataLB);
@@ -399,7 +372,6 @@
             this.Controls.Add(this.SoyadTB);
             this.Controls.Add(this.AdTB);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "KayitOlmaEkrani";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KayitOlmaEkrani";
