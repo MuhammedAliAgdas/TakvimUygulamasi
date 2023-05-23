@@ -13,7 +13,7 @@ namespace TakvimUygulamasi
 {
     public partial class OlayEkleEkrani : Form
     {
-        SqlConnection olayEkleBaglanti = AnaEkran.girisBaglanti;
+        SqlConnection olayEkleBaglanti = AnaEkran.AnaBaglanti;
         public OlayEkleEkrani()
         {
             InitializeComponent();
@@ -39,18 +39,18 @@ namespace TakvimUygulamasi
 
             if (girisHatalari())
             {
-                int alarmVorMi = 0;
-                if (alarmEkleCB.Checked == true) { alarmVorMi = 1; }
+                int alarmVarMi = 0;
+                if (alarmEkleCB.Checked == true) { alarmVarMi = 1; }
                 try
                 {
                     olayEkleBaglanti.Open();
-                    SqlCommand cmd = new SqlCommand("Insert into Olaylar (OlayTarihi,OlayBaslangicSaati,OlayBitisSaati,OlayTanimi,OlayAciklamasi,AlarmVarMi,OlayKod) values ('" + yazılacakTarih + "','" + baslangicSaatCB.Text + ":" + baslangicDkCB.Text + "','" + bitisSaatCB.Text + ":" + bitisDkCB.Text + "','" + olayTanimiTB.Text + "','" + olayAciklamasıRTB.Text + "','" + alarmVorMi + "','" + AnaEkran.kullaniciSifre + "')", olayEkleBaglanti);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("olay kaydoldu");
+                    SqlCommand olayKayitKomutu = new SqlCommand("Insert into Olaylar (OlayTarihi,OlayBaslangicSaati,OlayBitisSaati,OlayTanimi,OlayAciklamasi,AlarmVarMi,OlayKod) values ('" + yazılacakTarih + "','" + baslangicSaatCB.Text + ":" + baslangicDkCB.Text + "','" + bitisSaatCB.Text + ":" + bitisDkCB.Text + "','" + olayTanimiTB.Text + "','" + olayAciklamasıRTB.Text + "','" + alarmVarMi + "','" + AnaEkran.olayKod + "')", olayEkleBaglanti);
+                    olayKayitKomutu.ExecuteNonQuery();
+                    MessageBox.Show("Olay kaydedildi.");
                     olayEkleBaglanti.Close();
                     this.Dispose();
                 }
-                catch (System.Data.SqlClient.SqlException) { MessageBox.Show("Veri tabanıyla ilgili sorun oluştu"); }
+                catch (System.Data.SqlClient.SqlException) { MessageBox.Show("Veri tabanıyla ilgili bir sorun oluştu"); }
                 finally { olayEkleBaglanti.Close(); }
             }
     

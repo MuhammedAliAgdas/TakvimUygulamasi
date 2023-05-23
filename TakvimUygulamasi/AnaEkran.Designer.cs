@@ -147,7 +147,6 @@
             this.Name = "AnaEkran";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AnaEkran";
-            this.Load += new System.EventHandler(this.AnaEkran_Load);
             this.BilgiPaneli.ResumeLayout(false);
             this.GirisPaneli.ResumeLayout(false);
             this.GirisPaneli.PerformLayout();
