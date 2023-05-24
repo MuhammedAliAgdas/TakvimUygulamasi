@@ -25,8 +25,7 @@ namespace TakvimUygulamasi
         private void TakvimEkrani_Load(object sender, EventArgs e)
         {
             yılCB.SelectedIndex = 0;
-            var aylar = ayPaneli.Controls.OfType<Button>();
-            foreach (var ay in aylar) { ay.Click += new EventHandler(this.ayButonlarinaTiklama); }
+            foreach (var aylar in ayPaneli.Controls.OfType<Button>()) { aylar.Click += new EventHandler(this.ayButonlarinaTiklama); }
             olayGrountuleBaglanti.Open();
             SqlCommand alarmBulKomutu = new SqlCommand("Select OlayTarihi,AlarmVarMi from Olaylar Where OlayKod = '" + AnaEkran.olayKod + "'", olayGrountuleBaglanti);
             SqlDataReader alarmBul = alarmBulKomutu.ExecuteReader();
@@ -41,7 +40,7 @@ namespace TakvimUygulamasi
         {
             if (alarmAc)
             {
-                SoundPlayer alarm = new SoundPlayer(@"C:\Users\Ayfer\OneDrive\Belgeler\GitHub\TakvimUygulamasi\AlarmSes.wav"); alarm.PlayLooping();
+                SoundPlayer alarm = new SoundPlayer(@"C:\Users\aliag\Documents\GitHub\TakvimUygulamasi\AlarmSes.wav"); alarm.PlayLooping();
                 DialogResult kullaniciCevabi = MessageBox.Show("Bugüne tanımlanan olaylar var!!!","UYARI!!!");
                 if(kullaniciCevabi == DialogResult.OK) { alarm.Stop(); }
             }
@@ -95,11 +94,11 @@ namespace TakvimUygulamasi
             if (Convert.ToInt32(tiklananGun.Name) < 10) { secilenGun = "0" + tiklananGun.Name; }
             else { secilenGun = tiklananGun.Name;}
             olayGrountuleBaglanti.Open();
-            SqlCommand tarihSecmeKomutu = new SqlCommand("SELECT OlayTanimi FROM Olaylar Where OlayKod LIKE '" + AnaEkran.olayKod + "' AND OlayTarihi LIKE '" + (secilenGun +"."+secilenAy +"."+yılCB.Text) + "'", olayGrountuleBaglanti);
-            SqlDataReader tarihOku = tarihSecmeKomutu.ExecuteReader();
-            while (tarihOku.Read())
+            SqlCommand olayGoruntuleKomut = new SqlCommand("SELECT OlayTanimi FROM Olaylar Where OlayKod LIKE '" + AnaEkran.olayKod + "' AND OlayTarihi LIKE '" + (secilenGun +"."+secilenAy +"."+yılCB.Text) + "'", olayGrountuleBaglanti);
+            SqlDataReader olayYazdır = olayGoruntuleKomut.ExecuteReader();
+            while (olayYazdır.Read())
             {
-                olayTanimlarıCB.Items.Add(tarihOku[0].ToString());
+                olayTanimlarıCB.Items.Add(olayYazdır[0].ToString());
             }
             olayGrountuleBaglanti.Close();
         }
@@ -110,32 +109,33 @@ namespace TakvimUygulamasi
             olayEkleEkrani.ShowDialog();
         }
 
-
-        //////////////////
-      
-
-
         private void olayTanimlarıCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var comboBoxlar= this.guncelleButonu.Controls.OfType<ComboBox>();
-            foreach (var comboBox in comboBoxlar) { comboBox.Items.Clear(); }
-
+            foreach (var comboBoxlar in this.guncelleButonu.Controls.OfType<ComboBox>()) { comboBoxlar.Items.Clear(); }
             Boolean alarmVarYok = false;
             olayGrountuleBaglanti.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Olaylar Where OlayKod LIKE '" + AnaEkran.olayKod + "' AND OlayTanimi LIKE '" + olayTanimlarıCB.Text + "'", olayGrountuleBaglanti);
-            SqlDataReader rdr = cmd.ExecuteReader();
-            while (rdr.Read())
+            SqlCommand olayYazdirKomut = new SqlCommand("SELECT * FROM Olaylar Where OlayKod LIKE '" + AnaEkran.olayKod + "' AND OlayTanimi LIKE '" + olayTanimlarıCB.Text + "'", olayGrountuleBaglanti);
+            SqlDataReader olayBilgileriOku = olayYazdirKomut.ExecuteReader();
+            while (olayBilgileriOku.Read())
             {
-                olayTanimiGoruntuTB.Text = rdr[3].ToString(); olayAciklamaGoruntuRTB.Text = rdr[4].ToString(); baslangicGoruntuTB.Text = rdr[1].ToString(); bitisGoruntuTB.Text = rdr[2].ToString(); olayTarihiGoruntuTB.Text = rdr[0].ToString();
-                olayTanimiGuncelleTB.Text = rdr[3].ToString(); olayAciklamasiGuncelleRTB.Text = rdr[4].ToString(); alarmVarYok = Convert.ToBoolean(rdr[5].ToString());
-                saatGuncelleme(rdr[1].ToString(), rdr[2].ToString());
+                olayTanimiGoruntuTB.Text = olayBilgileriOku[3].ToString(); olayAciklamaGoruntuRTB.Text = olayBilgileriOku[4].ToString(); baslangicGoruntuTB.Text = olayBilgileriOku[1].ToString(); bitisGoruntuTB.Text = olayBilgileriOku[2].ToString(); olayTarihiGoruntuTB.Text = olayBilgileriOku[0].ToString();
+                olayTanimiGuncelleTB.Text = olayBilgileriOku[3].ToString(); olayAciklamasiGuncelleRTB.Text = olayBilgileriOku[4].ToString(); alarmVarYok = Convert.ToBoolean(olayBilgileriOku[5].ToString());
+                saatGuncelleme(olayBilgileriOku[1].ToString(), olayBilgileriOku[2].ToString());
             }
             if (alarmVarYok) { alarmCB.Checked = true; }
             olayGrountuleBaglanti.Close();
-            var labellar = this.GoruntulemeSayfasi.Controls.OfType<Label>();
-            foreach (var label in labellar) { label.Visible = true; }
         }
 
+        private void bilgileriKaldır()
+        {
+            olayTanimlarıCB.SelectedItem = null;
+            olayTanimiGuncelleTB.Text = null;
+            olayAciklamasiGuncelleRTB.Text = null;
+            olayAciklamaGoruntuRTB.Text = null;
+            foreach (var guncellenenBilgi in this.GoruntulemeSayfasi.Controls.OfType<TextBox>()) { guncellenenBilgi.Text = null; }
+            foreach (var saatler in this.GuncellemeSayfasi.Controls.OfType<ComboBox>()) { saatler.SelectedItem = null; }
+
+        }
         private void guncelleButonu_Click(object sender, EventArgs e)
         {
             bool alarmVarYok = false;
@@ -143,36 +143,25 @@ namespace TakvimUygulamasi
             if (girisHatalari())
             {
                 olayGrountuleBaglanti.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE Olaylar SET OlayTanimi = '" + olayTanimiGuncelleTB.Text + "',OlayAciklamasi = '" + olayAciklamasiGuncelleRTB.Text + "',OlayBaslangicSaati = '" + baslangicSaatiCB.Text + ":" + baslangicDkCB.Text + "',OlayBitisSaati ='" + bitisSaatiCB.Text + ":" + bitisDkCB.Text + "',AlarmVarMi = '" + alarmVarYok + "' Where OlayKod LIKE '" + AnaEkran.olayKod + "'AND OlayTanimi LIKE '" + olayTanimlarıCB.Text + "'", olayGrountuleBaglanti);
-                cmd.ExecuteNonQuery();
+                SqlCommand olayGuncelleKomutu = new SqlCommand("UPDATE Olaylar SET OlayTanimi = '" + olayTanimiGuncelleTB.Text + "',OlayAciklamasi = '" + olayAciklamasiGuncelleRTB.Text + "',OlayBaslangicSaati = '" + baslangicSaatiCB.Text + ":" + baslangicDkCB.Text + "',OlayBitisSaati ='" + bitisSaatiCB.Text + ":" + bitisDkCB.Text + "',AlarmVarMi = '" + alarmVarYok + "' Where OlayKod LIKE '" + AnaEkran.olayKod + "'AND OlayTanimi LIKE '" + olayTanimlarıCB.Text + "'", olayGrountuleBaglanti);
+                olayGuncelleKomutu.ExecuteNonQuery();
                 olayGrountuleBaglanti.Close();
                 olayTanimlarıCB.Items.Add(olayTanimiGuncelleTB.Text);
                 olayTanimlarıCB.Items.Remove(olayTanimlarıCB.SelectedItem);
-                olayTanimlarıCB.SelectedItem = null;
-                olayTanimiGuncelleTB.Text = null;
-                olayAciklamasiGuncelleRTB.Text = null;
-                olayTanimiGoruntuTB.Text = null;
-                olayAciklamaGoruntuRTB.Text = null;
-                olayTarihiGoruntuTB.Text = null;
-                baslangicGoruntuTB.Text = null;
-                bitisGoruntuTB.Text = null;
-                var comboboxlar = this.GuncellemeSayfasi.Controls.OfType<ComboBox>();
-                foreach (var combobox in comboboxlar) { combobox.SelectedItem = null; }
+                bilgileriKaldır();
+                foreach (var saatler in this.GuncellemeSayfasi.Controls.OfType<ComboBox>()) { saatler.Items.Clear(); }
             }
         }
 
         private void olaySilButonu_Click(object sender, EventArgs e)
         {
             olayGrountuleBaglanti.Open();
-            SqlCommand cmd = new SqlCommand("DELETE FROM Olaylar Where OlayKod LIKE '" + AnaEkran.olayKod + "' AND OlayTanimi LIKE '" + olayTanimlarıCB.Text + "'", olayGrountuleBaglanti);
-            cmd.ExecuteNonQuery();
+            SqlCommand olaySilKomut = new SqlCommand("DELETE FROM Olaylar Where OlayKod LIKE '" + AnaEkran.olayKod + "' AND OlayTanimi LIKE '" + olayTanimlarıCB.Text + "'", olayGrountuleBaglanti);
+            olaySilKomut.ExecuteNonQuery();
             olayGrountuleBaglanti.Close();
-            olayTanimiGoruntuTB.Text = null;
-            olayAciklamaGoruntuRTB.Text = null;
-            olayTarihiGoruntuTB=null;
-            baslangicGoruntuTB = null;
-            bitisGoruntuTB= null;
             olayTanimlarıCB.Items.Remove(olayTanimlarıCB.Text);
+            bilgileriKaldır();
+            foreach (var saatler in this.GuncellemeSayfasi.Controls.OfType<ComboBox>()) { saatler.Items.Clear(); }
         }
 
         private void yılCB_SelectedIndexChanged(object sender, EventArgs e)
@@ -187,8 +176,7 @@ namespace TakvimUygulamasi
             gunPaneli.Visible = false;
             panelDegistirBT.Visible = false;
             ayPaneli.Visible = true;
-            var labellar = this.Controls.OfType<Label>();
-            foreach (var label in labellar) { label.Visible = false; }
+            foreach (var gunIsimler in this.Controls.OfType<Label>()) { gunIsimler.Visible = false; }
         }
 
         private string[] tarihler(string tarih)
@@ -203,8 +191,8 @@ namespace TakvimUygulamasi
                 else if(i>=6&&i<10){ yil += simdi[i];}
             }
             tamTarih = gun +"."+ ay + "." + yil;
-            string[] simdik = {gun,ay,yil,tamTarih};
-            return simdik;
+            string[] simdikiTarih = {gun,ay,yil,tamTarih};
+            return simdikiTarih;
         }
         
         private void saatGuncelleme(string birlesikBaslangicS, string birlesikBitisS)
@@ -269,13 +257,11 @@ namespace TakvimUygulamasi
                     else { baslangicDkCB.Items.Add(i); }
 
                 }
-
                 if (baslangicSaatiCB.Text != bitisSaatiCB.Text)
                 {
                     if (i < 10) { bitisDkCB.Items.Add("0" + i); }
                     else { bitisDkCB.Items.Add(i); }
                 }
-
 
                 if (i >= sayi && baslangicSaatiCB.Text == bitisSaatiCB.Text)
                 {
@@ -284,6 +270,7 @@ namespace TakvimUygulamasi
                 }
             }
         }
+
         private bool girisHatalari()
         {
             bool hata = true;
@@ -294,5 +281,6 @@ namespace TakvimUygulamasi
 
             return hata;
         }
+
     }
 }

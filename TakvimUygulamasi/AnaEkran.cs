@@ -8,13 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace TakvimUygulamasi
 {
     public partial class AnaEkran : Form
     {
         public static string olayKod;
-        public static SqlConnection AnaBaglanti = new SqlConnection("Data Source=AYKSR\\SQLEXPRESS02;Initial Catalog=TakvimUygulamasi; Integrated Security=TRUE");
+        public static SqlConnection AnaBaglanti = new SqlConnection("Data Source=DESKTOP-HU58BL8\\SQLEXPRESS;Initial Catalog=TakvimUygulamasi; Integrated Security=TRUE");
         public AnaEkran()
         {
             InitializeComponent();
@@ -50,12 +51,16 @@ namespace TakvimUygulamasi
             kayitEkraniac.FormBorderStyle = FormBorderStyle.None;
             BilgiPaneli.Controls.Add(kayitEkraniac);
             kayitEkraniac.Show();
+            this.Text = "Kayıt Ekranı";
+            this.Icon = new Icon(@"C:\Users\aliag\Documents\GitHub\TakvimUygulamasi\Kullanıcılar.ico");
         }
 
         private void GeriButonu_Click(object sender, EventArgs e)
         {
             BilgiPaneli.Controls.Remove(kayitEkraniac);
             GirisPaneli.Visible = true;
+            this.Text = "Giriş Ekranı";
+            this.Icon = new Icon(@"C:\Users\aliag\Documents\GitHub\TakvimUygulamasi\Takvim.ico");
         }
 
       

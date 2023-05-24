@@ -261,7 +261,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OlayEkleEkrani";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "OlayEkleEkrani";
+            this.Text = "Olay Ekle";
             this.Load += new System.EventHandler(this.OlayEkleEkrani_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

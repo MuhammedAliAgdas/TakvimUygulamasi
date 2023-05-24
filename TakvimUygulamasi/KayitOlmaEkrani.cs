@@ -131,6 +131,5 @@ namespace TakvimUygulamasi
             else { yildizlariYokEt(); hataliMi = false; }
             return hataliMi;
         }
-
     }
 }

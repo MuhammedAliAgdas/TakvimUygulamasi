@@ -25,7 +25,7 @@ namespace TakvimUygulamasi
             DkSecme(0);
         }
 
-        private void olayEkleBT_Click(object sender, EventArgs e)
+        private string tarihBilgisi()
         {
             char[] tarih = new char[10];
             tarih = tarihSec.Value.ToString().ToCharArray();
@@ -36,6 +36,10 @@ namespace TakvimUygulamasi
                 if (tarih[i] == ' ') { kontrol = false; continue; }
                 if (kontrol) { yazılacakTarih += tarih[i]; }
             }
+            return yazılacakTarih;
+        }
+        private void olayEkleBT_Click(object sender, EventArgs e)
+        {
 
             if (girisHatalari())
             {
@@ -44,7 +48,7 @@ namespace TakvimUygulamasi
                 try
                 {
                     olayEkleBaglanti.Open();
-                    SqlCommand olayKayitKomutu = new SqlCommand("Insert into Olaylar (OlayTarihi,OlayBaslangicSaati,OlayBitisSaati,OlayTanimi,OlayAciklamasi,AlarmVarMi,OlayKod) values ('" + yazılacakTarih + "','" + baslangicSaatCB.Text + ":" + baslangicDkCB.Text + "','" + bitisSaatCB.Text + ":" + bitisDkCB.Text + "','" + olayTanimiTB.Text + "','" + olayAciklamasıRTB.Text + "','" + alarmVarMi + "','" + AnaEkran.olayKod + "')", olayEkleBaglanti);
+                    SqlCommand olayKayitKomutu = new SqlCommand("Insert into Olaylar (OlayTarihi,OlayBaslangicSaati,OlayBitisSaati,OlayTanimi,OlayAciklamasi,AlarmVarMi,OlayKod) values ('" + tarihBilgisi() + "','" + baslangicSaatCB.Text + ":" + baslangicDkCB.Text + "','" + bitisSaatCB.Text + ":" + bitisDkCB.Text + "','" + olayTanimiTB.Text + "','" + olayAciklamasıRTB.Text + "','" + alarmVarMi + "','" + AnaEkran.olayKod + "')", olayEkleBaglanti) ;
                     olayKayitKomutu.ExecuteNonQuery();
                     MessageBox.Show("Olay kaydedildi.");
                     olayEkleBaglanti.Close();

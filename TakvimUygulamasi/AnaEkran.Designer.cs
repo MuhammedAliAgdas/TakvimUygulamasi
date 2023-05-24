@@ -146,7 +146,7 @@
             this.IsMdiContainer = true;
             this.Name = "AnaEkran";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AnaEkran";
+            this.Text = "Giriş Ekranı";
             this.BilgiPaneli.ResumeLayout(false);
             this.GirisPaneli.ResumeLayout(false);
             this.GirisPaneli.PerformLayout();
