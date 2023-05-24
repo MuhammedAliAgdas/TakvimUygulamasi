@@ -93,9 +93,10 @@
             // 
             // gunPaneli
             // 
-            this.gunPaneli.Location = new System.Drawing.Point(71, 69);
+            this.gunPaneli.Location = new System.Drawing.Point(95, 85);
+            this.gunPaneli.Margin = new System.Windows.Forms.Padding(4);
             this.gunPaneli.Name = "gunPaneli";
-            this.gunPaneli.Size = new System.Drawing.Size(513, 317);
+            this.gunPaneli.Size = new System.Drawing.Size(684, 390);
             this.gunPaneli.TabIndex = 0;
             this.gunPaneli.Visible = false;
             // 
@@ -113,16 +114,18 @@
             this.ayPaneli.Controls.Add(this.martBT);
             this.ayPaneli.Controls.Add(this.subatBT);
             this.ayPaneli.Controls.Add(this.ocakBT);
-            this.ayPaneli.Location = new System.Drawing.Point(29, 98);
+            this.ayPaneli.Location = new System.Drawing.Point(39, 121);
+            this.ayPaneli.Margin = new System.Windows.Forms.Padding(4);
             this.ayPaneli.Name = "ayPaneli";
-            this.ayPaneli.Size = new System.Drawing.Size(601, 235);
+            this.ayPaneli.Size = new System.Drawing.Size(801, 289);
             this.ayPaneli.TabIndex = 2;
             // 
             // eylulBT
             // 
-            this.eylulBT.Location = new System.Drawing.Point(0, 181);
+            this.eylulBT.Location = new System.Drawing.Point(0, 223);
+            this.eylulBT.Margin = new System.Windows.Forms.Padding(4);
             this.eylulBT.Name = "eylulBT";
-            this.eylulBT.Size = new System.Drawing.Size(75, 54);
+            this.eylulBT.Size = new System.Drawing.Size(100, 66);
             this.eylulBT.TabIndex = 12;
             this.eylulBT.Tag = "09";
             this.eylulBT.Text = "Eylül";
@@ -130,9 +133,10 @@
             // 
             // ekimBT
             // 
-            this.ekimBT.Location = new System.Drawing.Point(171, 181);
+            this.ekimBT.Location = new System.Drawing.Point(228, 223);
+            this.ekimBT.Margin = new System.Windows.Forms.Padding(4);
             this.ekimBT.Name = "ekimBT";
-            this.ekimBT.Size = new System.Drawing.Size(75, 54);
+            this.ekimBT.Size = new System.Drawing.Size(100, 66);
             this.ekimBT.TabIndex = 11;
             this.ekimBT.Tag = "10";
             this.ekimBT.Text = "Ekim";
@@ -140,9 +144,10 @@
             // 
             // kasimBT
             // 
-            this.kasimBT.Location = new System.Drawing.Point(347, 181);
+            this.kasimBT.Location = new System.Drawing.Point(463, 223);
+            this.kasimBT.Margin = new System.Windows.Forms.Padding(4);
             this.kasimBT.Name = "kasimBT";
-            this.kasimBT.Size = new System.Drawing.Size(75, 54);
+            this.kasimBT.Size = new System.Drawing.Size(100, 66);
             this.kasimBT.TabIndex = 10;
             this.kasimBT.Tag = "11";
             this.kasimBT.Text = "Kasım";
@@ -150,9 +155,10 @@
             // 
             // aralikBT
             // 
-            this.aralikBT.Location = new System.Drawing.Point(526, 181);
+            this.aralikBT.Location = new System.Drawing.Point(701, 223);
+            this.aralikBT.Margin = new System.Windows.Forms.Padding(4);
             this.aralikBT.Name = "aralikBT";
-            this.aralikBT.Size = new System.Drawing.Size(75, 54);
+            this.aralikBT.Size = new System.Drawing.Size(100, 66);
             this.aralikBT.TabIndex = 9;
             this.aralikBT.Tag = "12";
             this.aralikBT.Text = "Aralık";
@@ -160,9 +166,10 @@
             // 
             // mayisBT
             // 
-            this.mayisBT.Location = new System.Drawing.Point(0, 91);
+            this.mayisBT.Location = new System.Drawing.Point(0, 112);
+            this.mayisBT.Margin = new System.Windows.Forms.Padding(4);
             this.mayisBT.Name = "mayisBT";
-            this.mayisBT.Size = new System.Drawing.Size(75, 54);
+            this.mayisBT.Size = new System.Drawing.Size(100, 66);
             this.mayisBT.TabIndex = 8;
             this.mayisBT.Tag = "05";
             this.mayisBT.Text = "Mayıs";
@@ -170,9 +177,10 @@
             // 
             // haziranBT
             // 
-            this.haziranBT.Location = new System.Drawing.Point(171, 91);
+            this.haziranBT.Location = new System.Drawing.Point(228, 112);
+            this.haziranBT.Margin = new System.Windows.Forms.Padding(4);
             this.haziranBT.Name = "haziranBT";
-            this.haziranBT.Size = new System.Drawing.Size(75, 54);
+            this.haziranBT.Size = new System.Drawing.Size(100, 66);
             this.haziranBT.TabIndex = 7;
             this.haziranBT.Tag = "06";
             this.haziranBT.Text = "Haziran";
@@ -180,9 +188,10 @@
             // 
             // temmuzBT
             // 
-            this.temmuzBT.Location = new System.Drawing.Point(347, 91);
+            this.temmuzBT.Location = new System.Drawing.Point(463, 112);
+            this.temmuzBT.Margin = new System.Windows.Forms.Padding(4);
             this.temmuzBT.Name = "temmuzBT";
-            this.temmuzBT.Size = new System.Drawing.Size(75, 54);
+            this.temmuzBT.Size = new System.Drawing.Size(100, 66);
             this.temmuzBT.TabIndex = 6;
             this.temmuzBT.Tag = "07";
             this.temmuzBT.Text = "Temmuz";
@@ -190,9 +199,10 @@
             // 
             // agustosBT
             // 
-            this.agustosBT.Location = new System.Drawing.Point(526, 91);
+            this.agustosBT.Location = new System.Drawing.Point(701, 112);
+            this.agustosBT.Margin = new System.Windows.Forms.Padding(4);
             this.agustosBT.Name = "agustosBT";
-            this.agustosBT.Size = new System.Drawing.Size(75, 54);
+            this.agustosBT.Size = new System.Drawing.Size(100, 66);
             this.agustosBT.TabIndex = 5;
             this.agustosBT.Tag = "08";
             this.agustosBT.Text = "Ağustos";
@@ -200,9 +210,10 @@
             // 
             // nisanBT
             // 
-            this.nisanBT.Location = new System.Drawing.Point(526, 0);
+            this.nisanBT.Location = new System.Drawing.Point(701, 0);
+            this.nisanBT.Margin = new System.Windows.Forms.Padding(4);
             this.nisanBT.Name = "nisanBT";
-            this.nisanBT.Size = new System.Drawing.Size(75, 54);
+            this.nisanBT.Size = new System.Drawing.Size(100, 66);
             this.nisanBT.TabIndex = 4;
             this.nisanBT.Tag = "04";
             this.nisanBT.Text = "Nisan";
@@ -210,9 +221,10 @@
             // 
             // martBT
             // 
-            this.martBT.Location = new System.Drawing.Point(347, 0);
+            this.martBT.Location = new System.Drawing.Point(463, 0);
+            this.martBT.Margin = new System.Windows.Forms.Padding(4);
             this.martBT.Name = "martBT";
-            this.martBT.Size = new System.Drawing.Size(75, 54);
+            this.martBT.Size = new System.Drawing.Size(100, 66);
             this.martBT.TabIndex = 3;
             this.martBT.Tag = "03";
             this.martBT.Text = "Mart";
@@ -220,9 +232,10 @@
             // 
             // subatBT
             // 
-            this.subatBT.Location = new System.Drawing.Point(171, 0);
+            this.subatBT.Location = new System.Drawing.Point(228, 0);
+            this.subatBT.Margin = new System.Windows.Forms.Padding(4);
             this.subatBT.Name = "subatBT";
-            this.subatBT.Size = new System.Drawing.Size(75, 54);
+            this.subatBT.Size = new System.Drawing.Size(100, 66);
             this.subatBT.TabIndex = 2;
             this.subatBT.Tag = "02";
             this.subatBT.Text = "Şubat";
@@ -231,8 +244,9 @@
             // ocakBT
             // 
             this.ocakBT.Location = new System.Drawing.Point(0, 0);
+            this.ocakBT.Margin = new System.Windows.Forms.Padding(4);
             this.ocakBT.Name = "ocakBT";
-            this.ocakBT.Size = new System.Drawing.Size(75, 54);
+            this.ocakBT.Size = new System.Drawing.Size(100, 66);
             this.ocakBT.TabIndex = 1;
             this.ocakBT.Tag = "01";
             this.ocakBT.Text = "Ocak";
@@ -240,9 +254,10 @@
             // 
             // OlayEkle
             // 
-            this.OlayEkle.Location = new System.Drawing.Point(797, 12);
+            this.OlayEkle.Location = new System.Drawing.Point(1063, 15);
+            this.OlayEkle.Margin = new System.Windows.Forms.Padding(4);
             this.OlayEkle.Name = "OlayEkle";
-            this.OlayEkle.Size = new System.Drawing.Size(75, 68);
+            this.OlayEkle.Size = new System.Drawing.Size(100, 84);
             this.OlayEkle.TabIndex = 3;
             this.OlayEkle.Text = "Olay Ekle";
             this.OlayEkle.UseVisualStyleBackColor = true;
@@ -250,9 +265,10 @@
             // 
             // panelDegistirBT
             // 
-            this.panelDegistirBT.Location = new System.Drawing.Point(5, 8);
+            this.panelDegistirBT.Location = new System.Drawing.Point(7, 10);
+            this.panelDegistirBT.Margin = new System.Windows.Forms.Padding(4);
             this.panelDegistirBT.Name = "panelDegistirBT";
-            this.panelDegistirBT.Size = new System.Drawing.Size(60, 60);
+            this.panelDegistirBT.Size = new System.Drawing.Size(80, 74);
             this.panelDegistirBT.TabIndex = 4;
             this.panelDegistirBT.Text = "<-";
             this.panelDegistirBT.UseVisualStyleBackColor = true;
@@ -263,9 +279,10 @@
             // 
             this.ayIsmi.AutoSize = true;
             this.ayIsmi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ayIsmi.Location = new System.Drawing.Point(303, 16);
+            this.ayIsmi.Location = new System.Drawing.Point(404, 20);
+            this.ayIsmi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ayIsmi.Name = "ayIsmi";
-            this.ayIsmi.Size = new System.Drawing.Size(51, 17);
+            this.ayIsmi.Size = new System.Drawing.Size(62, 20);
             this.ayIsmi.TabIndex = 0;
             this.ayIsmi.Text = "ay ismi";
             this.ayIsmi.Visible = false;
@@ -274,9 +291,10 @@
             // 
             this.olayTanimlarıCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.olayTanimlarıCB.FormattingEnabled = true;
-            this.olayTanimlarıCB.Location = new System.Drawing.Point(5, 413);
+            this.olayTanimlarıCB.Location = new System.Drawing.Point(7, 508);
+            this.olayTanimlarıCB.Margin = new System.Windows.Forms.Padding(4);
             this.olayTanimlarıCB.Name = "olayTanimlarıCB";
-            this.olayTanimlarıCB.Size = new System.Drawing.Size(173, 21);
+            this.olayTanimlarıCB.Size = new System.Drawing.Size(229, 24);
             this.olayTanimlarıCB.TabIndex = 0;
             this.olayTanimlarıCB.SelectedIndexChanged += new System.EventHandler(this.olayTanimlarıCB_SelectedIndexChanged);
             // 
@@ -284,10 +302,11 @@
             // 
             this.BilgilerEkrani.Controls.Add(this.GoruntulemeSayfasi);
             this.BilgilerEkrani.Controls.Add(this.GuncellemeSayfasi);
-            this.BilgilerEkrani.Location = new System.Drawing.Point(190, 413);
+            this.BilgilerEkrani.Location = new System.Drawing.Point(253, 508);
+            this.BilgilerEkrani.Margin = new System.Windows.Forms.Padding(4);
             this.BilgilerEkrani.Name = "BilgilerEkrani";
             this.BilgilerEkrani.SelectedIndex = 0;
-            this.BilgilerEkrani.Size = new System.Drawing.Size(696, 199);
+            this.BilgilerEkrani.Size = new System.Drawing.Size(928, 245);
             this.BilgilerEkrani.TabIndex = 5;
             // 
             // GoruntulemeSayfasi
@@ -303,105 +322,117 @@
             this.GoruntulemeSayfasi.Controls.Add(this.olayTarihGoruntuLB);
             this.GoruntulemeSayfasi.Controls.Add(this.olayTanimiGoruntuLB);
             this.GoruntulemeSayfasi.Controls.Add(this.olaySilButonu);
-            this.GoruntulemeSayfasi.Location = new System.Drawing.Point(4, 22);
+            this.GoruntulemeSayfasi.Location = new System.Drawing.Point(4, 25);
+            this.GoruntulemeSayfasi.Margin = new System.Windows.Forms.Padding(4);
             this.GoruntulemeSayfasi.Name = "GoruntulemeSayfasi";
-            this.GoruntulemeSayfasi.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.GoruntulemeSayfasi.Size = new System.Drawing.Size(688, 173);
+            this.GoruntulemeSayfasi.Padding = new System.Windows.Forms.Padding(4);
+            this.GoruntulemeSayfasi.Size = new System.Drawing.Size(920, 216);
             this.GoruntulemeSayfasi.TabIndex = 0;
             this.GoruntulemeSayfasi.Text = "Görüntüle";
             this.GoruntulemeSayfasi.UseVisualStyleBackColor = true;
             // 
             // bitisGoruntuTB
             // 
-            this.bitisGoruntuTB.Location = new System.Drawing.Point(91, 123);
+            this.bitisGoruntuTB.Location = new System.Drawing.Point(121, 175);
+            this.bitisGoruntuTB.Margin = new System.Windows.Forms.Padding(4);
             this.bitisGoruntuTB.Name = "bitisGoruntuTB";
             this.bitisGoruntuTB.ReadOnly = true;
-            this.bitisGoruntuTB.Size = new System.Drawing.Size(145, 20);
+            this.bitisGoruntuTB.Size = new System.Drawing.Size(192, 22);
             this.bitisGoruntuTB.TabIndex = 18;
             // 
             // baslangicGoruntuTB
             // 
-            this.baslangicGoruntuTB.Location = new System.Drawing.Point(91, 89);
+            this.baslangicGoruntuTB.Location = new System.Drawing.Point(121, 127);
+            this.baslangicGoruntuTB.Margin = new System.Windows.Forms.Padding(4);
             this.baslangicGoruntuTB.Name = "baslangicGoruntuTB";
             this.baslangicGoruntuTB.ReadOnly = true;
-            this.baslangicGoruntuTB.Size = new System.Drawing.Size(145, 20);
+            this.baslangicGoruntuTB.Size = new System.Drawing.Size(192, 22);
             this.baslangicGoruntuTB.TabIndex = 17;
             // 
             // olayTarihiGoruntuTB
             // 
-            this.olayTarihiGoruntuTB.Location = new System.Drawing.Point(91, 51);
+            this.olayTarihiGoruntuTB.Location = new System.Drawing.Point(121, 73);
+            this.olayTarihiGoruntuTB.Margin = new System.Windows.Forms.Padding(4);
             this.olayTarihiGoruntuTB.Name = "olayTarihiGoruntuTB";
             this.olayTarihiGoruntuTB.ReadOnly = true;
-            this.olayTarihiGoruntuTB.Size = new System.Drawing.Size(145, 20);
+            this.olayTarihiGoruntuTB.Size = new System.Drawing.Size(192, 22);
             this.olayTarihiGoruntuTB.TabIndex = 16;
             // 
             // olayTanimiGoruntuTB
             // 
-            this.olayTanimiGoruntuTB.Location = new System.Drawing.Point(91, 13);
+            this.olayTanimiGoruntuTB.Location = new System.Drawing.Point(121, 20);
+            this.olayTanimiGoruntuTB.Margin = new System.Windows.Forms.Padding(4);
             this.olayTanimiGoruntuTB.Name = "olayTanimiGoruntuTB";
             this.olayTanimiGoruntuTB.ReadOnly = true;
-            this.olayTanimiGoruntuTB.Size = new System.Drawing.Size(145, 20);
+            this.olayTanimiGoruntuTB.Size = new System.Drawing.Size(192, 22);
             this.olayTanimiGoruntuTB.TabIndex = 15;
             // 
             // olayAciklamaGoruntuRTB
             // 
-            this.olayAciklamaGoruntuRTB.Location = new System.Drawing.Point(348, 6);
+            this.olayAciklamaGoruntuRTB.Location = new System.Drawing.Point(464, 7);
+            this.olayAciklamaGoruntuRTB.Margin = new System.Windows.Forms.Padding(4);
             this.olayAciklamaGoruntuRTB.Name = "olayAciklamaGoruntuRTB";
             this.olayAciklamaGoruntuRTB.ReadOnly = true;
-            this.olayAciklamaGoruntuRTB.Size = new System.Drawing.Size(310, 99);
+            this.olayAciklamaGoruntuRTB.Size = new System.Drawing.Size(412, 121);
             this.olayAciklamaGoruntuRTB.TabIndex = 14;
             this.olayAciklamaGoruntuRTB.Text = "";
             // 
             // olayAciklamasiGoruntuLB
             // 
             this.olayAciklamasiGoruntuLB.AutoSize = true;
-            this.olayAciklamasiGoruntuLB.Location = new System.Drawing.Point(262, 16);
+            this.olayAciklamasiGoruntuLB.Location = new System.Drawing.Point(349, 20);
+            this.olayAciklamasiGoruntuLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.olayAciklamasiGoruntuLB.Name = "olayAciklamasiGoruntuLB";
-            this.olayAciklamasiGoruntuLB.Size = new System.Drawing.Size(84, 13);
+            this.olayAciklamasiGoruntuLB.Size = new System.Drawing.Size(107, 16);
             this.olayAciklamasiGoruntuLB.TabIndex = 13;
             this.olayAciklamasiGoruntuLB.Text = "Olay Açıklaması:";
             // 
             // olayBitisGoruntuLB
             // 
             this.olayBitisGoruntuLB.AutoSize = true;
-            this.olayBitisGoruntuLB.Location = new System.Drawing.Point(3, 126);
+            this.olayBitisGoruntuLB.Location = new System.Drawing.Point(4, 178);
+            this.olayBitisGoruntuLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.olayBitisGoruntuLB.Name = "olayBitisGoruntuLB";
-            this.olayBitisGoruntuLB.Size = new System.Drawing.Size(56, 13);
+            this.olayBitisGoruntuLB.Size = new System.Drawing.Size(69, 16);
             this.olayBitisGoruntuLB.TabIndex = 12;
             this.olayBitisGoruntuLB.Text = "Bitiş Saati:";
             // 
             // olayBaslangicGoruntuLB
             // 
             this.olayBaslangicGoruntuLB.AutoSize = true;
-            this.olayBaslangicGoruntuLB.Location = new System.Drawing.Point(3, 92);
+            this.olayBaslangicGoruntuLB.Location = new System.Drawing.Point(4, 130);
+            this.olayBaslangicGoruntuLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.olayBaslangicGoruntuLB.Name = "olayBaslangicGoruntuLB";
-            this.olayBaslangicGoruntuLB.Size = new System.Drawing.Size(83, 13);
+            this.olayBaslangicGoruntuLB.Size = new System.Drawing.Size(104, 16);
             this.olayBaslangicGoruntuLB.TabIndex = 11;
             this.olayBaslangicGoruntuLB.Text = "Başlangıç Saati:";
             // 
             // olayTarihGoruntuLB
             // 
             this.olayTarihGoruntuLB.AutoSize = true;
-            this.olayTarihGoruntuLB.Location = new System.Drawing.Point(8, 54);
+            this.olayTarihGoruntuLB.Location = new System.Drawing.Point(4, 76);
+            this.olayTarihGoruntuLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.olayTarihGoruntuLB.Name = "olayTarihGoruntuLB";
-            this.olayTarihGoruntuLB.Size = new System.Drawing.Size(60, 13);
+            this.olayTarihGoruntuLB.Size = new System.Drawing.Size(75, 16);
             this.olayTarihGoruntuLB.TabIndex = 10;
             this.olayTarihGoruntuLB.Text = "Olay Tarihi:";
             // 
             // olayTanimiGoruntuLB
             // 
             this.olayTanimiGoruntuLB.AutoSize = true;
-            this.olayTanimiGoruntuLB.Location = new System.Drawing.Point(3, 13);
+            this.olayTanimiGoruntuLB.Location = new System.Drawing.Point(4, 23);
+            this.olayTanimiGoruntuLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.olayTanimiGoruntuLB.Name = "olayTanimiGoruntuLB";
-            this.olayTanimiGoruntuLB.Size = new System.Drawing.Size(65, 13);
+            this.olayTanimiGoruntuLB.Size = new System.Drawing.Size(82, 16);
             this.olayTanimiGoruntuLB.TabIndex = 9;
             this.olayTanimiGoruntuLB.Text = "Olay Tanımı:";
             // 
             // olaySilButonu
             // 
-            this.olaySilButonu.Location = new System.Drawing.Point(440, 111);
+            this.olaySilButonu.Location = new System.Drawing.Point(587, 137);
+            this.olaySilButonu.Margin = new System.Windows.Forms.Padding(4);
             this.olaySilButonu.Name = "olaySilButonu";
-            this.olaySilButonu.Size = new System.Drawing.Size(128, 49);
+            this.olaySilButonu.Size = new System.Drawing.Size(171, 60);
             this.olaySilButonu.TabIndex = 8;
             this.olaySilButonu.Text = "Olayı Sil";
             this.olaySilButonu.UseVisualStyleBackColor = true;
@@ -424,10 +455,11 @@
             this.GuncellemeSayfasi.Controls.Add(this.baslangicSaatiCB);
             this.GuncellemeSayfasi.Controls.Add(this.olayAciklamasiGuncelleRTB);
             this.GuncellemeSayfasi.Controls.Add(this.olayTanimiGuncelleTB);
-            this.GuncellemeSayfasi.Location = new System.Drawing.Point(4, 22);
+            this.GuncellemeSayfasi.Location = new System.Drawing.Point(4, 25);
+            this.GuncellemeSayfasi.Margin = new System.Windows.Forms.Padding(4);
             this.GuncellemeSayfasi.Name = "GuncellemeSayfasi";
-            this.GuncellemeSayfasi.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.GuncellemeSayfasi.Size = new System.Drawing.Size(688, 173);
+            this.GuncellemeSayfasi.Padding = new System.Windows.Forms.Padding(4);
+            this.GuncellemeSayfasi.Size = new System.Drawing.Size(920, 216);
             this.GuncellemeSayfasi.TabIndex = 1;
             this.GuncellemeSayfasi.Text = "Güncelle";
             this.GuncellemeSayfasi.UseVisualStyleBackColor = true;
@@ -437,9 +469,10 @@
             this.bosSaatHatasi.AutoSize = true;
             this.bosSaatHatasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.bosSaatHatasi.ForeColor = System.Drawing.Color.Brown;
-            this.bosSaatHatasi.Location = new System.Drawing.Point(537, 23);
+            this.bosSaatHatasi.Location = new System.Drawing.Point(716, 28);
+            this.bosSaatHatasi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bosSaatHatasi.Name = "bosSaatHatasi";
-            this.bosSaatHatasi.Size = new System.Drawing.Size(20, 25);
+            this.bosSaatHatasi.Size = new System.Drawing.Size(23, 29);
             this.bosSaatHatasi.TabIndex = 20;
             this.bosSaatHatasi.Text = "*";
             this.bosSaatHatasi.Visible = false;
@@ -449,9 +482,10 @@
             this.bosAciklamaHatasi.AutoSize = true;
             this.bosAciklamaHatasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.bosAciklamaHatasi.ForeColor = System.Drawing.Color.Brown;
-            this.bosAciklamaHatasi.Location = new System.Drawing.Point(578, 103);
+            this.bosAciklamaHatasi.Location = new System.Drawing.Point(771, 127);
+            this.bosAciklamaHatasi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bosAciklamaHatasi.Name = "bosAciklamaHatasi";
-            this.bosAciklamaHatasi.Size = new System.Drawing.Size(20, 25);
+            this.bosAciklamaHatasi.Size = new System.Drawing.Size(23, 29);
             this.bosAciklamaHatasi.TabIndex = 19;
             this.bosAciklamaHatasi.Text = "*";
             this.bosAciklamaHatasi.Visible = false;
@@ -461,9 +495,10 @@
             this.bosTanimHatasi.AutoSize = true;
             this.bosTanimHatasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.bosTanimHatasi.ForeColor = System.Drawing.Color.Brown;
-            this.bosTanimHatasi.Location = new System.Drawing.Point(161, 29);
+            this.bosTanimHatasi.Location = new System.Drawing.Point(215, 36);
+            this.bosTanimHatasi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bosTanimHatasi.Name = "bosTanimHatasi";
-            this.bosTanimHatasi.Size = new System.Drawing.Size(20, 25);
+            this.bosTanimHatasi.Size = new System.Drawing.Size(23, 29);
             this.bosTanimHatasi.TabIndex = 18;
             this.bosTanimHatasi.Text = "*";
             this.bosTanimHatasi.Visible = false;
@@ -471,44 +506,49 @@
             // olayBitisGuncelleLB
             // 
             this.olayBitisGuncelleLB.AutoSize = true;
-            this.olayBitisGuncelleLB.Location = new System.Drawing.Point(203, 46);
+            this.olayBitisGuncelleLB.Location = new System.Drawing.Point(271, 57);
+            this.olayBitisGuncelleLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.olayBitisGuncelleLB.Name = "olayBitisGuncelleLB";
-            this.olayBitisGuncelleLB.Size = new System.Drawing.Size(56, 13);
+            this.olayBitisGuncelleLB.Size = new System.Drawing.Size(69, 16);
             this.olayBitisGuncelleLB.TabIndex = 11;
             this.olayBitisGuncelleLB.Text = "Bitiş Saati:";
             // 
             // olayBaslangicGuncelleLB
             // 
             this.olayBaslangicGuncelleLB.AutoSize = true;
-            this.olayBaslangicGuncelleLB.Location = new System.Drawing.Point(180, 9);
+            this.olayBaslangicGuncelleLB.Location = new System.Drawing.Point(240, 11);
+            this.olayBaslangicGuncelleLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.olayBaslangicGuncelleLB.Name = "olayBaslangicGuncelleLB";
-            this.olayBaslangicGuncelleLB.Size = new System.Drawing.Size(83, 13);
+            this.olayBaslangicGuncelleLB.Size = new System.Drawing.Size(104, 16);
             this.olayBaslangicGuncelleLB.TabIndex = 10;
             this.olayBaslangicGuncelleLB.Text = "Başlangıç Saati:";
             // 
             // olayAciklamasiGuncelleLB
             // 
             this.olayAciklamasiGuncelleLB.AutoSize = true;
-            this.olayAciklamasiGuncelleLB.Location = new System.Drawing.Point(-1, 87);
+            this.olayAciklamasiGuncelleLB.Location = new System.Drawing.Point(-1, 107);
+            this.olayAciklamasiGuncelleLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.olayAciklamasiGuncelleLB.Name = "olayAciklamasiGuncelleLB";
-            this.olayAciklamasiGuncelleLB.Size = new System.Drawing.Size(84, 13);
+            this.olayAciklamasiGuncelleLB.Size = new System.Drawing.Size(107, 16);
             this.olayAciklamasiGuncelleLB.TabIndex = 9;
             this.olayAciklamasiGuncelleLB.Text = "Olay Açıklaması:";
             // 
             // olayTanimiGuncelleLB
             // 
             this.olayTanimiGuncelleLB.AutoSize = true;
-            this.olayTanimiGuncelleLB.Location = new System.Drawing.Point(3, 9);
+            this.olayTanimiGuncelleLB.Location = new System.Drawing.Point(4, 11);
+            this.olayTanimiGuncelleLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.olayTanimiGuncelleLB.Name = "olayTanimiGuncelleLB";
-            this.olayTanimiGuncelleLB.Size = new System.Drawing.Size(65, 13);
+            this.olayTanimiGuncelleLB.Size = new System.Drawing.Size(82, 16);
             this.olayTanimiGuncelleLB.TabIndex = 8;
             this.olayTanimiGuncelleLB.Text = "Olay Tanımı:";
             // 
             // guncelleButonu
             // 
-            this.guncelleButonu.Location = new System.Drawing.Point(608, 98);
+            this.guncelleButonu.Location = new System.Drawing.Point(811, 121);
+            this.guncelleButonu.Margin = new System.Windows.Forms.Padding(4);
             this.guncelleButonu.Name = "guncelleButonu";
-            this.guncelleButonu.Size = new System.Drawing.Size(80, 60);
+            this.guncelleButonu.Size = new System.Drawing.Size(107, 74);
             this.guncelleButonu.TabIndex = 7;
             this.guncelleButonu.Text = "Olayı Güncelle";
             this.guncelleButonu.UseVisualStyleBackColor = true;
@@ -517,9 +557,10 @@
             // alarmCB
             // 
             this.alarmCB.AutoSize = true;
-            this.alarmCB.Location = new System.Drawing.Point(569, 6);
+            this.alarmCB.Location = new System.Drawing.Point(759, 7);
+            this.alarmCB.Margin = new System.Windows.Forms.Padding(4);
             this.alarmCB.Name = "alarmCB";
-            this.alarmCB.Size = new System.Drawing.Size(113, 17);
+            this.alarmCB.Size = new System.Drawing.Size(141, 20);
             this.alarmCB.TabIndex = 6;
             this.alarmCB.Text = "Alarm eklensin mi?";
             this.alarmCB.UseVisualStyleBackColor = true;
@@ -528,9 +569,10 @@
             // 
             this.bitisDkCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.bitisDkCB.FormattingEnabled = true;
-            this.bitisDkCB.Location = new System.Drawing.Point(408, 43);
+            this.bitisDkCB.Location = new System.Drawing.Point(544, 53);
+            this.bitisDkCB.Margin = new System.Windows.Forms.Padding(4);
             this.bitisDkCB.Name = "bitisDkCB";
-            this.bitisDkCB.Size = new System.Drawing.Size(121, 21);
+            this.bitisDkCB.Size = new System.Drawing.Size(160, 24);
             this.bitisDkCB.TabIndex = 5;
             this.bitisDkCB.Click += new System.EventHandler(this.bitisDkCB_Click);
             // 
@@ -538,9 +580,10 @@
             // 
             this.bitisSaatiCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.bitisSaatiCB.FormattingEnabled = true;
-            this.bitisSaatiCB.Location = new System.Drawing.Point(265, 43);
+            this.bitisSaatiCB.Location = new System.Drawing.Point(353, 53);
+            this.bitisSaatiCB.Margin = new System.Windows.Forms.Padding(4);
             this.bitisSaatiCB.Name = "bitisSaatiCB";
-            this.bitisSaatiCB.Size = new System.Drawing.Size(121, 21);
+            this.bitisSaatiCB.Size = new System.Drawing.Size(160, 24);
             this.bitisSaatiCB.TabIndex = 4;
             this.bitisSaatiCB.Click += new System.EventHandler(this.bitisSaatiCB_Click);
             // 
@@ -548,41 +591,46 @@
             // 
             this.baslangicDkCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.baslangicDkCB.FormattingEnabled = true;
-            this.baslangicDkCB.Location = new System.Drawing.Point(408, 6);
+            this.baslangicDkCB.Location = new System.Drawing.Point(544, 7);
+            this.baslangicDkCB.Margin = new System.Windows.Forms.Padding(4);
             this.baslangicDkCB.Name = "baslangicDkCB";
-            this.baslangicDkCB.Size = new System.Drawing.Size(121, 21);
+            this.baslangicDkCB.Size = new System.Drawing.Size(160, 24);
             this.baslangicDkCB.TabIndex = 3;
             // 
             // baslangicSaatiCB
             // 
             this.baslangicSaatiCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.baslangicSaatiCB.FormattingEnabled = true;
-            this.baslangicSaatiCB.Location = new System.Drawing.Point(265, 6);
+            this.baslangicSaatiCB.Location = new System.Drawing.Point(353, 7);
+            this.baslangicSaatiCB.Margin = new System.Windows.Forms.Padding(4);
             this.baslangicSaatiCB.Name = "baslangicSaatiCB";
-            this.baslangicSaatiCB.Size = new System.Drawing.Size(121, 21);
+            this.baslangicSaatiCB.Size = new System.Drawing.Size(160, 24);
             this.baslangicSaatiCB.TabIndex = 2;
             // 
             // olayAciklamasiGuncelleRTB
             // 
-            this.olayAciklamasiGuncelleRTB.Location = new System.Drawing.Point(0, 103);
+            this.olayAciklamasiGuncelleRTB.Location = new System.Drawing.Point(0, 127);
+            this.olayAciklamasiGuncelleRTB.Margin = new System.Windows.Forms.Padding(4);
             this.olayAciklamasiGuncelleRTB.Name = "olayAciklamasiGuncelleRTB";
-            this.olayAciklamasiGuncelleRTB.Size = new System.Drawing.Size(572, 80);
+            this.olayAciklamasiGuncelleRTB.Size = new System.Drawing.Size(761, 98);
             this.olayAciklamasiGuncelleRTB.TabIndex = 1;
             this.olayAciklamasiGuncelleRTB.Text = "";
             // 
             // olayTanimiGuncelleTB
             // 
-            this.olayTanimiGuncelleTB.Location = new System.Drawing.Point(6, 29);
+            this.olayTanimiGuncelleTB.Location = new System.Drawing.Point(8, 36);
+            this.olayTanimiGuncelleTB.Margin = new System.Windows.Forms.Padding(4);
             this.olayTanimiGuncelleTB.Name = "olayTanimiGuncelleTB";
-            this.olayTanimiGuncelleTB.Size = new System.Drawing.Size(150, 20);
+            this.olayTanimiGuncelleTB.Size = new System.Drawing.Size(199, 22);
             this.olayTanimiGuncelleTB.TabIndex = 0;
             // 
             // OlayTanimlariLB
             // 
             this.OlayTanimlariLB.AutoSize = true;
-            this.OlayTanimlariLB.Location = new System.Drawing.Point(10, 392);
+            this.OlayTanimlariLB.Location = new System.Drawing.Point(13, 482);
+            this.OlayTanimlariLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.OlayTanimlariLB.Name = "OlayTanimlariLB";
-            this.OlayTanimlariLB.Size = new System.Drawing.Size(116, 13);
+            this.OlayTanimlariLB.Size = new System.Drawing.Size(144, 16);
             this.OlayTanimlariLB.TabIndex = 6;
             this.OlayTanimlariLB.Text = "Bugünün olay tanımları:";
             // 
@@ -602,18 +650,20 @@
             "2031",
             "2032",
             "2033"});
-            this.yılCB.Location = new System.Drawing.Point(646, 12);
+            this.yılCB.Location = new System.Drawing.Point(861, 15);
+            this.yılCB.Margin = new System.Windows.Forms.Padding(4);
             this.yılCB.Name = "yılCB";
-            this.yılCB.Size = new System.Drawing.Size(121, 21);
+            this.yılCB.Size = new System.Drawing.Size(160, 24);
             this.yılCB.TabIndex = 7;
             this.yılCB.SelectedIndexChanged += new System.EventHandler(this.yılCB_SelectedIndexChanged);
             // 
             // gun1
             // 
             this.gun1.AutoSize = true;
-            this.gun1.Location = new System.Drawing.Point(81, 53);
+            this.gun1.Location = new System.Drawing.Point(108, 65);
+            this.gun1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.gun1.Name = "gun1";
-            this.gun1.Size = new System.Drawing.Size(14, 13);
+            this.gun1.Size = new System.Drawing.Size(15, 16);
             this.gun1.TabIndex = 0;
             this.gun1.Text = "X";
             this.gun1.Visible = false;
@@ -621,9 +671,10 @@
             // gun2
             // 
             this.gun2.AutoSize = true;
-            this.gun2.Location = new System.Drawing.Point(152, 53);
+            this.gun2.Location = new System.Drawing.Point(203, 65);
+            this.gun2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.gun2.Name = "gun2";
-            this.gun2.Size = new System.Drawing.Size(14, 13);
+            this.gun2.Size = new System.Drawing.Size(15, 16);
             this.gun2.TabIndex = 1;
             this.gun2.Text = "X";
             this.gun2.Visible = false;
@@ -631,9 +682,10 @@
             // gun3
             // 
             this.gun3.AutoSize = true;
-            this.gun3.Location = new System.Drawing.Point(213, 53);
+            this.gun3.Location = new System.Drawing.Point(284, 65);
+            this.gun3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.gun3.Name = "gun3";
-            this.gun3.Size = new System.Drawing.Size(14, 13);
+            this.gun3.Size = new System.Drawing.Size(15, 16);
             this.gun3.TabIndex = 8;
             this.gun3.Text = "X";
             this.gun3.Visible = false;
@@ -641,9 +693,10 @@
             // gun4
             // 
             this.gun4.AutoSize = true;
-            this.gun4.Location = new System.Drawing.Point(288, 53);
+            this.gun4.Location = new System.Drawing.Point(384, 65);
+            this.gun4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.gun4.Name = "gun4";
-            this.gun4.Size = new System.Drawing.Size(14, 13);
+            this.gun4.Size = new System.Drawing.Size(15, 16);
             this.gun4.TabIndex = 9;
             this.gun4.Text = "X";
             this.gun4.Visible = false;
@@ -651,9 +704,10 @@
             // gun5
             // 
             this.gun5.AutoSize = true;
-            this.gun5.Location = new System.Drawing.Point(361, 53);
+            this.gun5.Location = new System.Drawing.Point(481, 65);
+            this.gun5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.gun5.Name = "gun5";
-            this.gun5.Size = new System.Drawing.Size(14, 13);
+            this.gun5.Size = new System.Drawing.Size(15, 16);
             this.gun5.TabIndex = 8;
             this.gun5.Text = "X";
             this.gun5.Visible = false;
@@ -661,9 +715,10 @@
             // gun6
             // 
             this.gun6.AutoSize = true;
-            this.gun6.Location = new System.Drawing.Point(426, 53);
+            this.gun6.Location = new System.Drawing.Point(568, 65);
+            this.gun6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.gun6.Name = "gun6";
-            this.gun6.Size = new System.Drawing.Size(14, 13);
+            this.gun6.Size = new System.Drawing.Size(15, 16);
             this.gun6.TabIndex = 8;
             this.gun6.Text = "X";
             this.gun6.Visible = false;
@@ -671,18 +726,19 @@
             // gun7
             // 
             this.gun7.AutoSize = true;
-            this.gun7.Location = new System.Drawing.Point(510, 53);
+            this.gun7.Location = new System.Drawing.Point(680, 65);
+            this.gun7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.gun7.Name = "gun7";
-            this.gun7.Size = new System.Drawing.Size(14, 13);
+            this.gun7.Size = new System.Drawing.Size(15, 16);
             this.gun7.TabIndex = 8;
             this.gun7.Text = "X";
             this.gun7.Visible = false;
             // 
             // TakvimEkrani
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(886, 612);
+            this.ClientSize = new System.Drawing.Size(1181, 753);
             this.Controls.Add(this.gun7);
             this.Controls.Add(this.BilgilerEkrani);
             this.Controls.Add(this.gun6);
@@ -700,6 +756,8 @@
             this.Controls.Add(this.OlayEkle);
             this.Controls.Add(this.gunPaneli);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "TakvimEkrani";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Takvim";

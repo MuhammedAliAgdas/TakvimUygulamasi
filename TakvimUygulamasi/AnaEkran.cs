@@ -15,10 +15,18 @@ namespace TakvimUygulamasi
     public partial class AnaEkran : Form
     {
         public static string olayKod;
-        public static SqlConnection AnaBaglanti = new SqlConnection("Data Source=DESKTOP-HU58BL8\\SQLEXPRESS;Initial Catalog=TakvimUygulamasi; Integrated Security=TRUE");
+        public static SqlConnection AnaBaglanti = new SqlConnection("Data Source=AYKSR\\SQLEXPRESS02;Initial Catalog=TakvimUygulamasi; Integrated Security=TRUE");
+        KayitOlmaEkrani kayitEkraniac = new KayitOlmaEkrani();
+
         public AnaEkran()
         {
             InitializeComponent();
+        }
+
+        private void AnaEkran_Load(object sender, EventArgs e)
+        {
+            kayitEkraniac.MdiParent = this;
+          
         }
 
         private void GirisButonu_Click(object sender, EventArgs e)
@@ -43,26 +51,23 @@ namespace TakvimUygulamasi
             }
             if (AlarmVarMi == false) { MessageBox.Show("Bilgileriniz yanlış veya kayıt değilsiniz. kaydolun"); }
         }
-        KayitOlmaEkrani kayitEkraniac = new KayitOlmaEkrani();
+        
         private void KayıtAcmaLLB_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            this.Text = "Kayıt Ekranı";
+            this.Icon = new Icon(@"C:\Users\Ayfer\OneDrive\Belgeler\GitHub\TakvimUygulamasi\Kullanıcılar.ico");
             GirisPaneli.Visible = false;
-            kayitEkraniac.MdiParent = this;
             kayitEkraniac.FormBorderStyle = FormBorderStyle.None;
             BilgiPaneli.Controls.Add(kayitEkraniac);
             kayitEkraniac.Show();
-            this.Text = "Kayıt Ekranı";
-            this.Icon = new Icon(@"C:\Users\aliag\Documents\GitHub\TakvimUygulamasi\Kullanıcılar.ico");
         }
 
         private void GeriButonu_Click(object sender, EventArgs e)
         {
+            this.Text = "Giriş Ekranı";
+            this.Icon = new Icon(@"C:\Users\Ayfer\OneDrive\Belgeler\GitHub\TakvimUygulamasi\Takvim.ico");
             BilgiPaneli.Controls.Remove(kayitEkraniac);
             GirisPaneli.Visible = true;
-            this.Text = "Giriş Ekranı";
-            this.Icon = new Icon(@"C:\Users\aliag\Documents\GitHub\TakvimUygulamasi\Takvim.ico");
         }
-
-      
     }
 }

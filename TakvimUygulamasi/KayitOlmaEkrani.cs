@@ -48,7 +48,6 @@ namespace TakvimUygulamasi
                     SqlCommand kayitKomutu = new SqlCommand("Insert into Kullanicilar (AdminMi,Ad,Soyad,KullaniciAdi,Sifre,TcKimlikNo,TelefonNo,Email,Adres) values ('" + adminMi + "','" + AdTB.Text + "','" + SoyadTB.Text + "','" + KullaniciAdiTB.Text + "','" + SifreTB.Text + "','" + TcNoTB.Text + "','" + TelNoTB.Text + "','" + EmailTB.Text + "','" + adresRTB.Text + "')", kayitBaglanti);
                     kayitKomutu.ExecuteNonQuery();
                     MessageBox.Show("Kaydoldunuz.");
-                    kayitBaglanti.Close();
                     var nesneler = this.Controls.OfType<TextBox>();
                     foreach (var nesne in nesneler) { nesne.Text = null; }
                     TelNoTB.Text = " ";

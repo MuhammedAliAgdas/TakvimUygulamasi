@@ -61,81 +61,99 @@
             // 
             // AdTB
             // 
-            this.AdTB.Location = new System.Drawing.Point(145, 31);
+            this.AdTB.BackColor = System.Drawing.Color.Gainsboro;
+            this.AdTB.Location = new System.Drawing.Point(193, 38);
+            this.AdTB.Margin = new System.Windows.Forms.Padding(4);
             this.AdTB.MaxLength = 20;
             this.AdTB.Name = "AdTB";
-            this.AdTB.Size = new System.Drawing.Size(156, 20);
+            this.AdTB.Size = new System.Drawing.Size(207, 22);
             this.AdTB.TabIndex = 0;
             // 
             // SoyadTB
             // 
-            this.SoyadTB.Location = new System.Drawing.Point(145, 80);
+            this.SoyadTB.BackColor = System.Drawing.Color.Gainsboro;
+            this.SoyadTB.Location = new System.Drawing.Point(193, 98);
+            this.SoyadTB.Margin = new System.Windows.Forms.Padding(4);
             this.SoyadTB.MaxLength = 20;
             this.SoyadTB.Name = "SoyadTB";
-            this.SoyadTB.Size = new System.Drawing.Size(156, 20);
+            this.SoyadTB.Size = new System.Drawing.Size(207, 22);
             this.SoyadTB.TabIndex = 1;
             // 
             // KullaniciAdiTB
             // 
-            this.KullaniciAdiTB.Location = new System.Drawing.Point(145, 127);
+            this.KullaniciAdiTB.BackColor = System.Drawing.Color.Gainsboro;
+            this.KullaniciAdiTB.Location = new System.Drawing.Point(193, 156);
+            this.KullaniciAdiTB.Margin = new System.Windows.Forms.Padding(4);
             this.KullaniciAdiTB.MaxLength = 20;
             this.KullaniciAdiTB.Name = "KullaniciAdiTB";
-            this.KullaniciAdiTB.Size = new System.Drawing.Size(156, 20);
+            this.KullaniciAdiTB.Size = new System.Drawing.Size(207, 22);
             this.KullaniciAdiTB.TabIndex = 2;
             this.KullaniciAdiTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KullaniciAdiTB_KeyPress);
             // 
             // SifreTB
             // 
-            this.SifreTB.Location = new System.Drawing.Point(145, 174);
+            this.SifreTB.BackColor = System.Drawing.Color.Gainsboro;
+            this.SifreTB.Location = new System.Drawing.Point(193, 214);
+            this.SifreTB.Margin = new System.Windows.Forms.Padding(4);
             this.SifreTB.MaxLength = 20;
             this.SifreTB.Name = "SifreTB";
-            this.SifreTB.Size = new System.Drawing.Size(156, 20);
+            this.SifreTB.Size = new System.Drawing.Size(207, 22);
             this.SifreTB.TabIndex = 3;
             this.SifreTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SifreTB_KeyPress);
             // 
             // TcNoTB
             // 
-            this.TcNoTB.Location = new System.Drawing.Point(145, 225);
+            this.TcNoTB.BackColor = System.Drawing.Color.Gainsboro;
+            this.TcNoTB.Location = new System.Drawing.Point(193, 277);
+            this.TcNoTB.Margin = new System.Windows.Forms.Padding(4);
             this.TcNoTB.MaxLength = 11;
             this.TcNoTB.Name = "TcNoTB";
-            this.TcNoTB.Size = new System.Drawing.Size(156, 20);
+            this.TcNoTB.Size = new System.Drawing.Size(207, 22);
             this.TcNoTB.TabIndex = 4;
             this.TcNoTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TcNoTB_KeyPress);
             // 
             // TelNoTB
             // 
-            this.TelNoTB.Location = new System.Drawing.Point(145, 277);
+            this.TelNoTB.BackColor = System.Drawing.Color.Gainsboro;
+            this.TelNoTB.Location = new System.Drawing.Point(193, 341);
+            this.TelNoTB.Margin = new System.Windows.Forms.Padding(4);
             this.TelNoTB.Mask = "0 000 000 00 00";
             this.TelNoTB.Name = "TelNoTB";
             this.TelNoTB.PromptChar = ' ';
-            this.TelNoTB.Size = new System.Drawing.Size(156, 20);
+            this.TelNoTB.Size = new System.Drawing.Size(207, 22);
             this.TelNoTB.TabIndex = 5;
             this.TelNoTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelNoTB_KeyPress);
             // 
             // EmailTB
             // 
-            this.EmailTB.Location = new System.Drawing.Point(145, 325);
+            this.EmailTB.BackColor = System.Drawing.Color.Gainsboro;
+            this.EmailTB.Location = new System.Drawing.Point(193, 400);
+            this.EmailTB.Margin = new System.Windows.Forms.Padding(4);
             this.EmailTB.MaxLength = 30;
             this.EmailTB.Name = "EmailTB";
-            this.EmailTB.Size = new System.Drawing.Size(156, 20);
+            this.EmailTB.Size = new System.Drawing.Size(207, 22);
             this.EmailTB.TabIndex = 6;
             this.EmailTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmailTB_KeyPress);
             // 
             // adresRTB
             // 
-            this.adresRTB.Location = new System.Drawing.Point(389, 31);
+            this.adresRTB.BackColor = System.Drawing.Color.Gainsboro;
+            this.adresRTB.Location = new System.Drawing.Point(535, 36);
+            this.adresRTB.Margin = new System.Windows.Forms.Padding(4);
             this.adresRTB.MaxLength = 250;
             this.adresRTB.Name = "adresRTB";
-            this.adresRTB.Size = new System.Drawing.Size(227, 116);
+            this.adresRTB.Size = new System.Drawing.Size(301, 142);
             this.adresRTB.TabIndex = 7;
             this.adresRTB.Text = "";
             // 
             // adminSifreTB
             // 
-            this.adminSifreTB.Location = new System.Drawing.Point(419, 174);
+            this.adminSifreTB.BackColor = System.Drawing.Color.Gainsboro;
+            this.adminSifreTB.Location = new System.Drawing.Point(599, 214);
+            this.adminSifreTB.Margin = new System.Windows.Forms.Padding(4);
             this.adminSifreTB.MaxLength = 50;
             this.adminSifreTB.Name = "adminSifreTB";
-            this.adminSifreTB.Size = new System.Drawing.Size(197, 20);
+            this.adminSifreTB.Size = new System.Drawing.Size(237, 22);
             this.adminSifreTB.TabIndex = 8;
             this.adminSifreTB.UseSystemPasswordChar = true;
             this.adminSifreTB.TextChanged += new System.EventHandler(this.adminSifreTB_TextChanged);
@@ -143,113 +161,158 @@
             // adminMisinCB
             // 
             this.adminMisinCB.AutoSize = true;
+            this.adminMisinCB.BackColor = System.Drawing.Color.Transparent;
             this.adminMisinCB.Enabled = false;
-            this.adminMisinCB.Location = new System.Drawing.Point(419, 224);
+            this.adminMisinCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.adminMisinCB.ForeColor = System.Drawing.Color.Khaki;
+            this.adminMisinCB.Location = new System.Drawing.Point(583, 273);
+            this.adminMisinCB.Margin = new System.Windows.Forms.Padding(4);
             this.adminMisinCB.Name = "adminMisinCB";
-            this.adminMisinCB.Size = new System.Drawing.Size(88, 17);
+            this.adminMisinCB.Size = new System.Drawing.Size(144, 24);
             this.adminMisinCB.TabIndex = 9;
             this.adminMisinCB.Text = "Admin Misin?";
-            this.adminMisinCB.UseVisualStyleBackColor = true;
+            this.adminMisinCB.UseVisualStyleBackColor = false;
             // 
             // adLB
             // 
             this.adLB.AutoSize = true;
-            this.adLB.Location = new System.Drawing.Point(116, 34);
+            this.adLB.BackColor = System.Drawing.Color.Transparent;
+            this.adLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.adLB.ForeColor = System.Drawing.Color.Khaki;
+            this.adLB.Location = new System.Drawing.Point(132, 38);
+            this.adLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.adLB.Name = "adLB";
-            this.adLB.Size = new System.Drawing.Size(23, 13);
+            this.adLB.Size = new System.Drawing.Size(37, 20);
             this.adLB.TabIndex = 10;
             this.adLB.Text = "Ad:";
             // 
             // soyadLB
             // 
             this.soyadLB.AutoSize = true;
-            this.soyadLB.Location = new System.Drawing.Point(99, 83);
+            this.soyadLB.BackColor = System.Drawing.Color.Transparent;
+            this.soyadLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.soyadLB.ForeColor = System.Drawing.Color.Khaki;
+            this.soyadLB.Location = new System.Drawing.Point(103, 98);
+            this.soyadLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.soyadLB.Name = "soyadLB";
-            this.soyadLB.Size = new System.Drawing.Size(40, 13);
+            this.soyadLB.Size = new System.Drawing.Size(66, 20);
             this.soyadLB.TabIndex = 11;
             this.soyadLB.Text = "Soyad:";
             // 
             // kullaniciAdiLB
             // 
             this.kullaniciAdiLB.AutoSize = true;
-            this.kullaniciAdiLB.Location = new System.Drawing.Point(76, 130);
+            this.kullaniciAdiLB.BackColor = System.Drawing.Color.Transparent;
+            this.kullaniciAdiLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.kullaniciAdiLB.ForeColor = System.Drawing.Color.Khaki;
+            this.kullaniciAdiLB.Location = new System.Drawing.Point(49, 158);
+            this.kullaniciAdiLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.kullaniciAdiLB.Name = "kullaniciAdiLB";
-            this.kullaniciAdiLB.Size = new System.Drawing.Size(67, 13);
+            this.kullaniciAdiLB.Size = new System.Drawing.Size(120, 20);
             this.kullaniciAdiLB.TabIndex = 12;
             this.kullaniciAdiLB.Text = "Kullanıcı Adı:";
             // 
             // sifreLB
             // 
             this.sifreLB.AutoSize = true;
-            this.sifreLB.Location = new System.Drawing.Point(108, 177);
+            this.sifreLB.BackColor = System.Drawing.Color.Transparent;
+            this.sifreLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.sifreLB.ForeColor = System.Drawing.Color.Khaki;
+            this.sifreLB.Location = new System.Drawing.Point(114, 216);
+            this.sifreLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.sifreLB.Name = "sifreLB";
-            this.sifreLB.Size = new System.Drawing.Size(31, 13);
+            this.sifreLB.Size = new System.Drawing.Size(55, 20);
             this.sifreLB.TabIndex = 13;
             this.sifreLB.Text = "Şifre:";
             // 
             // TcNoLB
             // 
             this.TcNoLB.AutoSize = true;
-            this.TcNoLB.Location = new System.Drawing.Point(72, 228);
+            this.TcNoLB.BackColor = System.Drawing.Color.Transparent;
+            this.TcNoLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TcNoLB.ForeColor = System.Drawing.Color.Khaki;
+            this.TcNoLB.Location = new System.Drawing.Point(53, 274);
+            this.TcNoLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TcNoLB.Name = "TcNoLB";
-            this.TcNoLB.Size = new System.Drawing.Size(67, 13);
+            this.TcNoLB.Size = new System.Drawing.Size(116, 20);
             this.TcNoLB.TabIndex = 14;
             this.TcNoLB.Text = "Tc kimlik no:";
             // 
             // telNoLB
             // 
             this.telNoLB.AutoSize = true;
-            this.telNoLB.Location = new System.Drawing.Point(76, 280);
+            this.telNoLB.BackColor = System.Drawing.Color.Transparent;
+            this.telNoLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.telNoLB.ForeColor = System.Drawing.Color.Khaki;
+            this.telNoLB.Location = new System.Drawing.Point(63, 341);
+            this.telNoLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.telNoLB.Name = "telNoLB";
-            this.telNoLB.Size = new System.Drawing.Size(63, 13);
+            this.telNoLB.Size = new System.Drawing.Size(106, 20);
             this.telNoLB.TabIndex = 15;
             this.telNoLB.Text = "Telefon No:";
             // 
             // emailLB
             // 
             this.emailLB.AutoSize = true;
-            this.emailLB.Location = new System.Drawing.Point(104, 328);
+            this.emailLB.BackColor = System.Drawing.Color.Transparent;
+            this.emailLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.emailLB.ForeColor = System.Drawing.Color.Khaki;
+            this.emailLB.Location = new System.Drawing.Point(107, 400);
+            this.emailLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.emailLB.Name = "emailLB";
-            this.emailLB.Size = new System.Drawing.Size(35, 13);
+            this.emailLB.Size = new System.Drawing.Size(62, 20);
             this.emailLB.TabIndex = 16;
             this.emailLB.Text = "Email:";
             // 
             // AdresLB
             // 
             this.AdresLB.AutoSize = true;
-            this.AdresLB.Location = new System.Drawing.Point(343, 34);
+            this.AdresLB.BackColor = System.Drawing.Color.Transparent;
+            this.AdresLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.AdresLB.ForeColor = System.Drawing.Color.Khaki;
+            this.AdresLB.Location = new System.Drawing.Point(447, 38);
+            this.AdresLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AdresLB.Name = "AdresLB";
-            this.AdresLB.Size = new System.Drawing.Size(40, 13);
+            this.AdresLB.Size = new System.Drawing.Size(70, 20);
             this.AdresLB.TabIndex = 17;
             this.AdresLB.Text = "Adres: ";
             // 
             // adminSifreLB
             // 
             this.adminSifreLB.AutoSize = true;
-            this.adminSifreLB.Location = new System.Drawing.Point(343, 177);
+            this.adminSifreLB.BackColor = System.Drawing.Color.Transparent;
+            this.adminSifreLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.adminSifreLB.ForeColor = System.Drawing.Color.Khaki;
+            this.adminSifreLB.Location = new System.Drawing.Point(447, 214);
+            this.adminSifreLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.adminSifreLB.Name = "adminSifreLB";
-            this.adminSifreLB.Size = new System.Drawing.Size(70, 13);
+            this.adminSifreLB.Size = new System.Drawing.Size(128, 20);
             this.adminSifreLB.TabIndex = 18;
             this.adminSifreLB.Text = "Admin Şifresi:";
             // 
             // KaydolButonu
             // 
-            this.KaydolButonu.Location = new System.Drawing.Point(419, 276);
+            this.KaydolButonu.BackColor = System.Drawing.Color.Chocolate;
+            this.KaydolButonu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.KaydolButonu.Location = new System.Drawing.Point(583, 327);
+            this.KaydolButonu.Margin = new System.Windows.Forms.Padding(4);
             this.KaydolButonu.Name = "KaydolButonu";
-            this.KaydolButonu.Size = new System.Drawing.Size(150, 65);
+            this.KaydolButonu.Size = new System.Drawing.Size(200, 80);
             this.KaydolButonu.TabIndex = 10;
             this.KaydolButonu.Text = "Kaydol";
-            this.KaydolButonu.UseVisualStyleBackColor = true;
+            this.KaydolButonu.UseVisualStyleBackColor = false;
             this.KaydolButonu.Click += new System.EventHandler(this.KaydolButonu_Click);
             // 
             // adHataLB
             // 
             this.adHataLB.AutoSize = true;
-            this.adHataLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.adHataLB.ForeColor = System.Drawing.Color.Brown;
-            this.adHataLB.Location = new System.Drawing.Point(307, 31);
+            this.adHataLB.BackColor = System.Drawing.Color.Transparent;
+            this.adHataLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.adHataLB.ForeColor = System.Drawing.Color.Red;
+            this.adHataLB.Location = new System.Drawing.Point(409, 38);
+            this.adHataLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.adHataLB.Name = "adHataLB";
-            this.adHataLB.Size = new System.Drawing.Size(25, 31);
+            this.adHataLB.Size = new System.Drawing.Size(37, 48);
             this.adHataLB.TabIndex = 20;
             this.adHataLB.Text = "*";
             this.adHataLB.Visible = false;
@@ -257,11 +320,13 @@
             // sifreHataLB
             // 
             this.sifreHataLB.AutoSize = true;
-            this.sifreHataLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.sifreHataLB.ForeColor = System.Drawing.Color.Brown;
-            this.sifreHataLB.Location = new System.Drawing.Point(307, 174);
+            this.sifreHataLB.BackColor = System.Drawing.Color.Transparent;
+            this.sifreHataLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.sifreHataLB.ForeColor = System.Drawing.Color.Red;
+            this.sifreHataLB.Location = new System.Drawing.Point(409, 214);
+            this.sifreHataLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.sifreHataLB.Name = "sifreHataLB";
-            this.sifreHataLB.Size = new System.Drawing.Size(25, 31);
+            this.sifreHataLB.Size = new System.Drawing.Size(37, 48);
             this.sifreHataLB.TabIndex = 21;
             this.sifreHataLB.Text = "*";
             this.sifreHataLB.Visible = false;
@@ -269,11 +334,13 @@
             // kullaniciadiHataLB
             // 
             this.kullaniciadiHataLB.AutoSize = true;
-            this.kullaniciadiHataLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.kullaniciadiHataLB.ForeColor = System.Drawing.Color.Brown;
-            this.kullaniciadiHataLB.Location = new System.Drawing.Point(307, 127);
+            this.kullaniciadiHataLB.BackColor = System.Drawing.Color.Transparent;
+            this.kullaniciadiHataLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.kullaniciadiHataLB.ForeColor = System.Drawing.Color.Red;
+            this.kullaniciadiHataLB.Location = new System.Drawing.Point(409, 156);
+            this.kullaniciadiHataLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.kullaniciadiHataLB.Name = "kullaniciadiHataLB";
-            this.kullaniciadiHataLB.Size = new System.Drawing.Size(25, 31);
+            this.kullaniciadiHataLB.Size = new System.Drawing.Size(37, 48);
             this.kullaniciadiHataLB.TabIndex = 22;
             this.kullaniciadiHataLB.Text = "*";
             this.kullaniciadiHataLB.Visible = false;
@@ -281,11 +348,13 @@
             // soyadHataLB
             // 
             this.soyadHataLB.AutoSize = true;
-            this.soyadHataLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.soyadHataLB.ForeColor = System.Drawing.Color.Brown;
-            this.soyadHataLB.Location = new System.Drawing.Point(307, 83);
+            this.soyadHataLB.BackColor = System.Drawing.Color.Transparent;
+            this.soyadHataLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.soyadHataLB.ForeColor = System.Drawing.Color.Red;
+            this.soyadHataLB.Location = new System.Drawing.Point(409, 102);
+            this.soyadHataLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.soyadHataLB.Name = "soyadHataLB";
-            this.soyadHataLB.Size = new System.Drawing.Size(25, 31);
+            this.soyadHataLB.Size = new System.Drawing.Size(37, 48);
             this.soyadHataLB.TabIndex = 23;
             this.soyadHataLB.Text = "*";
             this.soyadHataLB.Visible = false;
@@ -293,11 +362,13 @@
             // tcnoHataLB
             // 
             this.tcnoHataLB.AutoSize = true;
-            this.tcnoHataLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tcnoHataLB.ForeColor = System.Drawing.Color.Brown;
-            this.tcnoHataLB.Location = new System.Drawing.Point(307, 225);
+            this.tcnoHataLB.BackColor = System.Drawing.Color.Transparent;
+            this.tcnoHataLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tcnoHataLB.ForeColor = System.Drawing.Color.Red;
+            this.tcnoHataLB.Location = new System.Drawing.Point(408, 277);
+            this.tcnoHataLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tcnoHataLB.Name = "tcnoHataLB";
-            this.tcnoHataLB.Size = new System.Drawing.Size(25, 31);
+            this.tcnoHataLB.Size = new System.Drawing.Size(37, 48);
             this.tcnoHataLB.TabIndex = 24;
             this.tcnoHataLB.Text = "*";
             this.tcnoHataLB.Visible = false;
@@ -305,11 +376,13 @@
             // telnoHataLB
             // 
             this.telnoHataLB.AutoSize = true;
-            this.telnoHataLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.telnoHataLB.ForeColor = System.Drawing.Color.Brown;
-            this.telnoHataLB.Location = new System.Drawing.Point(307, 277);
+            this.telnoHataLB.BackColor = System.Drawing.Color.Transparent;
+            this.telnoHataLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.telnoHataLB.ForeColor = System.Drawing.Color.Red;
+            this.telnoHataLB.Location = new System.Drawing.Point(408, 341);
+            this.telnoHataLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.telnoHataLB.Name = "telnoHataLB";
-            this.telnoHataLB.Size = new System.Drawing.Size(25, 31);
+            this.telnoHataLB.Size = new System.Drawing.Size(37, 48);
             this.telnoHataLB.TabIndex = 25;
             this.telnoHataLB.Text = "*";
             this.telnoHataLB.Visible = false;
@@ -317,11 +390,13 @@
             // emailHataLB
             // 
             this.emailHataLB.AutoSize = true;
-            this.emailHataLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.emailHataLB.ForeColor = System.Drawing.Color.Brown;
-            this.emailHataLB.Location = new System.Drawing.Point(307, 325);
+            this.emailHataLB.BackColor = System.Drawing.Color.Transparent;
+            this.emailHataLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.emailHataLB.ForeColor = System.Drawing.Color.Red;
+            this.emailHataLB.Location = new System.Drawing.Point(409, 400);
+            this.emailHataLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.emailHataLB.Name = "emailHataLB";
-            this.emailHataLB.Size = new System.Drawing.Size(25, 31);
+            this.emailHataLB.Size = new System.Drawing.Size(37, 48);
             this.emailHataLB.TabIndex = 26;
             this.emailHataLB.Text = "*";
             this.emailHataLB.Visible = false;
@@ -329,20 +404,23 @@
             // adresHataLB
             // 
             this.adresHataLB.AutoSize = true;
-            this.adresHataLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.adresHataLB.ForeColor = System.Drawing.Color.Brown;
-            this.adresHataLB.Location = new System.Drawing.Point(622, 31);
+            this.adresHataLB.BackColor = System.Drawing.Color.Transparent;
+            this.adresHataLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.adresHataLB.ForeColor = System.Drawing.Color.Red;
+            this.adresHataLB.Location = new System.Drawing.Point(841, 38);
+            this.adresHataLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.adresHataLB.Name = "adresHataLB";
-            this.adresHataLB.Size = new System.Drawing.Size(25, 31);
+            this.adresHataLB.Size = new System.Drawing.Size(37, 48);
             this.adresHataLB.TabIndex = 27;
             this.adresHataLB.Text = "*";
             this.adresHataLB.Visible = false;
             // 
             // KayitOlmaEkrani
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 426);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(879, 490);
             this.Controls.Add(this.adresHataLB);
             this.Controls.Add(this.emailHataLB);
             this.Controls.Add(this.telnoHataLB);
@@ -372,6 +450,7 @@
             this.Controls.Add(this.SoyadTB);
             this.Controls.Add(this.AdTB);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "KayitOlmaEkrani";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kayıt Ol";

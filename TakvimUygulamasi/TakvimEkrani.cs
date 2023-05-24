@@ -40,7 +40,7 @@ namespace TakvimUygulamasi
         {
             if (alarmAc)
             {
-                SoundPlayer alarm = new SoundPlayer(@"C:\Users\aliag\Documents\GitHub\TakvimUygulamasi\AlarmSes.wav"); alarm.PlayLooping();
+                SoundPlayer alarm = new SoundPlayer(@"C:\Users\Ayfer\OneDrive\Belgeler\GitHub\TakvimUygulamasi\AlarmSes.wav"); alarm.PlayLooping();
                 DialogResult kullaniciCevabi = MessageBox.Show("Bugüne tanımlanan olaylar var!!!","UYARI!!!");
                 if(kullaniciCevabi == DialogResult.OK) { alarm.Stop(); }
             }
