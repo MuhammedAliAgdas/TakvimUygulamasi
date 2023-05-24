@@ -15,7 +15,7 @@ namespace TakvimUygulamasi
     public partial class AnaEkran : Form
     {
         public static string olayKod;
-        public static SqlConnection AnaBaglanti = new SqlConnection("Data Source=AYKSR\\SQLEXPRESS02;Initial Catalog=TakvimUygulamasi; Integrated Security=TRUE");
+        public static SqlConnection AnaBaglanti = new SqlConnection("Data Source=DESKTOP-HU58BL8\\SQLEXPRESS;Initial Catalog=TakvimUygulamasi; Integrated Security=TRUE");
         KayitOlmaEkrani kayitEkraniac = new KayitOlmaEkrani();
 
         public AnaEkran()
