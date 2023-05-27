@@ -20,7 +20,6 @@ namespace TakvimUygulamasi
             InitializeComponent();
         }
 
-
         private void adminSifreTB_TextChanged(object sender, EventArgs e)
         {
             if(adminSifreTB.Text == "çok gizli şifre")
@@ -47,14 +46,14 @@ namespace TakvimUygulamasi
                     kayitBaglanti.Open();
                     SqlCommand kayitKomutu = new SqlCommand("Insert into Kullanicilar (AdminMi,Ad,Soyad,KullaniciAdi,Sifre,TcKimlikNo,TelefonNo,Email,Adres) values ('" + adminMi + "','" + AdTB.Text + "','" + SoyadTB.Text + "','" + KullaniciAdiTB.Text + "','" + SifreTB.Text + "','" + TcNoTB.Text + "','" + TelNoTB.Text + "','" + EmailTB.Text + "','" + adresRTB.Text + "')", kayitBaglanti);
                     kayitKomutu.ExecuteNonQuery();
-                    MessageBox.Show("Kaydoldunuz.");
+                    MessageBox.Show("Kaydoldunuz.","Tebrikler!");
                     var nesneler = this.Controls.OfType<TextBox>();
                     foreach (var nesne in nesneler) { nesne.Text = null; }
                     TelNoTB.Text = " ";
                     adresRTB.Text = " ";
 
                 }
-                catch (System.Data.SqlClient.SqlException) { MessageBox.Show("Girdiğiniz bilgiler veri tabanında soruna yol açtı. Bazı bilgileri değiştirmeyi deneyin."); }
+                catch (System.Data.SqlClient.SqlException) { MessageBox.Show("Girdiğiniz bilgiler veri tabanında soruna yol açtı. Bazı bilgileri değiştirmeyi deneyin.","Uyarı!!!"); }
                 finally { kayitBaglanti.Close(); }
             }
         }
@@ -111,24 +110,35 @@ namespace TakvimUygulamasi
         }
         private bool hatalıDurumlar(bool hataliMi)
         {
-            if (AdTB.Text.Length < 2) { yildizlariYokEt(); adHataLB.Visible = true; MessageBox.Show("Ad 2 karakterden az olamaz"); hataliMi = true; }
+            if (AdTB.Text.Length < 2) { yildizlariYokEt(); yildiz1.Visible = true; MessageBox.Show("Ad 2 karakterden az olamaz", "Uyarı!"); hataliMi = true; }
 
-            else if (SoyadTB.Text.Length < 2) { yildizlariYokEt(); soyadHataLB.Visible = true; MessageBox.Show("Soyad 2 karakterden az olamaz"); hataliMi = true; }
+            else if (SoyadTB.Text.Length < 2) { yildizlariYokEt(); yildiz2.Visible = true; MessageBox.Show("Soyad 2 karakterden az olamaz", "Uyarı!"); hataliMi = true; }
 
-            else if (KullaniciAdiTB.Text.Length < 8) { yildizlariYokEt(); kullaniciadiHataLB.Visible = true; MessageBox.Show("Kullanıcı adı 8 karakterden az olamaz"); hataliMi = true; }
+            else if (KullaniciAdiTB.Text.Length < 8) { yildizlariYokEt(); yildiz3.Visible = true; MessageBox.Show("Kullanıcı adı 8 karakterden az olamaz", "Uyarı!"); hataliMi = true; }
 
-            else if (SifreTB.Text.Length < 8) { yildizlariYokEt(); sifreHataLB.Visible = true; MessageBox.Show("Şifre 8 karakterden az olamaz"); hataliMi = true; }
+            else if (SifreTB.Text.Length < 8) { yildizlariYokEt(); yildiz4.Visible = true; MessageBox.Show("Şifre 8 karakterden az olamaz", "Uyarı!"); hataliMi = true; }
 
-            else if (TcNoTB.Text.Length < 11) { yildizlariYokEt(); tcnoHataLB.Visible = true; MessageBox.Show("Yanlış Tc no girişi"); hataliMi = true; }
+            else if (TcNoTB.Text.Length < 11) { yildizlariYokEt(); yildiz5.Visible = true; MessageBox.Show("Yanlış Tc no girişi", "Uyarı!"); hataliMi = true; }
 
-            else if (TelNoTB.Text.Length < 15) { yildizlariYokEt(); telnoHataLB.Visible = true; MessageBox.Show("Yanlış tel no girişi"); hataliMi = true; }
+            else if (TelNoTB.Text.Length < 15) { yildizlariYokEt(); yildiz6.Visible = true; MessageBox.Show("Yanlış tel no girişi", "Uyarı!"); hataliMi = true; }
 
-            else if (Email_Format_Kontrol(EmailTB.Text)) { yildizlariYokEt(); emailHataLB.Visible = true; MessageBox.Show("Yanlış Email formatı"); hataliMi = true; }
+            else if (Email_Format_Kontrol(EmailTB.Text)) { yildizlariYokEt(); yildiz7.Visible = true; MessageBox.Show("Yanlış Email formatı", "Uyarı!"); hataliMi = true; }
 
-            else if (adresRTB.Text.Length < 10) { yildizlariYokEt(); adresHataLB.Visible = true; MessageBox.Show("Adres çok kısa"); hataliMi = true; }
+            else if (adresRTB.Text.Length < 10) { yildizlariYokEt(); yildiz8.Visible = true; MessageBox.Show("Adres çok kısa","Uyarı!"); hataliMi = true; }
 
             else { yildizlariYokEt(); hataliMi = false; }
             return hataliMi;
+        }
+
+        private void KayitOlmaEkrani_Load(object sender, EventArgs e)
+        {
+            for (int i = 1; i <= 8; i++) { this.Controls["yildiz" + i.ToString()].Parent = ArkaPlan; }
+            foreach (var item in this.Controls.OfType<Label>()){item.Parent = ArkaPlan;}
+            soyadLB.Parent = ArkaPlan;
+            sifreLB.Parent = ArkaPlan;
+            telNoLB.Parent = ArkaPlan;
+            AdresLB.Parent = ArkaPlan;
+            adminMisinCB.Parent = ArkaPlan;
         }
     }
 }

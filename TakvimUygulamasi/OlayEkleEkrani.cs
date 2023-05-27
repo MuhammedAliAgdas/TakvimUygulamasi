@@ -23,6 +23,12 @@ namespace TakvimUygulamasi
             tarihSec.MinDate = DateTime.Now;
             saatSecme(0);
             DkSecme(0);
+            for (int i = 1; i <= 3; i++) { this.Controls["yildiz" + i.ToString()].Parent = ArkaPlan; }
+            foreach (var item in this.Controls.OfType<Label>()){ item.Parent = ArkaPlan;}
+            baslangicSaatiLB.Parent = ArkaPlan;
+            bitisSaatiLB.Parent = ArkaPlan;
+            olayTanimiLB.Parent = ArkaPlan;
+            alarmEkleCB.Parent = ArkaPlan;
         }
 
         private string tarihBilgisi()
@@ -54,7 +60,7 @@ namespace TakvimUygulamasi
                     olayEkleBaglanti.Close();
                     this.Dispose();
                 }
-                catch (System.Data.SqlClient.SqlException) { MessageBox.Show("Veri tabanıyla ilgili bir sorun oluştu"); }
+                catch (System.Data.SqlClient.SqlException) { MessageBox.Show("Veri tabanıyla ilgili bir sorun oluştu. Tekrar deneyin.","Uyarı!!!"); }
                 finally { olayEkleBaglanti.Close(); }
             }
     
@@ -125,12 +131,14 @@ namespace TakvimUygulamasi
         private bool girisHatalari()
         {
             bool hata = true;
-            if (baslangicSaatCB.SelectedItem == null||baslangicDkCB.SelectedItem==null|| bitisSaatCB.SelectedItem==null||bitisDkCB.SelectedItem==null) { hata = false; bosSaatHatasi.Visible = true; MessageBox.Show("Saat bilgileri boş olamaz."); }
-            else if (olayTanimiTB.Text.Length ==0) {hata = false; bosSaatHatasi.Visible = false; bosTanimHatasi.Visible = true; MessageBox.Show("Olay tanımı boş olamaz."); }
-            else if(olayAciklamasıRTB.Text.Length == 0) { hata = false; bosSaatHatasi.Visible=false; bosTanimHatasi.Visible = false; bosAciklamaHatasi.Visible = true; MessageBox.Show("Olay açıklaması boş olamaz."); }
-            else { hata = true; bosAciklamaHatasi.Visible = false; }
+            if (baslangicSaatCB.SelectedItem == null||baslangicDkCB.SelectedItem==null|| bitisSaatCB.SelectedItem==null||bitisDkCB.SelectedItem==null) { hata = false; yildiz1.Visible = true; MessageBox.Show("Saat bilgileri boş olamaz."); }
+            else if (olayTanimiTB.Text.Length ==0) {hata = false; yildiz1.Visible = false; yildiz2.Visible = true; MessageBox.Show("Olay tanımı boş olamaz.", "Uyarı!"); }
+            else if(olayAciklamasıRTB.Text.Length == 0) { hata = false; yildiz1.Visible=false; yildiz2.Visible = false; yildiz3.Visible = true; MessageBox.Show("Olay açıklaması boş olamaz.", "Uyarı!"); }
+            else { hata = true; yildiz3.Visible = false; }
 
             return hata;
         }
+
+ 
     }
 }

@@ -21,12 +21,7 @@ namespace TakvimUygulamasi
         public AnaEkran()
         {
             InitializeComponent();
-        }
-
-        private void AnaEkran_Load(object sender, EventArgs e)
-        {
             kayitEkraniac.MdiParent = this;
-          
         }
 
         private void GirisButonu_Click(object sender, EventArgs e)
@@ -45,17 +40,21 @@ namespace TakvimUygulamasi
                 olayKod = SifreTB.Text;
                 KullaniciAdiTB.Text = null;
                 SifreTB.Text = null;
+                AnaEkran.ActiveForm.Hide();
                 TakvimEkrani takvimekrani = new TakvimEkrani();
                 takvimekrani.ShowDialog();
+                this.Show();
                 
             }
-            if (AlarmVarMi == false) { MessageBox.Show("Bilgileriniz yanlış veya kayıt değilsiniz. kaydolun"); }
+            if (AlarmVarMi == false) { MessageBox.Show("Bilgileriniz yanlış veya kayıt değilsiniz. Kayıt Ol seçeneğinden kaydolabilirsiniz.","Uyarı!!!"); }
         }
         
         private void KayıtAcmaLLB_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Text = "Kayıt Ekranı";
-            this.Icon = new Icon(@"C:\Users\Ayfer\OneDrive\Belgeler\GitHub\TakvimUygulamasi\Kullanıcılar.ico");
+            this.Icon = new Icon(@"C:\Users\aliag\Documents\GitHub\TakvimUygulamasi\Kullanıcılar.ico");
+            KullaniciAdiTB.Text = null;
+            SifreTB.Text = null;
             GirisPaneli.Visible = false;
             kayitEkraniac.FormBorderStyle = FormBorderStyle.None;
             BilgiPaneli.Controls.Add(kayitEkraniac);
@@ -65,7 +64,7 @@ namespace TakvimUygulamasi
         private void GeriButonu_Click(object sender, EventArgs e)
         {
             this.Text = "Giriş Ekranı";
-            this.Icon = new Icon(@"C:\Users\Ayfer\OneDrive\Belgeler\GitHub\TakvimUygulamasi\Takvim.ico");
+            this.Icon = new Icon(@"C:\Users\aliag\Documents\GitHub\TakvimUygulamasi\Takvim.ico");
             BilgiPaneli.Controls.Remove(kayitEkraniac);
             GirisPaneli.Visible = true;
         }

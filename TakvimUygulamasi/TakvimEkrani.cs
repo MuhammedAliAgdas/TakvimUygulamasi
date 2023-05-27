@@ -15,51 +15,62 @@ namespace TakvimUygulamasi
 {
     public partial class TakvimEkrani : Form
     {
-        SqlConnection olayGrountuleBaglanti = AnaEkran.AnaBaglanti;
+        SqlConnection olayGoruntuleBaglanti = AnaEkran.AnaBaglanti;
         public TakvimEkrani()
         {
             InitializeComponent();
         }
-
         bool alarmAc = false;
         private void TakvimEkrani_Load(object sender, EventArgs e)
         {
             yılCB.SelectedIndex = 0;
             foreach (var aylar in ayPaneli.Controls.OfType<Button>()) { aylar.Click += new EventHandler(this.ayButonlarinaTiklama); }
-            olayGrountuleBaglanti.Open();
-            SqlCommand alarmBulKomutu = new SqlCommand("Select OlayTarihi,AlarmVarMi from Olaylar Where OlayKod = '" + AnaEkran.olayKod + "'", olayGrountuleBaglanti);
-            SqlDataReader alarmBul = alarmBulKomutu.ExecuteReader();
-            while (alarmBul.Read())
+            try
             {
-                if (tarihler(DateTime.Now.ToString())[3] == alarmBul["OlayTarihi"].ToString().TrimEnd() && Convert.ToBoolean(alarmBul["AlarmVarMi"].ToString().TrimEnd()) == true) { alarmAc = true; }
+                olayGoruntuleBaglanti.Open();
+                SqlCommand alarmBulKomutu = new SqlCommand("Select OlayTarihi,AlarmVarMi from Olaylar Where OlayKod = '" + AnaEkran.olayKod + "'", olayGoruntuleBaglanti);
+                SqlDataReader alarmBul = alarmBulKomutu.ExecuteReader();
+                while (alarmBul.Read())
+                {
+                    if (tarihler(DateTime.Now.ToString())[3] == alarmBul["OlayTarihi"].ToString().TrimEnd() && Convert.ToBoolean(alarmBul["AlarmVarMi"].ToString().TrimEnd()) == true) { alarmAc = true; }
+                }
             }
-            olayGrountuleBaglanti.Close();
+            catch (System.Data.SqlClient.SqlException) { MessageBox.Show("Veri tabanıyla ilgili bir sorun oluştu. Tekrar deneyin.", "Uyarı!!!"); }
+            finally { olayGoruntuleBaglanti.Close(); }
+            
+            for (int i = 1; i <= 7; i++) { this.Controls["gun" + i.ToString()].Parent = ArkaPlan; }
+            YilLB.Parent = ArkaPlan;
+            OlayTanimlariLB.Parent = ArkaPlan;
+            panelDegistirBT.Parent = ArkaPlan;
         }
 
         private void TakvimEkrani_Shown(object sender, EventArgs e)
-        {
+        {          
             if (alarmAc)
             {
-                SoundPlayer alarm = new SoundPlayer(@"C:\Users\Ayfer\OneDrive\Belgeler\GitHub\TakvimUygulamasi\AlarmSes.wav"); alarm.PlayLooping();
+                SoundPlayer alarm = new SoundPlayer(@"C:\Users\aliag\Documents\GitHub\TakvimUygulamasi\AlarmSes.wav"); alarm.PlayLooping();
                 DialogResult kullaniciCevabi = MessageBox.Show("Bugüne tanımlanan olaylar var!!!","UYARI!!!");
                 if(kullaniciCevabi == DialogResult.OK) { alarm.Stop(); }
             }
+            
         }
         string secilenGun, secilenAy;
         private void ayButonlarinaTiklama(object sender, EventArgs e)
         {
             Button tiklananAy= (Button)sender;
             gunOlusturma(Convert.ToInt32(tiklananAy.Tag));
-            ayIsmi.Text = tiklananAy.Text +" "+yılCB.Text;
-            ayIsmi.Visible = true;
+            ayIsmiLB.Text = tiklananAy.Text +"  "+yılCB.Text;
+            ayIsmiLB.Parent = ArkaPlan;
+            ayIsmiLB.Visible = true;
             ayPaneli.Visible = false;
+            gunPaneli.Parent = ArkaPlan;
             gunPaneli.Visible = true;
             panelDegistirBT.Visible = true;
             secilenAy = tiklananAy.Tag.ToString();
             for (int i = 1; i <= 7; i++)
             {
-                this.Controls["gun"+i.ToString()].Text = CultureInfo.GetCultureInfo("tr-TR").DateTimeFormat.DayNames[(int)DateTime.Parse(yılCB.Text + "-" + tiklananAy.Tag.ToString() + "-0"+i.ToString()).DayOfWeek];
-                this.Controls["gun" + i.ToString()].Visible = true;
+                this.ArkaPlan.Controls["gun"+i.ToString()].Text = CultureInfo.GetCultureInfo("tr-TR").DateTimeFormat.DayNames[(int)DateTime.Parse(yılCB.Text + "-" + tiklananAy.Tag.ToString() + "-0"+i.ToString()).DayOfWeek];
+                this.ArkaPlan.Controls["gun" + i.ToString()].Visible = true;
             }
         }
 
@@ -77,11 +88,17 @@ namespace TakvimUygulamasi
                 Button gunButonu = new Button();
                 gunButonu.Name = i.ToString();
                 if (i <10) { gunButonu.Tag = ("0" + i).ToString(); } else { gunButonu.Tag = i.ToString(); }
+                gunButonu.FlatStyle = FlatStyle.Flat;
+                gunButonu.FlatAppearance.BorderColor = Color.RosyBrown;
+                gunButonu.FlatAppearance.MouseOverBackColor = Color.RosyBrown;
+                gunButonu.Cursor = Cursors.Hand;
+                gunButonu.Font = new Font("Candara",12);
+                gunButonu.BackColor = Color.MistyRose;
                 gunButonu.Text =i.ToString();
                 gunButonu.Click += new EventHandler(this.gunTikla);
-                gunButonu.Size = new Size(70,60);
+                gunButonu.Size = new Size(80,60);
                 gunButonu.Location = new Point(x,y);
-                x+=70;
+                x+=80;
                 if (i%7==0){y += 60; x = 0;}
                 gunPaneli.Controls.Add(gunButonu);    
             }
@@ -93,37 +110,47 @@ namespace TakvimUygulamasi
             Button tiklananGun = (Button)sender;
             if (Convert.ToInt32(tiklananGun.Name) < 10) { secilenGun = "0" + tiklananGun.Name; }
             else { secilenGun = tiklananGun.Name;}
-            olayGrountuleBaglanti.Open();
-            SqlCommand olayGoruntuleKomut = new SqlCommand("SELECT OlayTanimi FROM Olaylar Where OlayKod LIKE '" + AnaEkran.olayKod + "' AND OlayTarihi LIKE '" + (secilenGun +"."+secilenAy +"."+yılCB.Text) + "'", olayGrountuleBaglanti);
-            SqlDataReader olayYazdır = olayGoruntuleKomut.ExecuteReader();
-            while (olayYazdır.Read())
+            try
             {
-                olayTanimlarıCB.Items.Add(olayYazdır[0].ToString());
+                olayGoruntuleBaglanti.Open();
+                SqlCommand olayGoruntuleKomut = new SqlCommand("SELECT OlayTanimi FROM Olaylar Where OlayKod LIKE '" + AnaEkran.olayKod + "' AND OlayTarihi LIKE '" + (secilenGun + "." + secilenAy + "." + yılCB.Text) + "'", olayGoruntuleBaglanti);
+                SqlDataReader olayYazdır = olayGoruntuleKomut.ExecuteReader();
+                while (olayYazdır.Read())
+                {
+                    olayTanimlarıCB.Items.Add(olayYazdır[0].ToString());
+                }
             }
-            olayGrountuleBaglanti.Close();
+            catch (System.Data.SqlClient.SqlException) { MessageBox.Show("Veri tabanıyla ilgili bir sorun oluştu. Tekrar deneyin.", "Uyarı!!!"); }
+            finally { olayGoruntuleBaglanti.Close(); }
         }
 
         private void OlayEkle_Click(object sender, EventArgs e)
         {
+            TakvimEkrani.ActiveForm.Hide();
             OlayEkleEkrani olayEkleEkrani = new OlayEkleEkrani();
             olayEkleEkrani.ShowDialog();
+            this.Show();
         }
 
         private void olayTanimlarıCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (var comboBoxlar in this.guncelleButonu.Controls.OfType<ComboBox>()) { comboBoxlar.Items.Clear(); }
+            foreach (var comboBoxlar in this.GuncellemeSayfasi.Controls.OfType<ComboBox>()) {comboBoxlar.Items.Clear(); comboBoxlar.Enabled = true; }
             Boolean alarmVarYok = false;
-            olayGrountuleBaglanti.Open();
-            SqlCommand olayYazdirKomut = new SqlCommand("SELECT * FROM Olaylar Where OlayKod LIKE '" + AnaEkran.olayKod + "' AND OlayTanimi LIKE '" + olayTanimlarıCB.Text + "'", olayGrountuleBaglanti);
-            SqlDataReader olayBilgileriOku = olayYazdirKomut.ExecuteReader();
-            while (olayBilgileriOku.Read())
+            try
             {
-                olayTanimiGoruntuTB.Text = olayBilgileriOku[3].ToString(); olayAciklamaGoruntuRTB.Text = olayBilgileriOku[4].ToString(); baslangicGoruntuTB.Text = olayBilgileriOku[1].ToString(); bitisGoruntuTB.Text = olayBilgileriOku[2].ToString(); olayTarihiGoruntuTB.Text = olayBilgileriOku[0].ToString();
-                olayTanimiGuncelleTB.Text = olayBilgileriOku[3].ToString(); olayAciklamasiGuncelleRTB.Text = olayBilgileriOku[4].ToString(); alarmVarYok = Convert.ToBoolean(olayBilgileriOku[5].ToString());
-                saatGuncelleme(olayBilgileriOku[1].ToString(), olayBilgileriOku[2].ToString());
+                olayGoruntuleBaglanti.Open();
+                SqlCommand olayYazdirKomut = new SqlCommand("SELECT * FROM Olaylar Where OlayKod LIKE '" + AnaEkran.olayKod + "' AND OlayTanimi LIKE '" + olayTanimlarıCB.Text + "'", olayGoruntuleBaglanti);
+                SqlDataReader olayBilgileriOku = olayYazdirKomut.ExecuteReader();
+                while (olayBilgileriOku.Read())
+                {
+                    olayTanimiGoruntuTB.Text = olayBilgileriOku[3].ToString(); olayAciklamaGoruntuRTB.Text = olayBilgileriOku[4].ToString(); baslangicGoruntuTB.Text = olayBilgileriOku[1].ToString(); bitisGoruntuTB.Text = olayBilgileriOku[2].ToString(); olayTarihiGoruntuTB.Text = olayBilgileriOku[0].ToString();
+                    olayTanimiGuncelleTB.Text = olayBilgileriOku[3].ToString(); olayAciklamasiGuncelleRTB.Text = olayBilgileriOku[4].ToString(); alarmVarYok = Convert.ToBoolean(olayBilgileriOku[5].ToString());
+                    saatGuncelleme(olayBilgileriOku[1].ToString(), olayBilgileriOku[2].ToString());
+                }
+                if (alarmVarYok) { alarmCB.Checked = true; }
             }
-            if (alarmVarYok) { alarmCB.Checked = true; }
-            olayGrountuleBaglanti.Close();
+            catch (System.Data.SqlClient.SqlException) { MessageBox.Show("Veri tabanıyla ilgili bir sorun oluştu. Tekrar deneyin.", "Uyarı!!!"); }
+            finally { olayGoruntuleBaglanti.Close(); }
         }
 
         private void bilgileriKaldır()
@@ -142,10 +169,14 @@ namespace TakvimUygulamasi
             if (alarmCB.Checked == true) { alarmVarYok = true; }
             if (girisHatalari())
             {
-                olayGrountuleBaglanti.Open();
-                SqlCommand olayGuncelleKomutu = new SqlCommand("UPDATE Olaylar SET OlayTanimi = '" + olayTanimiGuncelleTB.Text + "',OlayAciklamasi = '" + olayAciklamasiGuncelleRTB.Text + "',OlayBaslangicSaati = '" + baslangicSaatiCB.Text + ":" + baslangicDkCB.Text + "',OlayBitisSaati ='" + bitisSaatiCB.Text + ":" + bitisDkCB.Text + "',AlarmVarMi = '" + alarmVarYok + "' Where OlayKod LIKE '" + AnaEkran.olayKod + "'AND OlayTanimi LIKE '" + olayTanimlarıCB.Text + "'", olayGrountuleBaglanti);
-                olayGuncelleKomutu.ExecuteNonQuery();
-                olayGrountuleBaglanti.Close();
+                try
+                {
+                    olayGoruntuleBaglanti.Open();
+                    SqlCommand olayGuncelleKomutu = new SqlCommand("UPDATE Olaylar SET OlayTanimi = '" + olayTanimiGuncelleTB.Text + "',OlayAciklamasi = '" + olayAciklamasiGuncelleRTB.Text + "',OlayBaslangicSaati = '" + baslangicSaatiCB.Text + ":" + baslangicDkCB.Text + "',OlayBitisSaati ='" + bitisSaatiCB.Text + ":" + bitisDkCB.Text + "',AlarmVarMi = '" + alarmVarYok + "' Where OlayKod LIKE '" + AnaEkran.olayKod + "'AND OlayTanimi LIKE '" + olayTanimlarıCB.Text + "'", olayGoruntuleBaglanti);
+                    olayGuncelleKomutu.ExecuteNonQuery();
+                }
+                catch (System.Data.SqlClient.SqlException) { MessageBox.Show("Veri tabanıyla ilgili bir sorun oluştu. Tekrar deneyin.", "Uyarı!!!"); }
+                finally { olayGoruntuleBaglanti.Close(); }
                 olayTanimlarıCB.Items.Add(olayTanimiGuncelleTB.Text);
                 olayTanimlarıCB.Items.Remove(olayTanimlarıCB.SelectedItem);
                 bilgileriKaldır();
@@ -155,10 +186,14 @@ namespace TakvimUygulamasi
 
         private void olaySilButonu_Click(object sender, EventArgs e)
         {
-            olayGrountuleBaglanti.Open();
-            SqlCommand olaySilKomut = new SqlCommand("DELETE FROM Olaylar Where OlayKod LIKE '" + AnaEkran.olayKod + "' AND OlayTanimi LIKE '" + olayTanimlarıCB.Text + "'", olayGrountuleBaglanti);
-            olaySilKomut.ExecuteNonQuery();
-            olayGrountuleBaglanti.Close();
+            try
+            {
+                olayGoruntuleBaglanti.Open();
+                SqlCommand olaySilKomut = new SqlCommand("DELETE FROM Olaylar Where OlayKod LIKE '" + AnaEkran.olayKod + "' AND OlayTanimi LIKE '" + olayTanimlarıCB.Text + "'", olayGoruntuleBaglanti);
+                olaySilKomut.ExecuteNonQuery();
+            }
+            catch (System.Data.SqlClient.SqlException) { MessageBox.Show("Veri tabanıyla ilgili bir sorun oluştu. Tekrar deneyin.", "Uyarı!!!"); }
+            finally { olayGoruntuleBaglanti.Close(); }
             olayTanimlarıCB.Items.Remove(olayTanimlarıCB.Text);
             bilgileriKaldır();
             foreach (var saatler in this.GuncellemeSayfasi.Controls.OfType<ComboBox>()) { saatler.Items.Clear(); }
@@ -168,7 +203,8 @@ namespace TakvimUygulamasi
         {
             gunPaneli.Visible = false;
             ayPaneli.Visible = true;
-            ayIsmi.Visible = false;
+            ayIsmiLB.Visible = false;
+            foreach (var gunIsimler in this.ArkaPlan.Controls.OfType<Label>()) { if (Convert.ToString(gunIsimler.Tag) == "gun") { gunIsimler.Visible = false; } }
         }
 
         private void panelDegistirBT_Click(object sender, EventArgs e)
@@ -176,7 +212,8 @@ namespace TakvimUygulamasi
             gunPaneli.Visible = false;
             panelDegistirBT.Visible = false;
             ayPaneli.Visible = true;
-            foreach (var gunIsimler in this.Controls.OfType<Label>()) { gunIsimler.Visible = false; }
+            foreach (var gunIsimler in this.ArkaPlan.Controls.OfType<Label>()) { if (Convert.ToString(gunIsimler.Tag) == "gun") { gunIsimler.Visible = false; } }
+            bilgileriKaldır();
         }
 
         private string[] tarihler(string tarih)
@@ -270,7 +307,6 @@ namespace TakvimUygulamasi
                 }
             }
         }
-
         private bool girisHatalari()
         {
             bool hata = true;
