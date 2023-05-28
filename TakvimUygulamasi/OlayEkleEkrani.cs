@@ -56,7 +56,7 @@ namespace TakvimUygulamasi
                     olayEkleBaglanti.Open();
                     SqlCommand olayKayitKomutu = new SqlCommand("Insert into Olaylar (OlayTarihi,OlayBaslangicSaati,OlayBitisSaati,OlayTanimi,OlayAciklamasi,AlarmVarMi,OlayKod) values ('" + tarihBilgisi() + "','" + baslangicSaatCB.Text + ":" + baslangicDkCB.Text + "','" + bitisSaatCB.Text + ":" + bitisDkCB.Text + "','" + olayTanimiTB.Text + "','" + olayAciklamasıRTB.Text + "','" + alarmVarMi + "','" + AnaEkran.olayKod + "')", olayEkleBaglanti) ;
                     olayKayitKomutu.ExecuteNonQuery();
-                    MessageBox.Show("Olay kaydedildi.");
+                    MessageBox.Show("Olay kaydedildi.","Tebrikler!");
                     olayEkleBaglanti.Close();
                     this.Dispose();
                 }
@@ -131,7 +131,7 @@ namespace TakvimUygulamasi
         private bool girisHatalari()
         {
             bool hata = true;
-            if (baslangicSaatCB.SelectedItem == null||baslangicDkCB.SelectedItem==null|| bitisSaatCB.SelectedItem==null||bitisDkCB.SelectedItem==null) { hata = false; yildiz1.Visible = true; MessageBox.Show("Saat bilgileri boş olamaz."); }
+            if (baslangicSaatCB.SelectedItem == null||baslangicDkCB.SelectedItem==null|| bitisSaatCB.SelectedItem==null||bitisDkCB.SelectedItem==null) { hata = false; yildiz1.Visible = true; MessageBox.Show("Saat bilgileri boş olamaz.", "Uyarı!"); }
             else if (olayTanimiTB.Text.Length ==0) {hata = false; yildiz1.Visible = false; yildiz2.Visible = true; MessageBox.Show("Olay tanımı boş olamaz.", "Uyarı!"); }
             else if(olayAciklamasıRTB.Text.Length == 0) { hata = false; yildiz1.Visible=false; yildiz2.Visible = false; yildiz3.Visible = true; MessageBox.Show("Olay açıklaması boş olamaz.", "Uyarı!"); }
             else { hata = true; yildiz3.Visible = false; }

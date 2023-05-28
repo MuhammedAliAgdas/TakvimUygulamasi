@@ -133,7 +133,7 @@
             // adresRTB
             // 
             this.adresRTB.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.adresRTB.Location = new System.Drawing.Point(408, 35);
+            this.adresRTB.Location = new System.Drawing.Point(404, 21);
             this.adresRTB.MaxLength = 250;
             this.adresRTB.Name = "adresRTB";
             this.adresRTB.Size = new System.Drawing.Size(227, 116);
@@ -143,7 +143,7 @@
             // adminSifreTB
             // 
             this.adminSifreTB.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.adminSifreTB.Location = new System.Drawing.Point(456, 175);
+            this.adminSifreTB.Location = new System.Drawing.Point(456, 155);
             this.adminSifreTB.MaxLength = 50;
             this.adminSifreTB.Name = "adminSifreTB";
             this.adminSifreTB.Size = new System.Drawing.Size(179, 21);
@@ -158,7 +158,7 @@
             this.adminMisinCB.Enabled = false;
             this.adminMisinCB.Font = new System.Drawing.Font("Candara", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.adminMisinCB.ForeColor = System.Drawing.Color.Thistle;
-            this.adminMisinCB.Location = new System.Drawing.Point(456, 214);
+            this.adminMisinCB.Location = new System.Drawing.Point(456, 196);
             this.adminMisinCB.Name = "adminMisinCB";
             this.adminMisinCB.Size = new System.Drawing.Size(130, 26);
             this.adminMisinCB.TabIndex = 9;
@@ -263,7 +263,7 @@
             this.AdresLB.BackColor = System.Drawing.Color.Transparent;
             this.AdresLB.Font = new System.Drawing.Font("Candara", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.AdresLB.ForeColor = System.Drawing.Color.Thistle;
-            this.AdresLB.Location = new System.Drawing.Point(339, 33);
+            this.AdresLB.Location = new System.Drawing.Point(335, 23);
             this.AdresLB.Name = "AdresLB";
             this.AdresLB.Size = new System.Drawing.Size(63, 22);
             this.AdresLB.TabIndex = 17;
@@ -276,7 +276,7 @@
             this.adminSifreLB.BackColor = System.Drawing.Color.Transparent;
             this.adminSifreLB.Font = new System.Drawing.Font("Candara", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.adminSifreLB.ForeColor = System.Drawing.Color.Thistle;
-            this.adminSifreLB.Location = new System.Drawing.Point(339, 174);
+            this.adminSifreLB.Location = new System.Drawing.Point(335, 155);
             this.adminSifreLB.Name = "adminSifreLB";
             this.adminSifreLB.Size = new System.Drawing.Size(115, 22);
             this.adminSifreLB.TabIndex = 18;
@@ -293,7 +293,7 @@
             this.KaydolButonu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Thistle;
             this.KaydolButonu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.KaydolButonu.Font = new System.Drawing.Font("Ebrima", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.KaydolButonu.Location = new System.Drawing.Point(447, 261);
+            this.KaydolButonu.Location = new System.Drawing.Point(447, 245);
             this.KaydolButonu.Name = "KaydolButonu";
             this.KaydolButonu.Size = new System.Drawing.Size(150, 65);
             this.KaydolButonu.TabIndex = 10;
@@ -405,7 +405,7 @@
             this.yildiz8.BackColor = System.Drawing.Color.Transparent;
             this.yildiz8.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.yildiz8.ForeColor = System.Drawing.Color.Red;
-            this.yildiz8.Location = new System.Drawing.Point(641, 33);
+            this.yildiz8.Location = new System.Drawing.Point(633, 21);
             this.yildiz8.Name = "yildiz8";
             this.yildiz8.Size = new System.Drawing.Size(31, 39);
             this.yildiz8.TabIndex = 27;

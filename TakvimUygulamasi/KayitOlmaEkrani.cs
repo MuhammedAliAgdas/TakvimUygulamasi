@@ -51,6 +51,7 @@ namespace TakvimUygulamasi
                     foreach (var nesne in nesneler) { nesne.Text = null; }
                     TelNoTB.Text = " ";
                     adresRTB.Text = " ";
+                    adminMisinCB.Checked = false;
 
                 }
                 catch (System.Data.SqlClient.SqlException) { MessageBox.Show("Girdiğiniz bilgiler veri tabanında soruna yol açtı. Bazı bilgileri değiştirmeyi deneyin.","Uyarı!!!"); }
@@ -105,7 +106,7 @@ namespace TakvimUygulamasi
         
         void yildizlariYokEt()
         {
-            var nesneler = this.Controls.OfType<Label>();
+            var nesneler = this.ArkaPlan.Controls.OfType<Label>();
             foreach (var nesne in nesneler) { if (nesne.Text == "*") { nesne.Visible = false; } }
         }
         private bool hatalıDurumlar(bool hataliMi)

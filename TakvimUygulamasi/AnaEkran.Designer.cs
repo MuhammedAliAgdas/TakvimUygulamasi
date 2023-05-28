@@ -73,7 +73,7 @@
             this.BilgiPaneli.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BilgiPaneli.Location = new System.Drawing.Point(0, 0);
             this.BilgiPaneli.Name = "BilgiPaneli";
-            this.BilgiPaneli.Size = new System.Drawing.Size(654, 389);
+            this.BilgiPaneli.Size = new System.Drawing.Size(659, 389);
             this.BilgiPaneli.TabIndex = 1;
             // 
             // GeriButonu
@@ -172,7 +172,7 @@
             this.GirisPaneli.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GirisPaneli.Location = new System.Drawing.Point(0, 0);
             this.GirisPaneli.Name = "GirisPaneli";
-            this.GirisPaneli.Size = new System.Drawing.Size(654, 389);
+            this.GirisPaneli.Size = new System.Drawing.Size(659, 389);
             this.GirisPaneli.TabIndex = 6;
             // 
             // Başlık
@@ -214,7 +214,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(654, 389);
+            this.ClientSize = new System.Drawing.Size(659, 389);
             this.Controls.Add(this.GirisPaneli);
             this.Controls.Add(this.BilgiPaneli);
             this.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));

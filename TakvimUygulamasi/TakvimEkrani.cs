@@ -108,8 +108,7 @@ namespace TakvimUygulamasi
         {
             olayTanimlarıCB.Items.Clear();
             Button tiklananGun = (Button)sender;
-            if (Convert.ToInt32(tiklananGun.Name) < 10) { secilenGun = "0" + tiklananGun.Name; }
-            else { secilenGun = tiklananGun.Name;}
+            secilenGun = tiklananGun.Name;
             try
             {
                 olayGoruntuleBaglanti.Open();
@@ -204,6 +203,7 @@ namespace TakvimUygulamasi
             gunPaneli.Visible = false;
             ayPaneli.Visible = true;
             ayIsmiLB.Visible = false;
+            panelDegistirBT.Visible = false;
             foreach (var gunIsimler in this.ArkaPlan.Controls.OfType<Label>()) { if (Convert.ToString(gunIsimler.Tag) == "gun") { gunIsimler.Visible = false; } }
         }
 
@@ -310,9 +310,9 @@ namespace TakvimUygulamasi
         private bool girisHatalari()
         {
             bool hata = true;
-            if (baslangicSaatiCB.SelectedItem == null || baslangicDkCB.SelectedItem == null || bitisSaatiCB.SelectedItem == null || bitisDkCB.SelectedItem == null) { hata = false; bosSaatHatasi.Visible = true; MessageBox.Show("Saat bilgileri boş olamaz."); }
-            else if (olayTanimiGuncelleTB.Text.Length == 0) { hata = false; bosSaatHatasi.Visible = false; bosTanimHatasi.Visible = true; MessageBox.Show("Olay tanımı boş olamaz."); }
-            else if (olayAciklamasiGuncelleRTB.Text.Length == 0) { hata = false; bosSaatHatasi.Visible = false; bosTanimHatasi.Visible = false; bosAciklamaHatasi.Visible = true; MessageBox.Show("Olay açıklaması boş olamaz."); }
+            if (baslangicSaatiCB.SelectedItem == null || baslangicDkCB.SelectedItem == null || bitisSaatiCB.SelectedItem == null || bitisDkCB.SelectedItem == null) { hata = false; bosSaatHatasi.Visible = true; MessageBox.Show("Saat bilgileri boş olamaz.","Uyarı!"); }
+            else if (olayTanimiGuncelleTB.Text.Length == 0) { hata = false; bosSaatHatasi.Visible = false; bosTanimHatasi.Visible = true; MessageBox.Show("Olay tanımı boş olamaz.", "Uyarı!"); }
+            else if (olayAciklamasiGuncelleRTB.Text.Length == 0) { hata = false; bosSaatHatasi.Visible = false; bosTanimHatasi.Visible = false; bosAciklamaHatasi.Visible = true; MessageBox.Show("Olay açıklaması boş olamaz.", "Uyarı!"); }
             else { hata = true; bosAciklamaHatasi.Visible = false; bosSaatHatasi.Visible = false; bosTanimHatasi.Visible = false; }
 
             return hata;
