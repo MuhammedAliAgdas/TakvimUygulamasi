@@ -26,27 +26,34 @@ namespace TakvimUygulamasi
 
         private void GirisButonu_Click(object sender, EventArgs e)
         {
-            bool AlarmVarMi = false;
-            AnaBaglanti.Open();
-            SqlCommand girisKomutu = new SqlCommand("Select *from Kullanicilar", AnaBaglanti);
-            SqlDataReader kullaniciBilgileri = girisKomutu.ExecuteReader();
-            while (kullaniciBilgileri.Read())
+            bool bilgilerDogruMu = false;
+            try
             {
-                if (KullaniciAdiTB.Text == kullaniciBilgileri["KullaniciAdi"].ToString().TrimEnd() && SifreTB.Text == kullaniciBilgileri["Sifre"].ToString().TrimEnd()) { AlarmVarMi = true; break; }
+                AnaBaglanti.Open();
+                SqlCommand girisKomutu = new SqlCommand("Select *from Kullanicilar", AnaBaglanti);
+                SqlDataReader kullaniciBilgileri = girisKomutu.ExecuteReader();
+                while (kullaniciBilgileri.Read())
+                {
+                    if (KullaniciAdiTB.Text == kullaniciBilgileri["KullaniciAdi"].ToString().TrimEnd() && SifreTB.Text == kullaniciBilgileri["Sifre"].ToString().TrimEnd()) { bilgilerDogruMu = true; break; }
+                }
             }
-            AnaBaglanti.Close();
-            if (AlarmVarMi == true)
+            catch (System.Data.SqlClient.SqlException) { MessageBox.Show("Üzgünüz, veri tabanında bir sorun oluştu lütfen tekrar deneyiniz.", "Uyarı!!!"); }
+            finally
             {
-                olayKod = SifreTB.Text;
-                KullaniciAdiTB.Text = null;
-                SifreTB.Text = null;
-                AnaEkran.ActiveForm.Hide();
-                TakvimEkrani takvimekrani = new TakvimEkrani();
-                takvimekrani.ShowDialog();
-                this.Show();
-                
+                AnaBaglanti.Close();
+                if (bilgilerDogruMu == true)
+                {
+                    olayKod = SifreTB.Text;
+                    KullaniciAdiTB.Text = null;
+                    SifreTB.Text = null;
+                    AnaEkran.ActiveForm.Hide();
+                    TakvimEkrani takvimekrani = new TakvimEkrani();
+                    takvimekrani.ShowDialog();
+                    this.Show();
+
+                }
+                if (bilgilerDogruMu == false) { MessageBox.Show("Bilgileriniz yanlış veya kayıt değilsiniz. Kayıt Ol seçeneğinden kaydolabilirsiniz.", "Uyarı!!!"); }
             }
-            if (AlarmVarMi == false) { MessageBox.Show("Bilgileriniz yanlış veya kayıt değilsiniz. Kayıt Ol seçeneğinden kaydolabilirsiniz.","Uyarı!!!"); }
         }
         
         private void KayıtAcmaLLB_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
